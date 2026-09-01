@@ -37,7 +37,7 @@ const accentStyles: Record<Accent, { border: string; glow: string }> = {
 const entries: TimelineEntry[] = [
   {
     id: "1",
-    yearRange: "2024–Now",  
+    yearRange: "2024–Now",
     duration: "2 years",
     title: "IT Systems Manager",
     dateRange: "Jan 2024 — Present",
