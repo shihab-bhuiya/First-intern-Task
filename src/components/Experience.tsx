@@ -117,73 +117,80 @@ export default function CareerTimeline() {
           Career <span className="text-sky-400">Timeline</span>
         </h1>
 
-        <ol className="relative border-l border-sky-900/60 pl-0">
-          {entries.map((entry) => {
-            const isOpen = openId === entry.id;
-            const styles = accentStyles[entry.accent];
+      <ol className="relative pl-0">
+  {/* Vertical timeline line */}
+  <span className="absolute left-0 top-0 bottom-0 w-px bg-sky-900/60" />
 
-            return (
-              <li key={entry.id} className="relative mb-14 last:mb-0">
-                {/* connector line to card */}
-                <span className="absolute left-0 top-9 hidden h-px w-40 -translate-x-full bg-sky-800/60 sm:block" />
+  {entries.map((entry) => {
+    const isOpen = openId === entry.id;
+    const styles = accentStyles[entry.accent];
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-[160px_1fr] sm:gap-8 sm:pl-6">
-                  {/* left: year range + duration pill */}
-                  <div className="flex flex-col items-start gap-2 sm:items-end sm:text-right">
-                    <span className="text-sm font-medium text-white sm:text-base">
-                      {entry.yearRange}
-                    </span>
-                    <span className="rounded-full border border-sky-800/70 px-3 py-0.5 text-xs text-sky-300/80">
-                      {entry.duration}
-                    </span>
-                  </div>
+    return (
+      <li key={entry.id} className="relative mb-14 last:mb-0">
+        {/* Connector: vertical line → card */}
+        <span className="absolute left-0 top-9 hidden h-px w-[208px] bg-sky-800/60 sm:block" />
 
-                  {/* right: card */}
-                  <button
-                    type="button"
-                    onClick={() => toggle(entry.id)}
-                    aria-expanded={isOpen}
-                    className={`group relative overflow-hidden rounded-xl border bg-gradient-to-br ${styles.glow} ${styles.border} bg-[#0d1420] px-5 py-4 text-left transition-colors hover:bg-[#101827]`}
-                  >
-                    <div className="flex items-center justify-between gap-4">
-                      <div>
-                        <h2 className="text-base font-medium text-white sm:text-lg">
-                          {entry.title}
-                        </h2>
-                        <p className="mt-1 text-xs text-slate-400 sm:text-sm">
-                          {entry.dateRange} · {entry.location}
-                        </p>
-                      </div>
-                      <ChevronDown
-                        className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-200 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-[160px_1fr] sm:gap-8 sm:pl-6">
+          
+          {/* left: year range + duration */}
+          <div className="flex flex-col items-start gap-2 sm:items-end sm:text-right">
+            <span className="text-sm font-medium text-white sm:text-base">
+              {entry.yearRange}
+            </span>
 
-                    {entry.details && (
-                      <div
-                        className={`grid transition-all duration-200 ease-out ${
-                          isOpen
-                            ? "mt-3 grid-rows-[1fr] opacity-100"
-                            : "grid-rows-[0fr] opacity-0"
-                        }`}
-                      >
-                        <ul className="overflow-hidden text-sm text-slate-300">
-                          {entry.details.map((line, i) => (
-                            <li key={i} className="mt-1 first:mt-0">
-                              {line}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </button>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+            <span className="rounded-full border border-sky-800/70 px-3 py-0.5 text-xs text-sky-300/80">
+              {entry.duration}
+            </span>
+          </div>
+
+          {/* right: card */}
+          <button
+            type="button"
+            onClick={() => toggle(entry.id)}
+            aria-expanded={isOpen}
+            className={`group relative overflow-hidden rounded-xl border bg-gradient-to-br ${styles.glow} ${styles.border} bg-[#0d1420] px-5 py-4 text-left transition-colors hover:bg-[#101827]`}
+          >
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <h2 className="text-base font-medium text-white sm:text-lg">
+                  {entry.title}
+                </h2>
+
+                <p className="mt-1 text-xs text-slate-400 sm:text-sm">
+                  {entry.dateRange} · {entry.location}
+                </p>
+              </div>
+
+              <ChevronDown
+                className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-200 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+              />
+            </div>
+
+            {entry.details && (
+              <div
+                className={`grid transition-all duration-200 ease-out ${
+                  isOpen
+                    ? "mt-3 grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <ul className="overflow-hidden text-sm text-slate-300">
+                  {entry.details.map((line, i) => (
+                    <li key={i} className="mt-1 first:mt-0">
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </button>
+        </div>
+      </li>
+    );
+  })}
+</ol>
       </div>
     </div>
   );
