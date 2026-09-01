@@ -43,7 +43,7 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-[#05090d] px-6 pt-16"
     >
       {/* Background glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-72 w-80 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 py-20 lg:grid-cols-2">
         {/* Left Content */}

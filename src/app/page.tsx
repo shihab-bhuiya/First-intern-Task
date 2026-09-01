@@ -1,11 +1,9 @@
 import About from "@/components/About";
 import Certificates from "@/components/Certifications";
-import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import MarquePage from "@/components/Marque";
-
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Qualifications from "@/components/Qualifications";
@@ -15,7 +13,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
         <Navbar/>
       <Hero/>
       <Marquee>

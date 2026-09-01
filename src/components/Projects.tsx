@@ -140,7 +140,7 @@ export default function CaseFiles() {
               </h3>
 
               {/* Description */}
-              <p className="mt-3 text-[9px] leading-5 text-gray-500">
+              <p className="mt-3 text-[15px] leading-5 text-gray-500">
                 {item.description}
               </p>
 
@@ -157,7 +157,7 @@ export default function CaseFiles() {
                           +
                         </span>
 
-                        <span className="font-mono text-[8px] leading-4 text-emerald-400/80">
+                        <span className="font-mono text-[12px] leading-4 text-emerald-400/80">
                           {result}
                         </span>
                       </div>
