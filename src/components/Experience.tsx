@@ -111,7 +111,7 @@ export default function CareerTimeline() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0e14] px-6 py-16 sm:px-12">
+    <div id="experience" className="min-h-screen bg-[#0a0e14] px-6 py-16 sm:px-12">
       <div className="mx-auto max-w-4xl">
         <h1 className="mb-16 text-4xl font-semibold text-white sm:text-5xl">
           Career <span className="text-sky-400">Timeline</span>

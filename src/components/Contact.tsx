@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-[#0a0e14] px-6 py-14 sm:px-12">
+    <section id="contact" className="bg-[#0a0e14] px-6 py-14 sm:px-12">
       <div className="mx-auto w-full max-w-7xl">
         {/* Section Label */}
         <SectionLabel index="08" label="CONTACT" />

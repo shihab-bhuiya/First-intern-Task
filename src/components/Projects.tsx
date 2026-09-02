@@ -93,7 +93,7 @@ const caseFiles = [
 export default function CaseFiles() {
   return (
     <section
-      id="case-files"
+      id="projects"
       className="border-t border-white/10 bg-[#05090d] px-6 py-24"
     >
       <div className="mx-auto max-w-7xl">
