@@ -38,7 +38,7 @@ export default function Certificates() {
         label="PROFESSIONAL CERTIFICATES"
       />
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
         {certificates.map((cert) => (
           <div
             key={cert.id}
