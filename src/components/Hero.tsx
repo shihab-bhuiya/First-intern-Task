@@ -76,7 +76,7 @@ export default function Hero() {
           {/* Action Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/contact"
+              href="#experience"
               className="rounded-md border border-white/15 px-5 py-3 font-mono text-xs font-semibold text-gray-300 transition-all hover:border-cyan-400/50 hover:text-cyan-400"
             >
               <div className="flex items-center gap-2 text-white">
@@ -86,12 +86,12 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/projects"
+              href="#contact"
               className="rounded-md bg-cyan-400 px-5 py-3 font-mono text-xs font-semibold text-black transition-all hover:bg-cyan-300"
             >
               <div className="flex items-center gap-2">
                 <MdOutlineEmail className="text-lg" />
-                <span>Contact Me</span>
+                <span> Contact Me</span>
               </div>
             </Link>
           </div>
