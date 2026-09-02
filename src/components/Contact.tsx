@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, MessageSquare, Send } from "lucide-react";
 import SectionLabel from "./SectionLabel";
+import Link from "next/link";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
@@ -104,12 +105,12 @@ export default function Contact() {
                 EMAIL
               </p>
 
-              <a
+              <Link
                 href="mailto:mazidulhakim@gmail.com"
                 className="text-sm text-white transition-colors hover:text-sky-300"
               >
                 mazidulhakim@gmail.com
-              </a>
+              </Link>
             </div>
 
             {/* LinkedIn */}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 
 interface Qualification {
@@ -44,8 +45,10 @@ export default function Qualifications() {
             className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 bg-[#10151f]"
           >
             {qualification.imageUrl ? (
-              <img
+              <Image
                 src={qualification.imageUrl}
+                width={200}
+                height={200}
                 alt={qualification.title}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />

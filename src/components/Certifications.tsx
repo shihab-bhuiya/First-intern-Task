@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 
 interface Certificate {
@@ -45,9 +46,11 @@ export default function Certificates() {
           >
            <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-2 ring-1 ring-white/10">
   {cert.iconUrl ? (
-    <img
+    <Image
       src={cert.iconUrl}
       alt={cert.name}
+      width={64}
+      height={64}
       className="h-full w-full object-contain"
     />
   ) : (
