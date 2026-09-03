@@ -54,7 +54,7 @@ export default function Skills() {
             Technical Skills
           </h2>
 
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-500">
+          <p className="mt-3                max-w-2xl text-sm leading-7 text-gray-500">
             Technologies and tools I use to design, build and deploy modern
             web applications.
           </p>
