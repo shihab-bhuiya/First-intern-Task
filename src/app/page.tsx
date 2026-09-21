@@ -7,13 +7,13 @@ import MarquePage from "@/components/Marque";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Qualifications from "@/components/Qualifications";
-import Skills from "@/components/Skill";
+import Skills from "@/components/Expertise";
 import Marquee from "react-fast-marquee";
 
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="mx-auto">
         <Navbar/>
       <Hero/>
       <Marquee>
