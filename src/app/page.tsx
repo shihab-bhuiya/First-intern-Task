@@ -13,7 +13,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
-    <div className="mx-auto bg-[#0a0e14]">
+    <div className="mx-auto bg-[#0a0e14] max-w[1440px] w-full space-y-4">
         <Navbar/>
       <Hero/>
       <Marquee>

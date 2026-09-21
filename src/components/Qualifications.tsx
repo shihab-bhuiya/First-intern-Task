@@ -32,7 +32,7 @@ const qualifications: Qualification[] = [
 
 export default function Qualifications() {
   return (
-    <section className="w-full max-w-[1440px] mx-auto bg-[#0a0e14] px-6 py-4 sm:px-10">
+    <section className="w-full max-w-[1440px] mx-auto mt-8 bg-[#0a0e14] px-6 py-4 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
          <div className="mb-7 border-b border-white/[0.06] pb-4">
