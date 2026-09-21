@@ -1,7 +1,22 @@
+const accents = {
+  orange: {
+    badge: "border-orange-400/60 text-orange-400",
+    caseNo: "text-orange-400/80",
+  },
+  cyan: {
+    badge: "border-cyan-400/60 text-cyan-400",
+    caseNo: "text-cyan-400/80",
+  },
+  green: {
+    badge: "border-emerald-400/60 text-emerald-400",
+    caseNo: "text-emerald-400/80",
+  },
+};
+
 const caseFiles = [
   {
     category: "Infrastructure / Resilience",
-    caseNo: "CASE-01",
+    caseNo: "CASE-001",
     title: "Infrastructure Modernization",
     description:
       "Aging on-prem server and storage infrastructure with no disaster recovery. Replaced legacy infrastructure with Dell modular servers and EMC storage, introduced new L3 Cisco switching, repurposed legacy hardware into a dedicated DR site, and deployed Veeam backup.",
@@ -94,83 +109,84 @@ export default function CaseFiles() {
   return (
     <section
       id="projects"
-      className="border-t border-white/10 bg-[#05090d] px-6 py-24"
+      className="relative w-full overflow-hidden border-t border-white/10 bg-[#0a0e11] px-6 py-24"
     >
-      <div className="mx-auto max-w-7xl">
-        {/* Heading */}
-        <div className="mb-10">
-          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-gray-500">
-            04 / Case Files
-          </p>
+      {/* Background glows: blue top-left, teal bottom-right */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse 55% 45% at 0% 0%, rgba(37,99,235,0.20), transparent 70%), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(20,184,166,0.14), transparent 70%)",
+        }}
+      />
 
-          <h2 className="font-mono text-3xl font-bold text-white sm:text-4xl">
-            Selected Work
+      <div className="relative mx-auto max-w-[1312px]">
+        {/* Heading */}
+        <div className="mb-7 border-b border-white/[0.06] pb-4">
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-gray-400">
+            04 / Case Files
           </h2>
         </div>
 
         {/* Case Files */}
         <div className="grid gap-4 md:grid-cols-2">
-          {caseFiles.map((item) => (
-            <article
-              key={item.caseNo}
-              className="rounded-xl border border-white/10 bg-[#111821] p-4 transition-all duration-300 hover:border-white/20 hover:bg-[#141d27]"
-            >
-              {/* Top */}
-              <div className="mb-4 flex items-center justify-between">
-                <span
-                  className={`rounded border px-2 py-1 font-mono text-[8px] ${
-                    item.accent === "orange"
-                      ? "border-orange-400/50 text-orange-400"
-                      : item.accent === "green"
-                        ? "border-green-400/50 text-green-400"
-                        : "border-cyan-400/50 text-cyan-400"
-                  }`}
-                >
-                  {item.category}
-                </span>
+          {caseFiles.map((item) => {
+            const accent = accents[item.accent];
 
-                <span className="font-mono text-[8px] text-cyan-500/70">
-                  {item.caseNo}
-                </span>
-              </div>
+            return (
+              <article
+                key={item.caseNo}
+                className="flex flex-col rounded-2xl border border-white/[0.08] bg-[#131820] p-6 transition-colors duration-300 hover:border-white/20"
+              >
+                {/* Top */}
+                <div className="mb-5 flex items-center justify-between gap-3">
+                  <span
+                    className={`rounded border px-3 py-1.5 font-mono text-[10px] leading-4 ${accent.badge}`}
+                  >
+                    {item.category}
+                  </span>
 
-              {/* Title */}
-              <h3 className="font-mono text-sm font-medium text-white">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="mt-3 text-[15px] leading-5 text-gray-500">
-                {item.description}
-              </p>
-
-              {/* Results */}
-              <div className="mt-5 rounded-md bg-[#0c141d] p-4">
-                <div className="space-y-3">
-                  {item.results.map(([result, technology]) => (
-                    <div
-                      key={result}
-                      className="flex items-center justify-between gap-4"
-                    >
-                      <div className="flex min-w-0 items-center gap-2">
-                        <span className="font-mono text-[9px] text-emerald-400">
-                          +
-                        </span>
-
-                        <span className="font-mono text-[12px] leading-4 text-emerald-400/80">
-                          {result}
-                        </span>
-                      </div>
-
-                      <span className="shrink-0 text-right font-mono text-[7px] text-gray-400">
-                        {technology}
-                      </span>
-                    </div>
-                  ))}
+                  <span
+                    className={`font-mono text-[10px] ${accent.caseNo}`}
+                  >
+                    {item.caseNo}
+                  </span>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                {/* Title */}
+                <h3 className="text-lg font-medium tracking-tight text-white">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-2 text-[11px] leading-5 text-gray-400">
+                  {item.description}
+                </p>
+
+                {/* Results: fills remaining height so both cards in a row match */}
+                <div className="mt-5 flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
+                  <ul className="space-y-3.5">
+                    {item.results.map(([result, technology]) => (
+                      <li
+                        key={result}
+                        className="flex items-start justify-between gap-4"
+                      >
+                        <span className="flex min-w-0 items-start gap-2 font-mono text-[11px] leading-4 text-emerald-400">
+                          <span aria-hidden="true">+</span>
+                          <span>{result}</span>
+                        </span>
+
+                        <span className="shrink-0 text-right text-[11px] leading-4 text-gray-200">
+                          {technology}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

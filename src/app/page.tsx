@@ -5,7 +5,7 @@ import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import MarquePage from "@/components/Marque";
 import Navbar from "@/components/Navbar";
-import Projects from "@/components/Projects";
+import Projects from "@/components/CaseFile";
 import Qualifications from "@/components/Qualifications";
 import Skills from "@/components/Expertise";
 import Marquee from "react-fast-marquee";
