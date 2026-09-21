@@ -22,13 +22,15 @@ export default function Contact() {
       id="contact"
       className="
         relative
-    mt-8
+        mt-8
         overflow-hidden
         bg-[#090d14]
-        px-6
+        px-4
         py-7
         text-white
-        sm:px-10
+        sm:px-6
+        md:px-8
+        lg:px-10
       "
     >
       {/* Bottom-left teal glow */}
@@ -63,14 +65,41 @@ export default function Contact() {
 
       <div className="relative mx-auto w-full max-w-[1312px]">
         {/* ================= HEADER ================= */}
-        <div className="mb-6 flex lg:text-[24px] items-center gap-3">
-          <span className="font-mono text-[14px] tracking-[0.08em] text-slate-400">
+        <div
+          className="
+            mb-6
+            flex
+            items-center
+            gap-2
+            sm:gap-3
+            lg:text-[24px]
+          "
+        >
+          <span
+            className="
+              font-mono
+              text-[11px]
+              tracking-[0.08em]
+              text-slate-400
+              sm:text-[14px]
+            "
+          >
             08
           </span>
 
-          <span className="font-mono text-[18px] text-slate-500">/</span>
+          <span className="font-mono text-[14px] text-slate-500 sm:text-[18px]">
+            /
+          </span>
 
-          <span className="font-mono text-[14px] tracking-[0.08em] text-slate-400">
+          <span
+            className="
+              font-mono
+              text-[11px]
+              tracking-[0.08em]
+              text-slate-400
+              sm:text-[14px]
+            "
+          >
             CONTACT
           </span>
         </div>
@@ -82,12 +111,14 @@ export default function Contact() {
           className="
             mt-6
             text-[34px]
-            lg:text-[64px]
             uppercase
-            leading-[1.18]
+            leading-[1.15]
             tracking-[-0.03em]
             text-[#f5eeee]
-            sm:text-[36px]
+            sm:text-[42px]
+            md:text-[52px]
+            lg:text-[64px]
+            lg:leading-[1.18]
           "
         >
           Let&apos;s secure what
@@ -98,12 +129,15 @@ export default function Contact() {
         {/* ================= MAIN CONTENT ================= */}
         <div
           className="
-            mt-5
+            mt-8
             grid
             grid-cols-1
-            gap-32
-            sm:grid-cols-[260px_2fr]
-            sm:gap-[190px]
+            gap-10
+            sm:mt-10
+            md:gap-14
+            lg:mt-5
+            lg:grid-cols-[260px_2fr]
+            lg:gap-[190px]
           "
         >
           {/* ================= FORM ================= */}
@@ -150,6 +184,7 @@ export default function Contact() {
                   className="
                     h-full
                     w-full
+                    min-w-0
                     bg-transparent
                     font-mono
                     text-[9px]
@@ -203,6 +238,7 @@ export default function Contact() {
                   className="
                     h-full
                     w-full
+                    min-w-0
                     resize-none
                     bg-transparent
                     font-mono
@@ -245,14 +281,22 @@ export default function Contact() {
           </form>
 
           {/* ================= DIRECT CONTACT ================= */}
-          <div className="pt-0 pl-[55%]">
+          <div
+            className="
+              pt-0
+              pl-0
+              lg:pl-[55%]
+            "
+          >
             <p
               className="
                 font-mono
-                text-[16px]
+                text-[13px]
                 font-bold
                 tracking-[0.08em]
                 text-lime-400
+                sm:text-[14px]
+                lg:text-[16px]
               "
             >
               OR REACH ME DIRECTLY
@@ -276,11 +320,17 @@ export default function Contact() {
               <Link
                 href="mailto:mazidulhakim@gmail.com"
                 className="
+                  block
+                  max-w-full
+                  break-all
                   font-mono
-                  text-[24px]
+                  text-[16px]
+                  leading-6
                   text-slate-200
                   transition-colors
                   hover:text-white
+                  sm:text-[20px]
+                  lg:text-[24px]
                 "
               >
                 mazidulhakim@gmail.com
@@ -293,10 +343,12 @@ export default function Contact() {
                 className="
                   mb-2
                   font-mono
-                  text-[16px]
+                  text-[12px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
+                  sm:text-[14px]
+                  lg:text-[16px]
                 "
               >
                 LINKEDIN
@@ -308,11 +360,13 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="
                   font-mono
-                  text-[24px]
+                  text-[16px]
                   uppercase
                   text-emerald-300
                   transition-colors
                   hover:text-emerald-200
+                  sm:text-[20px]
+                  lg:text-[24px]
                 "
               >
                 Connect
@@ -322,55 +376,85 @@ export default function Contact() {
         </div>
 
         {/* ================= FOOTER ================= */}
-        <footer className="mt-[67px]">
+        <footer className="mt-12 sm:mt-[67px]">
           <div className="h-px w-full bg-white/[0.08]" />
 
-          <div className="flex items-end justify-between pt-3">
+          <div
+            className="
+              flex
+              flex-col
+              gap-6
+              pt-4
+              sm:flex-row
+              sm:items-end
+              sm:justify-between
+              sm:gap-4
+            "
+          >
             {/* Name */}
             <p
               className="
-                text-[24px]
+                text-[20px]
                 font-medium
                 tracking-tight
                 text-slate-200
+                sm:text-[24px]
               "
             >
               Mazidul Hakim
             </p>
 
             {/* Footer right */}
-            <div className="flex flex-col items-end gap-5">
-              <nav className="flex items-center gap-6">
+            <div
+              className="
+                flex
+                flex-col
+                items-start
+                gap-4
+                sm:items-end
+                sm:gap-5
+              "
+            >
+              <nav
+                className="
+                  flex
+                  flex-wrap
+                  items-center
+                  gap-x-5
+                  gap-y-2
+                  sm:gap-6
+                "
+              >
                 <Link
                   href="#about"
-                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   About
                 </Link>
 
                 <Link
                   href="#impact"
-                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   Impact
                 </Link>
 
                 <Link
                   href="#expertise"
-                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   Expertise
                 </Link>
 
                 <Link
                   href="#experience"
-                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   Experience
                 </Link>
               </nav>
 
-              <p className="font-mono text-[12px] text-slate-500">
+              <p className="font-mono text-[10px] text-slate-500 sm:text-[12px]">
                 © 2026 · All rights reserved
               </p>
             </div>
