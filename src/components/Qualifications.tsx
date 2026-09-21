@@ -11,28 +11,28 @@ const qualifications: Qualification[] = [
   {
     id: "1",
     title: "Diploma of\nManagement",
-    imageUrl: "/Degree/Diploma of Management.png",
+    imageUrl: "/u1.svg",
   },
   {
     id: "2",
     title: "Master of Information\nTechnology",
-    imageUrl: "/Degree/Master of Information Technology.png",
+    imageUrl: "/u2.svg",
   },
   {
     id: "3",
     title: "Grad. Dip. Internet\nComputing",
-    imageUrl: "/Degree/Grad. Dip. Internet Computing.png",
+    imageUrl:"/u3.svg",
   },
   {
     id: "4",
     title: "Diploma of\nManagement",
-    imageUrl: "/Degree/Diploma of Management1.png",
+    imageUrl: "/u4.svg",
   },
 ];
 
 export default function Qualifications() {
   return (
-    <section className="w-full bg-[#0a0e14] px-6 py-4 sm:px-10">
+    <section className="w-full max-w-[1440px] mx-auto bg-[#0a0e14] px-6 py-4 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
          <div className="mb-7 border-b border-white/[0.06] pb-4">
@@ -42,7 +42,7 @@ export default function Qualifications() {
         </div>
 
         {/* Divider */}
-        <div className="mt-2 h-px w-full bg-white/[0.08]" />
+        <div className="mt-2 h-px w-full  bg-white/[0.08]" />
 
         {/* Cards */}
         <div
@@ -50,7 +50,7 @@ export default function Qualifications() {
             mt-4
             grid
             grid-cols-1
-            gap-5
+       
             sm:grid-cols-2
             md:grid-cols-4
             md:gap-[42px]
@@ -85,12 +85,12 @@ export default function Qualifications() {
                 src={qualification.imageUrl}
                 alt={qualification.title.replace("\n", " ")}
                 fill
-                sizes="136px"
+             
                 className="
                   object-cover
                   transition-transform
-                  duration-300
-                  group-hover:scale-[1.03]
+                  duration-210
+                  group-hover:scale-[1.08]
                 "
               />
 
