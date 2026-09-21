@@ -150,7 +150,7 @@ export default function Contact() {
                   mb-1.5
                   block
                   font-mono
-                  text-[9px]
+                  text-[12px]
                   tracking-wide
                   text-slate-300
                 "
@@ -204,7 +204,7 @@ export default function Contact() {
                   mb-1.5
                   block
                   font-mono
-                  text-[9px]
+                  text-[12px]
                   tracking-wide
                   text-slate-300
                 "
@@ -308,7 +308,7 @@ export default function Contact() {
                 className="
                   mb-2
                   font-mono
-                  text-[9px]
+                  text-[14px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
