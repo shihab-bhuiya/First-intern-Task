@@ -10,60 +10,124 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: "1",
-    name: "ACS Certified Technologist",
-    iconUrl: "/certificate/Acs_Certificate.png",
+    name: "ACS Certified\nTechnologist",
+    iconUrl: "/circle-1.svg",
   },
   {
     id: "2",
-    name: "ACS Certified Technologist",
-    iconUrl: "/certificate/Acs_2.png",
+    name: "Network\nOperator",
+    iconUrl: "/circle-2.svg",
   },
   {
     id: "3",
-    name: "ACS Certified Technologist",
-    iconUrl: "/certificate/Acs_3.png",
+    name: "Exinda ECNA",
+    iconUrl: "/circle-3.svg",
   },
   {
     id: "4",
-    name: "ACS Certified Technologist",
-    iconUrl: "/certificate/Acs_4.png",
+    name: "Next-Gen\nFirewall",
+    iconUrl: "/circle-4.svg",
   },
 ];
 
 export default function Certificates() {
   return (
-    <section id="" className="bg-[#0a0e14] px-6 py-14 sm:px-12">
-      <SectionLabel
-        index="04"
-        label="PROFESSIONAL CERTIFICATES"
-      />
+    <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 py-8 sm:px-10">
+      <div className="mx-auto w-full max-w-[1312px]">
+        {/* Section label */}
+        <SectionLabel
+          index="06"
+          label="PROFESSIONAL CERTIFICATES"
+        />
 
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {certificates.map((cert) => (
-          <div
-            key={cert.id}
-            className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-[#10151f] px-4 py-2 text-center"
-          >
-           <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-2 ring-1 ring-white/10">
-  {cert.iconUrl ? (
-    <Image
-      src={cert.iconUrl}
-      alt={cert.name}
-      width={64}
-      height={64}
-      className="h-full w-full object-contain"
-    />
-  ) : (
-    <span className="text-lg font-semibold text-sky-300">
-      A
-    </span>
-  )}
-</div>
-            <p className="text-xs font-medium text-slate-200 sm:text-sm">
-              {cert.name}
-            </p>
-          </div>
-        ))}
+        {/* Divider */}
+        <div className="mt-2 h-px w-full bg-white/[0.08]" />
+
+        {/* Certificates */}
+        <div
+          className="
+            mt-6
+            grid
+            grid-cols-1
+            gap-2
+            sm:grid-cols-2
+            md:grid-cols-4
+            md:gap-[110px]
+          "
+        >
+          {certificates.map((cert) => (
+            <div
+              key={cert.id}
+              className="
+                relative
+                flex
+                h-[140px]
+                w-[120px]
+                mx-auto
+                max-w-[1312px]
+                flex-col
+                items-center
+                justify-center
+                rounded-[21px]
+                border
+                border-[#263343]
+                bg-[#111720]
+              px-3
+              "
+            >
+              {/* Blue dot */}
+              <span
+                className="
+                  absolute
+                  right-[16px]
+                  top-[12px]
+                  h-[6px]
+                  w-[6px]
+                  rounded-full
+                  bg-[#35baf3]
+                  shadow-[0_0_7px_rgba(53,186,243,0.8)]
+                "
+              />
+
+              {/* Certificate icon */}
+              <div
+                className="
+                  flex
+                  h-[58px]
+                  w-[58px]
+                  items-center
+                  justify-center
+                  overflow-hidden
+                  rounded-[16px]
+                  bg-white
+                "
+              >
+                <Image
+                  src={cert.iconUrl}
+                  alt={cert.name.replace("\n", " ")}
+                  width={58}
+                  height={58}
+                  className="h-full w-full object-contain p-[5px]"
+                />
+              </div>
+
+              {/* Certificate name */}
+              <p
+                className="
+                  mt-3
+                  whitespace-pre-line
+                  text-center
+                  text-[14px]
+                  font-medium
+                  leading-[18px]
+                  text-[#d9dce1]
+                "
+              >
+                {cert.name}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

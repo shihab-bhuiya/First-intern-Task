@@ -32,7 +32,7 @@ const qualifications: Qualification[] = [
 
 export default function Qualifications() {
   return (
-    <section className="bg-[#0a0e14] px-6 py-14 sm:px-12">
+    <section className="bg-[#0a0e14] max-w-[1440px] w-full mx-auto px-6 py-14 sm:px-12">
       <SectionLabel
         index="03"
         label="PROFESSIONAL QUALIFICATIONS"
