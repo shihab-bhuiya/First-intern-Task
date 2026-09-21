@@ -22,7 +22,7 @@ export default function Contact() {
       id="contact"
       className="
         relative
-  
+    mt-8
         overflow-hidden
         bg-[#090d14]
         px-6
@@ -63,14 +63,14 @@ export default function Contact() {
 
       <div className="relative mx-auto w-full max-w-[1312px]">
         {/* ================= HEADER ================= */}
-        <div className="mb-6 flex items-center gap-3">
-          <span className="font-mono text-[8px] tracking-[0.08em] text-slate-400">
+        <div className="mb-6 flex lg:text-[24px] items-center gap-3">
+          <span className="font-mono text-[14px] tracking-[0.08em] text-slate-400">
             08
           </span>
 
-          <span className="font-mono text-[8px] text-slate-500">/</span>
+          <span className="font-mono text-[18px] text-slate-500">/</span>
 
-          <span className="font-mono text-[8px] tracking-[0.08em] text-slate-400">
+          <span className="font-mono text-[14px] tracking-[0.08em] text-slate-400">
             CONTACT
           </span>
         </div>
@@ -82,7 +82,7 @@ export default function Contact() {
           className="
             mt-6
             text-[34px]
-            font-medium
+            lg:text-[64px]
             uppercase
             leading-[1.18]
             tracking-[-0.03em]
@@ -249,7 +249,7 @@ export default function Contact() {
             <p
               className="
                 font-mono
-                text-[9px]
+                text-[16px]
                 font-bold
                 tracking-[0.08em]
                 text-lime-400
@@ -277,7 +277,7 @@ export default function Contact() {
                 href="mailto:mazidulhakim@gmail.com"
                 className="
                   font-mono
-                  text-[12px]
+                  text-[24px]
                   text-slate-200
                   transition-colors
                   hover:text-white
@@ -293,7 +293,7 @@ export default function Contact() {
                 className="
                   mb-2
                   font-mono
-                  text-[9px]
+                  text-[16px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
@@ -308,7 +308,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="
                   font-mono
-                  text-[12px]
+                  text-[24px]
                   uppercase
                   text-emerald-300
                   transition-colors
@@ -329,7 +329,7 @@ export default function Contact() {
             {/* Name */}
             <p
               className="
-                text-[13px]
+                text-[24px]
                 font-medium
                 tracking-tight
                 text-slate-200
@@ -343,34 +343,34 @@ export default function Contact() {
               <nav className="flex items-center gap-6">
                 <Link
                   href="#about"
-                  className="font-mono text-[7px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
                 >
                   About
                 </Link>
 
                 <Link
                   href="#impact"
-                  className="font-mono text-[7px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
                 >
                   Impact
                 </Link>
 
                 <Link
                   href="#expertise"
-                  className="font-mono text-[7px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
                 >
                   Expertise
                 </Link>
 
                 <Link
                   href="#experience"
-                  className="font-mono text-[7px] text-slate-500 transition-colors hover:text-slate-300"
+                  className="font-mono text-[12px] text-slate-500 transition-colors hover:text-slate-300"
                 >
                   Experience
                 </Link>
               </nav>
 
-              <p className="font-mono text-[7px] text-slate-500">
+              <p className="font-mono text-[12px] text-slate-500">
                 © 2026 · All rights reserved
               </p>
             </div>
