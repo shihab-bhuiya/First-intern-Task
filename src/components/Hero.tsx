@@ -111,7 +111,7 @@ export default function Hero() {
           {/* Left content */}
           <div className="relative z-10 min-w-0">
             {/* Status line */}
-            <div className="mb-4 flex items-center gap-2 font-mono text-sm text-gray-300">
+            <div className="mb-4 flex items-center gap-2 font-mono text-lg:text-sm text-gray-300">
               <span
                 aria-hidden="true"
                 className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]"
@@ -141,10 +141,10 @@ export default function Hero() {
                 IT Leadership
               </span>
 
-              <span className="inline-flex h-10 items-center gap-2 rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-6 font-mono text-base text-[#CCFF00]">
+              <span className="inline-flex h-10 items-center gap-2 rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-6 font-mono text-[10px] lg:text-base text-[#CCFF00]">
                 <span
                   aria-hidden="true"
-                  className="h-2.5 w-2.5 rounded-full bg-[#CCFF00]"
+                  className="h-2.5 w-2.5   rounded-full bg-[#CCFF00]"
                 />
                 open to SOC / Cybersecurity
               </span>
