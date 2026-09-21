@@ -101,9 +101,9 @@ export default function Contact() {
             mt-5
             grid
             grid-cols-1
-            gap-12
-            sm:grid-cols-[260px_1fr]
-            sm:gap-[163px]
+            gap-32
+            sm:grid-cols-[260px_2fr]
+            sm:gap-[190px]
           "
         >
           {/* ================= FORM ================= */}
@@ -245,7 +245,7 @@ export default function Contact() {
           </form>
 
           {/* ================= DIRECT CONTACT ================= */}
-          <div className="pt-0">
+          <div className="pt-0 pl-[55%]">
             <p
               className="
                 font-mono
