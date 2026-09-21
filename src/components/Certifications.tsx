@@ -32,7 +32,7 @@ const certificates: Certificate[] = [
 
 export default function Certificates() {
   return (
-    <section className="bg-[#0a0e14] px-6 py-14 sm:px-12">
+    <section id="" className="bg-[#0a0e14] px-6 py-14 sm:px-12">
       <SectionLabel
         index="04"
         label="PROFESSIONAL CERTIFICATES"
