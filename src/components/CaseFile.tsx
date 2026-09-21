@@ -124,7 +124,7 @@ export default function CaseFiles() {
       <div className="relative mx-auto max-w-[1312px]">
         {/* Heading */}
         <div className="mb-7 border-b border-white/[0.06] pb-4">
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-gray-400">
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
           </h2>
         </div>

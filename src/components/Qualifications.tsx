@@ -35,10 +35,11 @@ export default function Qualifications() {
     <section className="w-full bg-[#0a0e14] px-6 py-4 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
-        <SectionLabel
-          index="07"
-          label="PROFESSIONAL QUALIFICATIONS"
-        />
+         <div className="mb-7 border-b border-white/[0.06] pb-4">
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] uppercase text-gray-400">
+            07 / Professional Qualifications  
+          </h2>
+        </div>
 
         {/* Divider */}
         <div className="mt-2 h-px w-full bg-white/[0.08]" />

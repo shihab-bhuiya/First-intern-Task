@@ -35,10 +35,12 @@ export default function Certificates() {
     <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 py-8 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section label */}
-        <SectionLabel
-          index="06"
-          label="PROFESSIONAL CERTIFICATES"
-        />
+       <div className="mb-7 border-b border-white/[0.06] pb-4">
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] uppercase text-gray-400">
+            06 / Professional Certificates
+          </h2>
+        </div>
+
 
         {/* Divider */}
         <div className="mt-2 h-px w-full bg-white/[0.08]" />
