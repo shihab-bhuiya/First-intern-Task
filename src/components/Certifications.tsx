@@ -62,7 +62,7 @@ export default function Certificates() {
                 relative
                 flex
                 h-[140px]
-                w-[120px]
+                w-[10px]
                 mx-auto
                 max-w-[1312px]
                 flex-col
