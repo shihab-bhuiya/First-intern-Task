@@ -50,9 +50,8 @@ export default function Certificates() {
           className="
             mt-6
             grid
-            grid-cols-1
+            grid-cols-2
             gap-2
-            sm:grid-cols-2
             md:grid-cols-4
             md:gap-[110px]
           "
@@ -64,9 +63,9 @@ export default function Certificates() {
                 relative
                 flex
                 h-[140px]
-                w-[120px]
+                w-full
+                max-w-[140px]
                 mx-auto
-                max-w-[1312px]
                 flex-col
                 items-center
                 justify-center

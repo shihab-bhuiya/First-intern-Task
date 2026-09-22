@@ -293,7 +293,9 @@ export default function Contact() {
                 font-mono
                 text-[13px]
                 font-bold
-                tracking-[0.08em]
+              
+                tracking-[2]
+                mb-6
                 text-lime-400
                 sm:text-[14px]
                 lg:text-[16px]
@@ -308,7 +310,7 @@ export default function Contact() {
                 className="
                   mb-2
                   font-mono
-                  text-[14px]
+                  text-[10px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
@@ -324,7 +326,7 @@ export default function Contact() {
                   max-w-full
                   break-all
                   font-mono
-                  text-[16px]
+                  text-[20px]
                   leading-6
                   text-slate-200
                   transition-colors
@@ -343,7 +345,7 @@ export default function Contact() {
                 className="
                   mb-2
                   font-mono
-                  text-[12px]
+                  text-[10px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
@@ -360,7 +362,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="
                   font-mono
-                  text-[16px]
+                  text-[18px]
                   uppercase
                   text-emerald-300
                   transition-colors
@@ -374,9 +376,53 @@ export default function Contact() {
             </div>
           </div>
         </div>
+<nav
+                className="
+                  flex
+                  flex-wrap
+                  items-center
+                  mt-6
+                  justify-center
+                  lg:justify-end
+                  lg:text-[16px]
+                
+                  gap-x-8
+                  gap-y-2
+                
+                  sm:gap-6
+                "
+              >
+                <Link
+                  href="#about"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                >
+                  About
+                </Link>
+
+                <Link
+                  href="#impact"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                >
+                  Impact
+                </Link>
+
+                <Link
+                  href="#expertise"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                >
+                  Expertise
+                </Link>
+
+                <Link
+                  href="#experience"
+                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                >
+                  Experience
+                </Link>
+              </nav>
 
         {/* ================= FOOTER ================= */}
-        <footer className="mt-12 sm:mt-[67px]">
+        <footer className="mt-4 lg:mt-2 sm:mt-[67px]">
           <div className="h-px w-full bg-white/[0.08]" />
 
           <div
@@ -415,45 +461,7 @@ export default function Contact() {
                 sm:gap-5
               "
             >
-              <nav
-                className="
-                  flex
-                  flex-wrap
-                  items-center
-                  gap-x-5
-                  gap-y-2
-                  sm:gap-6
-                "
-              >
-                <Link
-                  href="#about"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  About
-                </Link>
-
-                <Link
-                  href="#impact"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  Impact
-                </Link>
-
-                <Link
-                  href="#expertise"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  Expertise
-                </Link>
-
-                <Link
-                  href="#experience"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  Experience
-                </Link>
-              </nav>
-
+              
               <p className="font-mono text-[10px] text-slate-500 sm:text-[12px]">
                 © 2026 · All rights reserved
               </p>
