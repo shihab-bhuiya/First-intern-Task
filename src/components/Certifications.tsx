@@ -18,7 +18,7 @@ export default function Certificates() {
     <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 py-8 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section label */}
-        <div className="mb-7 border border-white/[0.06] p-2 pb-4">
+        <div className="mb-7  p-2 pb-1">
           <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
             06 / Professional Certificates
           </h2>
