@@ -109,7 +109,7 @@ export default function Hero() {
       <div className="relative mx-auto w-full max-w-[1440px] px-6 md:px-10 xl:px-20">
         <div className="grid items-center gap-12 py-12 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
           {/* Left content */}
-          <div className="relative z-10 min-w-0">
+          <div className="relative z-10 min-w-0 order-2 lg:order-none">
             {/* Status line */}
             <div className="mb-4 flex items-center gap-2 font-mono text-lg:text-sm text-gray-300">
               <span
@@ -174,7 +174,7 @@ export default function Hero() {
           <div
             role="img"
             aria-label="Network map: Singapore HQ connected to Australia, the Philippines, India and Auckland, New Zealand"
-            className="relative hidden aspect-[656/554] w-full select-none lg:block"
+            className="relative order-1 lg:order-none aspect-[656/554] w-full select-none lg:block"
           >
             <svg
               aria-hidden="true"
