@@ -41,7 +41,7 @@ export default function Contact() {
           -bottom-40
           -left-40
           h-[420px]
-          w-[420px]
+          w-[820px]
           rounded-full
           bg-cyan-950/30
           blur-[100px]
@@ -55,11 +55,12 @@ export default function Contact() {
           absolute
           -bottom-40
           -right-40
-          h-[500px]
-          w-[800px]
+          h-[700px]
+          w-[600px]
           rounded-full
           bg-indigo-950/40
-          blur-[110px]
+          blur-[410px]
+          lg:blur-[130px]
         "
       />
 
