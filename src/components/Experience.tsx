@@ -15,21 +15,21 @@ interface TimelineEntry {
   details?: string[];
 }
 
-const accentStyles: Record<Accent, { border: string; glow: string }> = {
+const accentStyles: Record<Accent, { borderTop: string; glow: string }> = {
   blue: {
-    border: "border-sky-500/70",
+    borderTop: "border-t-sky-500",
     glow: "from-sky-500/20 via-sky-500/5 to-transparent",
   },
   olive: {
-    border: "border-lime-400/60",
+    borderTop: "border-t-lime-400",
     glow: "from-lime-400/20 via-lime-400/5 to-transparent",
   },
   coral: {
-    border: "border-orange-500/60",
+    borderTop: "border-t-orange-500",
     glow: "from-orange-500/20 via-orange-500/5 to-transparent",
   },
   teal: {
-    border: "border-teal-400/60",
+    borderTop: "border-t-teal-400",
     glow: "from-teal-400/20 via-teal-400/5 to-transparent",
   },
 };
@@ -117,7 +117,7 @@ export default function CareerTimeline() {
           Career <span className="text-sky-400">Timeline</span>
         </h1>
 
-      <ol className="relative pl-0">
+      <ol className="relative pl-2">
   {/* Vertical timeline line */}
   <span className="absolute left-0 top-0 bottom-0 w-px bg-sky-900/60" />
 
@@ -128,7 +128,7 @@ export default function CareerTimeline() {
     return (
       <li key={entry.id} className="relative mb-14 last:mb-0">
         {/* Connector: vertical line → card */}
-        <span className="absolute left-0 top-9 hidden h-px w-[208px] bg-sky-800/60 sm:block" />
+        <span className="absolute left-2 top-9 hidden h-px w-[208px] bg-sky-800/60 sm:block" />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-[160px_1fr] sm:gap-8 sm:pl-6">
           
@@ -148,7 +148,7 @@ export default function CareerTimeline() {
             type="button"
             onClick={() => toggle(entry.id)}
             aria-expanded={isOpen}
-            className={`group relative overflow-hidden rounded-xl border bg-gradient-to-br ${styles.glow} ${styles.border} bg-[#0d1420] px-5 py-4 text-left transition-colors hover:bg-[#101827]`}
+            className={`group relative overflow-hidden rounded-xl border-x border-b border-t-2 border-white/10 ${styles.borderTop} bg-gradient-to-br ${styles.glow} bg-[#0d1420] px-5 py-4 text-left transition-colors hover:bg-[#101827]`}
           >
             <div className="flex items-center justify-between gap-4">
               <div>
