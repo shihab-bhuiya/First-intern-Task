@@ -31,7 +31,7 @@ const nodes: GraphNode[] = [
     id: "aus",
     title: "Australia",
     subtitle: "8 Branches",
-    x: 74,
+    x: 44,
     y: 310,
     size: 18,
     dotClass: "bg-white",
@@ -40,7 +40,7 @@ const nodes: GraphNode[] = [
     id: "ph",
     title: "Philippines",
     subtitle: "Offshore Team",
-    x: 189,
+    x: 196,
     y: 388,
     size: 18,
     dotClass: "bg-blue-400",
@@ -50,7 +50,7 @@ const nodes: GraphNode[] = [
     title: "Auckland",
     subtitle: "New Zealand",
     x: 229,
-    y: 464,
+    y: 494,
     size: 18,
     dotClass: "bg-white",
   },
@@ -58,7 +58,7 @@ const nodes: GraphNode[] = [
     id: "in",
     title: "India",
     subtitle: "Offshore Team",
-    x: 518,
+    x: 448,
     y: 252,
     size: 18,
     dotClass: "bg-blue-400",
@@ -111,7 +111,7 @@ export default function Hero() {
           {/* Left content */}
           <div className="relative z-10 min-w-0 order-2 lg:order-none">
             {/* Status line */}
-            <div className="mb-4 flex items-center gap-2 font-mono text-lg:text-sm text-gray-300">
+            <div className="mb-4 flex items-center gap-2 font-mono text-[12px] lg:text-sm text-gray-300">
               <span
                 aria-hidden="true"
                 className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]"
@@ -136,38 +136,38 @@ export default function Hero() {
             </p>
 
             {/* Pills */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <span className="inline-flex h-10 items-center rounded-full bg-[#131A22] px-5 font-mono text-xs font-semibold text-white">
-                IT Leadership
-              </span>
+        <div className="mt-8 flex flex-nowrap gap-3 sm:gap-4">
+  <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 sm:px-5 font-mono text-[10px] sm:text-[10px] font-semibold text-white">
+    IT Leadership
+  </span>
 
-              <span className="inline-flex h-10 items-center gap-2 rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-6 font-mono text-[10px] lg:text-base text-[#CCFF00]">
-                <span
-                  aria-hidden="true"
-                  className="h-2.5 w-2.5   rounded-full bg-[#CCFF00]"
-                />
-                open to SOC / Cybersecurity
-              </span>
-            </div>
+  <span className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-3 sm:px-6 font-mono text-[10px] sm:text-[10px] lg:text-base text-[#CCFF00]">
+    <span
+      aria-hidden="true"
+      className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#CCFF00]"
+    />
+    open to SOC / Cybersecurity
+  </span>
+</div>
 
             {/* Action buttons */}
-            <div className="mt-12 flex flex-wrap gap-4">
-              <Link
-                href="#experience"
-                className="inline-flex h-14 items-center gap-2.5 rounded-[10px] bg-[#131A22] px-7 text-lg font-medium text-white transition-colors hover:bg-[#1B2430]"
-              >
-                <LuBriefcase className="text-xl" aria-hidden="true" />
-                Career Info
-              </Link>
+           <div className="mt-12 flex flex-nowrap gap-3 sm:gap-4">
+  <Link
+    href="#experience"
+    className="inline-flex h-12 sm:h-14 items-center gap-2 sm:gap-2.5 rounded-[10px] bg-[#131A22] px-4 sm:px-7 text-sm sm:text-lg font-medium text-white transition-colors hover:bg-[#1B2430]"
+  >
+    <LuBriefcase className="text-base sm:text-xl" aria-hidden="true" />
+    Career Info
+  </Link>
 
-              <Link
-                href="#contact"
-                className="inline-flex h-14 items-center gap-2.5 rounded-[10px] bg-[#38BDF8] px-7 text-lg font-medium text-[#05090d] transition-colors hover:bg-[#7DD3FC]"
-              >
-                <LuMail className="text-xl" aria-hidden="true" />
-                Contact Now
-              </Link>
-            </div>
+  <Link
+    href="#contact"
+    className="inline-flex h-12 sm:h-14 items-center gap-2 sm:gap-2.5 rounded-[10px] bg-[#38BDF8] px-4 sm:px-7 text-sm sm:text-lg font-medium text-[#05090d] transition-colors hover:bg-[#7DD3FC]"
+  >
+    <LuMail className="text-base sm:text-xl" aria-hidden="true" />
+    Contact Now
+  </Link>
+</div>
           </div>
 
           {/* Right: network map */}
