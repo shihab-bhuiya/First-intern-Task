@@ -134,7 +134,7 @@ export default function CaseFiles() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1312px]">
+      <div className="relative mx-auto  max-w-[1312px]">
         {/* Heading */}
         <div className="mb-7 border-b border-white/6 pb-4">
           <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
@@ -143,7 +143,7 @@ export default function CaseFiles() {
         </div>
 
         {/* Case Files */}
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid  gap-4 md:grid-cols-2">
           {caseFiles.map((item) => {
             const accent = accents[item.accent];
             const isOpen = !!openCards[item.caseNo];
@@ -151,7 +151,7 @@ export default function CaseFiles() {
             return (
               <article
                 key={item.caseNo}
-                className="flex flex-col rounded-2xl border border-white/[0.08] bg-[#131820] p-6 transition-colors duration-300 hover:border-white/20"
+                className="flex flex-col rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-6 transition-colors duration-300 hover:border-white/20"
               >
                 {/* Top */}
                 <div className="mb-5 flex items-center justify-between gap-3">
