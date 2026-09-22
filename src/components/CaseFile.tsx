@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
 const accents = {
   orange: {
     badge: "border-orange-400/60 text-orange-400",
@@ -106,6 +111,14 @@ const caseFiles = [
 ] as const;
 
 export default function CaseFiles() {
+  // Tracks which cards are expanded on small screens. Empty on mount so
+  // every card starts collapsed and the same height on mobile.
+  const [openCards, setOpenCards] = useState<Record<string, boolean>>({});
+
+  const toggleCard = (caseNo: string) => {
+    setOpenCards((prev) => ({ ...prev, [caseNo]: !prev[caseNo] }));
+  };
+
   return (
     <section
       id="impact"
@@ -133,6 +146,7 @@ export default function CaseFiles() {
         <div className="grid gap-4 md:grid-cols-2">
           {caseFiles.map((item) => {
             const accent = accents[item.accent];
+            const isOpen = !!openCards[item.caseNo];
 
             return (
               <article
@@ -147,9 +161,7 @@ export default function CaseFiles() {
                     {item.category}
                   </span>
 
-                  <span
-                    className={`font-mono text-[10px] ${accent.caseNo}`}
-                  >
+                  <span className={`font-mono text-[10px] ${accent.caseNo}`}>
                     {item.caseNo}
                   </span>
                 </div>
@@ -164,25 +176,50 @@ export default function CaseFiles() {
                   {item.description}
                 </p>
 
-                {/* Results: fills remaining height so both cards in a row match */}
-                <div className="mt-5 flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
-                  <ul className="space-y-3.5">
-                    {item.results.map(([result, technology]) => (
-                      <li
-                        key={result}
-                        className="flex items-start justify-between gap-4"
-                      >
-                        <span className="flex min-w-0 items-start gap-2 font-mono text-[11px] leading-4 text-emerald-400">
-                          <span aria-hidden="true">+</span>
-                          <span>{result}</span>
-                        </span>
+                {/* Mobile-only toggle. Hidden on md+ where results always show. */}
+                <button
+                  type="button"
+                  onClick={() => toggleCard(item.caseNo)}
+                  aria-expanded={isOpen}
+                  className="mt-5 flex items-center gap-2 text-[13px] font-medium text-white md:hidden"
+                >
+                  <span>{isOpen ? "Hide details" : "View details"}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
-                        <span className="shrink-0 text-right text-[11px] leading-4 text-gray-200">
-                          {technology}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Results: always visible on md+; collapsible on mobile so
+                    every collapsed card matches height. */}
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out md:mt-5 md:!grid-rows-[1fr] ${
+                    isOpen ? "mt-4 grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
+                      <ul className="space-y-3.5">
+                        {item.results.map(([result, technology]) => (
+                          <li
+                            key={result}
+                            className="flex items-start justify-between gap-4"
+                          >
+                            <span className="flex min-w-0 items-start gap-2 font-mono text-[11px] leading-4 text-emerald-400">
+                              <span aria-hidden="true">+</span>
+                              <span>{result}</span>
+                            </span>
+
+                            <span className="shrink-0 text-right text-[11px] leading-4 text-gray-200">
+                              {technology}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </article>
             );
