@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -15,22 +15,38 @@ interface TimelineEntry {
   details?: string[];
 }
 
-const accentStyles: Record<Accent, { borderTop: string; glow: string }> = {
+const accentStyles: Record<
+  Accent,
+  {
+    border: string;
+    topLine: string;
+    glow: string;
+    cardBg: string;
+  }
+> = {
   blue: {
-    borderTop: "border-t-sky-500",
-    glow: "from-sky-500/20 via-sky-500/5 to-transparent",
+    border: "border-sky-500/30 hover:border-sky-400/60",
+    topLine: "bg-[#00c8ff] shadow-[0_0_12px_#00c8ff]",
+    glow: "from-[#00c8ff]/20 via-[#00c8ff]/5 to-transparent",
+    cardBg: "bg-[#0f1722]/90",
   },
   olive: {
-    borderTop: "border-t-lime-400",
-    glow: "from-lime-400/20 via-lime-400/5 to-transparent",
+    border: "border-lime-500/30 hover:border-lime-400/60",
+    topLine: "bg-[#b0f53d] shadow-[0_0_12px_#b0f53d]",
+    glow: "from-[#b0f53d]/20 via-[#b0f53d]/5 to-transparent",
+    cardBg: "bg-[#141b16]/90",
   },
   coral: {
-    borderTop: "border-t-orange-500",
-    glow: "from-orange-500/20 via-orange-500/5 to-transparent",
+    border: "border-orange-500/30 hover:border-orange-400/60",
+    topLine: "bg-[#ff6b4a] shadow-[0_0_12px_#ff6b4a]",
+    glow: "from-[#ff6b4a]/20 via-[#ff6b4a]/5 to-transparent",
+    cardBg: "bg-[#1c1616]/90",
   },
   teal: {
-    borderTop: "border-t-teal-400",
-    glow: "from-teal-400/20 via-teal-400/5 to-transparent",
+    border: "border-teal-500/30 hover:border-teal-400/60",
+    topLine: "bg-[#2dd4bf] shadow-[0_0_12px_#2dd4bf]",
+    glow: "from-[#2dd4bf]/20 via-[#2dd4bf]/5 to-transparent",
+    cardBg: "bg-[#0f1a1a]/90",
   },
 };
 
@@ -111,87 +127,118 @@ export default function CareerTimeline() {
   };
 
   return (
-    <div id="experience" className="max-w-[1440px] mx-auto bg-[#0a0e14] px-6 py-16 sm:px-12">
-      <div className="mx-auto  max-w-5xl">
-        <h1 className="mb-16 text-4xl   font-semibold text-white sm:text-5xl">
-          Career <span className="text-sky-400">Timeline</span>
-        </h1>
+    <section id="experience" className="relative w-full bg-[#070b12] py-16 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden">
+      {/* Ambient background glow on right */}
+      <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <ol className="relative pl-2">
-  {/* Vertical timeline line */}
-  <span className="absolute left-0 top-0 bottom-0 w-px bg-sky-900/60" />
-
-  {entries.map((entry) => {
-    const isOpen = openId === entry.id;
-    const styles = accentStyles[entry.accent];
-
-    return (
-      <li key={entry.id} className="relative mb-14 last:mb-0">
-        {/* Connector: vertical line → card */}
-        <span className="absolute left-2 top-9 hidden h-px w-[208px] bg-sky-800/60 sm:block" />
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-[160px_1fr] sm:gap-8 sm:pl-6">
-          
-          {/* left: year range + duration */}
-          <div className="flex flex-col items-start gap-2 sm:items-end sm:text-right">
-            <span className="text-sm font-medium text-white sm:text-base">
-              {entry.yearRange}
-            </span>
-
-            <span className="rounded-full border border-sky-800/70 px-3 py-0.5 text-xs text-sky-300/80">
-              {entry.duration}
-            </span>
+      <div className="max-w-[1312px] mx-auto relative z-10">
+        {/* Section Tag */}
+        <div className="border-t border-slate-800/80 pt-6 mb-8">
+          <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400 uppercase">
+            <span className="text-slate-500 font-semibold">05</span>
+            <span className="text-slate-600">/</span>
+            <span className="text-slate-400 font-medium">EXPERIENCE</span>
           </div>
-
-          {/* right: card */}
-          <button
-            type="button"
-            onClick={() => toggle(entry.id)}
-            aria-expanded={isOpen}
-            className={`group relative overflow-hidden rounded-xl border-x border-b border-t-2 border-white/10 ${styles.borderTop} bg-gradient-to-br ${styles.glow} bg-[#0d1420] px-5 py-4 text-left transition-colors hover:bg-[#101827]`}
-          >
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <h2 className="text-base font-medium text-white sm:text-lg">
-                  {entry.title}
-                </h2>
-
-                <p className="mt-1 text-xs text-slate-400 sm:text-sm">
-                  {entry.dateRange} · {entry.location}
-                </p>
-              </div>
-
-              <ChevronDown
-                className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-200 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              />
-            </div>
-
-            {entry.details && (
-              <div
-                className={`grid transition-all duration-200 ease-out ${
-                  isOpen
-                    ? "mt-3 grid-rows-[1fr] opacity-100"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <ul className="overflow-hidden text-sm text-slate-300">
-                  {entry.details.map((line, i) => (
-                    <li key={i} className="mt-1 first:mt-0">
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </button>
         </div>
-      </li>
-    );
-  })}
-</ol>
+
+        {/* Section Heading */}
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-10 sm:mb-16">
+          Career <span className="text-[#00c8ff]">Timeline</span>
+        </h2>
+
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* Continuous Glowing Vertical Cyan Line */}
+          <div className="absolute left-2.5 sm:left-[220px] top-6 bottom-6 w-[2px] bg-[#00a8ff] shadow-[0_0_10px_#00a8ff] z-10" />
+
+          <div className="space-y-5 sm:space-y-12">
+            {entries.map((entry) => {
+              const isOpen = openId === entry.id;
+              const styles = accentStyles[entry.accent];
+
+              return (
+                <div
+                  key={entry.id}
+                  className="relative flex flex-col sm:flex-row items-start sm:items-center group"
+                >
+                  {/* Left Column: Year Range & Duration Pill (Desktop Only) */}
+                  <div className="hidden sm:flex w-[220px] shrink-0 pr-10 text-right flex-col items-end justify-center">
+                    <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                      {entry.yearRange}
+                    </span>
+                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-xs font-mono tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
+                      {entry.duration}
+                    </span>
+                  </div>
+
+                  {/* Connector Branch (Horizontal Glowing Line - Desktop Only) */}
+                  <div className="hidden sm:block absolute left-[220px] w-10 h-[2px] bg-[#00a8ff] shadow-[0_0_8px_#00a8ff] z-10" />
+
+                  {/* Card Container (Right Column / Full Width on Mobile) */}
+                  <div className="w-full pl-7 sm:pl-10 flex-1">
+                    <button
+                      type="button"
+                      onClick={() => toggle(entry.id)}
+                      aria-expanded={isOpen}
+                      className={`w-full relative text-left rounded-2xl border transition-all duration-300 ${styles.border} ${styles.cardBg} backdrop-blur-md p-4 sm:p-6 overflow-hidden group/card hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]`}
+                    >
+                      {/* Top glowing accent line */}
+                      <div className={`absolute top-0 inset-x-0 h-[2px] ${styles.topLine}`} />
+
+                      {/* Top inner gradient glow */}
+                      <div className={`absolute top-0 inset-x-0 h-24 bg-gradient-to-b ${styles.glow} pointer-events-none`} />
+
+                      {/* Card Content Header */}
+                      <div className="relative z-10 flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="text-base sm:text-xl font-semibold text-white tracking-tight">
+                            {entry.title}
+                          </h3>
+                          <p className="mt-1 text-xs sm:text-sm text-slate-400">
+                            <span className="font-semibold text-slate-200">{entry.dateRange}</span>
+                            <span className="mx-1.5 sm:mx-2 text-slate-500">·</span>
+                            <span>{entry.location}</span>
+                          </p>
+                        </div>
+
+                        <div className="p-1 rounded-lg text-slate-400 group-hover/card:text-white transition-colors">
+                          <ChevronDown
+                            className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${
+                              isOpen ? "rotate-180 text-white" : ""
+                            }`}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Expandable Details */}
+                      {entry.details && (
+                        <div
+                          className={`grid transition-all duration-300 ease-in-out ${
+                            isOpen
+                              ? "grid-rows-[1fr] opacity-100 mt-3 pt-3 sm:mt-4 sm:pt-4 border-t border-slate-800/60"
+                              : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside">
+                              {entry.details.map((detail, idx) => (
+                                <li key={idx} className="leading-relaxed">
+                                  {detail}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
+
