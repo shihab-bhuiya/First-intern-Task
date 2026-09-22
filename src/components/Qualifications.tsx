@@ -49,7 +49,7 @@ export default function Qualifications() {
           className="
             mt-4
             grid
-            grid-cols-1
+            grid-cols-2
        
             sm:grid-cols-2
             md:grid-cols-4
