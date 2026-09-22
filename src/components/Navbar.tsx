@@ -47,7 +47,7 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex items-center gap-1.5 font-mono text-[13px] font-medium text-white transition-opacity hover:opacity-80"
+          className="flex items-center gap-1.5 font-mono text-[16px] font-medium text-white transition-opacity hover:opacity-80"
           aria-label="hakim.live - Home"
         >
           <span
