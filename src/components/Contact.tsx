@@ -79,7 +79,7 @@ export default function Contact() {
           <span
             className="
               font-mono
-              text-[11px]
+              text-[14px]
               tracking-[0.08em]
               text-slate-400
               sm:text-[14px]
@@ -95,7 +95,7 @@ export default function Contact() {
           <span
             className="
               font-mono
-              text-[11px]
+              text-[14px]
               tracking-[0.08em]
               text-slate-400
               sm:text-[14px]
