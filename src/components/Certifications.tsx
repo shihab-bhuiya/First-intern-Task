@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SectionLabel from "./SectionLabel";
 
 interface Certificate {
   id: string;
@@ -8,26 +7,10 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
-  {
-    id: "1",
-    name: "ACS Certified\nTechnologist",
-    iconUrl: "/circle-1.svg",
-  },
-  {
-    id: "2",
-    name: "Network\nOperator",
-    iconUrl: "/circle-2.svg",
-  },
-  {
-    id: "3",
-    name: "Exinda ECNA",
-    iconUrl: "/circle-3.svg",
-  },
-  {
-    id: "4",
-    name: "Next-Gen\nFirewall",
-    iconUrl: "/circle-4.svg",
-  },
+  { id: "1", name: "ACS Certified\nTechnologist", iconUrl: "/circle-1.svg" },
+  { id: "2", name: "Network\nOperator", iconUrl: "/circle-2.svg" },
+  { id: "3", name: "Exinda ECNA", iconUrl: "/circle-3.svg" },
+  { id: "4", name: "Next-Gen\nFirewall", iconUrl: "/circle-4.svg" },
 ];
 
 export default function Certificates() {
@@ -35,27 +18,17 @@ export default function Certificates() {
     <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 py-8 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section label */}
-       <div className="mb-7 border border-white/[0.06] p-2 pb-4">
-          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] uppercase text-gray-400">
+        <div className="mb-7 border border-white/[0.06] p-2 pb-4">
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
             06 / Professional Certificates
           </h2>
         </div>
-
 
         {/* Divider */}
         <div className="mt-2 h-px w-full bg-white/[0.08]" />
 
         {/* Certificates */}
-        <div
-          className="
-            mt-6
-            grid
-            grid-cols-2
-            gap-2
-            md:grid-cols-4
-            md:gap-[110px]
-          "
-        >
+        <div className="mt-6 flex flex-wrap justify-center gap-6 sm:justify-between sm:gap-4">
           {certificates.map((cert) => (
             <div
               key={cert.id}
@@ -63,9 +36,8 @@ export default function Certificates() {
                 relative
                 flex
                 h-[140px]
-                w-full
-                max-w-[140px]
-                mx-auto
+                w-[140px]
+                shrink-0
                 flex-col
                 items-center
                 justify-center
@@ -73,15 +45,15 @@ export default function Certificates() {
                 border
                 border-[#263343]
                 bg-[#111720]
-              px-3
+                px-3
               "
             >
               {/* Blue dot */}
               <span
                 className="
                   absolute
-                  right-[16px]
-                  top-[12px]
+                  right-[14px]
+                  top-[14px]
                   h-[6px]
                   w-[6px]
                   rounded-full
@@ -94,21 +66,21 @@ export default function Certificates() {
               <div
                 className="
                   flex
-                  h-[58px]
-                  w-[58px]
+                  h-[56px]
+                  w-[56px]
                   items-center
                   justify-center
                   overflow-hidden
-                  rounded-[16px]
+                  rounded-[14px]
                   bg-white
                 "
               >
                 <Image
                   src={cert.iconUrl}
                   alt={cert.name.replace("\n", " ")}
-                  width={58}
-                  height={58}
-                  className="h-full w-full object-contain p-[5px]"
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-contain p-[3px]"
                 />
               </div>
 

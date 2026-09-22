@@ -21,7 +21,7 @@ const qualifications: Qualification[] = [
   {
     id: "3",
     title: "Grad. Dip. Internet\nComputing",
-    imageUrl:"/u3.svg",
+    imageUrl: "/u3.svg",
   },
   {
     id: "4",
@@ -30,19 +30,27 @@ const qualifications: Qualification[] = [
   },
 ];
 
+// Accent color for each card
+const topBorderColors = [
+  "#4dd0c8", // teal
+  "#5b6ee8", // blue/purple
+  "#e0c93a", // yellow
+  "#e0583a", // red/orange
+];
+
 export default function Qualifications() {
   return (
-    <section className="w-full max-w-[1440px] mx-auto mt-8 bg-[#0a0e14] px-6 py-4 sm:px-10">
+    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-4 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
-         <div className="mb-7 border-b border-white/[0.06] pb-4">
-          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] uppercase text-gray-400">
-            07 / Professional Qualifications  
+        <div className="mb-7 border-b border-white/[0.06] pb-4">
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
+            07 / Professional Qualifications
           </h2>
         </div>
 
         {/* Divider */}
-        <div className="mt-2 h-px w-full  bg-white/[0.08]" />
+        <div className="mt-2 h-px w-full bg-white/[0.08]" />
 
         {/* Cards */}
         <div
@@ -50,81 +58,95 @@ export default function Qualifications() {
             mt-4
             grid
             grid-cols-2
-       
+            gap-6
             sm:grid-cols-2
             md:grid-cols-4
             md:gap-[42px]
           "
         >
-          {qualifications.map((qualification, index) => (
-            <div
-              key={qualification.id}
-              className={`
-                group
-                relative
-                mx-auto
-                h-[147px]
-                w-[136px]
-                overflow-hidden
-                rounded-[20px]
-                border
-                bg-[#11151d]
-                ${
-                  index === 0
-                    ? "border-[#39495d]"
-                    : index === 1
-                      ? "border-[#4d526f]"
-                      : index === 2
-                        ? "border-[#6b6425]"
-                        : "border-[#59433f]"
-                }
-              `}
-            >
-              {/* Image */}
-              <Image
-                src={qualification.imageUrl}
-                alt={qualification.title.replace("\n", " ")}
-                fill
-             
-                className="
-                  object-cover
-                  transition-transform
-                  duration-210
-                  group-hover:scale-[1.08]
-                "
-              />
+          {qualifications.map((qualification, index) => {
+            const accentColor =
+              topBorderColors[index % topBorderColors.length];
 
-              {/* Bottom black panel */}
+            return (
               <div
+                key={qualification.id}
                 className="
-                  absolute
-                  bottom-0
-                  left-0
-                  right-0
-                  flex
-                  min-h-[48px]
-                  items-center
-                  justify-center
-                  bg-black/75
-                  px-2
-                  py-2
+                  group
+                  relative
+                  mx-auto
+                  h-[200px]
+                  w-full
+                  max-w-[190px]
+                  overflow-hidden
+                  rounded-[24px]
+                  bg-[#11151d]
                 "
+                style={{
+                  border: `1px solid ${accentColor}55`,
+                }}
               >
-                <p
+                {/* Strong colored top border */}
+                <div
                   className="
-                    whitespace-pre-line
-                    text-center
-                    text-[12px]
-                    font-normal
-                    leading-[14px]
-                    text-white
+                    pointer-events-none
+                    absolute
+                    left-0
+                    right-0
+                    top-0
+                    z-20
+                    h-[2px]
+                    rounded-t-[24px]
+                  "
+                  style={{
+                    backgroundColor: accentColor,
+                  }}
+                />
+
+                {/* Image */}
+                <div className="relative h-[135px] w-full overflow-hidden">
+                  <Image
+                    src={qualification.imageUrl}
+                    alt={qualification.title.replace("\n", " ")}
+                    fill
+                    sizes="(max-width: 768px) 45vw, 190px"
+                    className="
+                      object-cover
+                      transition-transform
+                      duration-300
+                      group-hover:scale-[1.05]
+                    "
+                  />
+                </div>
+
+                {/* Text Background */}
+                <div
+                  className="
+                    flex
+                    h-[64px]
+                    items-center
+                    justify-center
+                    rounded-b-[23px]
+                    bg-[#252a34]
+                    px-3
                   "
                 >
-                  {qualification.title}
-                </p>
+                  <p
+                    className="
+                      whitespace-pre-line
+                      text-center
+                      text-[13px]
+                      font-medium
+                      leading-[16px]
+                      text-white
+                    "
+                  >
+                    {qualification.title}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
