@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SectionLabel from "./SectionLabel";
 
 interface Qualification {
   id: string;
@@ -80,13 +79,32 @@ export default function Qualifications() {
                   max-w-[190px]
                   overflow-hidden
                   rounded-[24px]
-                  bg-[#11151d]
+                  border
+                  border-white/10
+                  bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))]
+                  shadow-[0_20px_40px_rgba(0,0,0,0.45)]
+                  backdrop-blur-xl
+                  ring-1
+                  ring-white/10
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-[0_24px_48px_rgba(0,0,0,0.5)]
                 "
                 style={{
-                  border: `1px solid ${accentColor}55`,
+                  borderColor: `${accentColor}88`,
                 }}
               >
-                {/* Strong colored top border */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.28),transparent_42%)]"
+                />
+
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-3 top-2 h-12 rounded-full bg-white/10 blur-xl"
+                />
+
                 <div
                   className="
                     pointer-events-none
@@ -94,17 +112,31 @@ export default function Qualifications() {
                     left-0
                     right-0
                     top-0
-                    z-20
-                    h-[2px]
+                    z-30
+                    h-[2.5px]
                     rounded-t-[24px]
                   "
                   style={{
                     backgroundColor: accentColor,
+                    boxShadow: `0 0 12px ${accentColor}aa`,
                   }}
                 />
 
-                {/* Image */}
-                <div className="relative h-[135px] w-full overflow-hidden">
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-x-0
+                    top-0
+                    z-20
+                    h-[50%]
+                    bg-gradient-to-b
+                    from-white/15
+                    to-transparent
+                  "
+                />
+
+                <div className="relative z-10 h-[135px] w-full overflow-hidden">
                   <Image
                     src={qualification.imageUrl}
                     alt={qualification.title.replace("\n", " ")}
@@ -114,21 +146,27 @@ export default function Qualifications() {
                       object-cover
                       transition-transform
                       duration-300
-                      group-hover:scale-[1.05]
+                      px-1
+                      pt-1.5
+                      group-hover:scale-[1.08]
                     "
                   />
                 </div>
 
-                {/* Text Background */}
                 <div
                   className="
+                    relative
+                    z-20
                     flex
                     h-[64px]
                     items-center
                     justify-center
                     rounded-b-[23px]
-                    bg-[#252a34]
+                    border-t
+                    border-white/10
+                    bg-white/[0.08]
                     px-3
+                    backdrop-blur-md
                   "
                 >
                   <p
