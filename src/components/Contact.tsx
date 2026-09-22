@@ -429,7 +429,7 @@ export default function Contact() {
           <div
             className="
               flex
-              flex-col
+         items-center
               gap-6
               pt-4
               sm:flex-row
