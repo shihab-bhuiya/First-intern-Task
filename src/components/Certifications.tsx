@@ -15,7 +15,7 @@ const certificates: Certificate[] = [
 
 export default function Certificates() {
   return (
-    <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 py-8 sm:px-10">
+    <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6  sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section label */}
         <div className="mb-2  p-2 pb-1">

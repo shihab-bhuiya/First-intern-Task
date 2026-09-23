@@ -93,7 +93,7 @@ const gridStyle = {
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center overflow-hidden bg-[#05090d] pt-[66px] lg:min-h-[700px]">
+    <section className="relative flex items-center pt-3  scroll-pb-80 overflow-hidden bg-[#05090d]  lg:min-h-[600px]">
       {/* Background grid */}
       <div
         aria-hidden="true"
@@ -108,7 +108,7 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-[1440px] px-6 md:px-10 xl:px-20">
-        <div className="grid items-center gap-12 py-8 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
+        <div className="grid items-center gap-12 py-4 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
           {/* Left content */}
           <div className="relative z-10 order-2 flex min-w-0 flex-col lg:order-none">
             {/* Status line */}

@@ -49,7 +49,7 @@ export default function Skills() {
   return (
     <section
       id="expertise"
-      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pb-20 pt-16"
+      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pb-10 pt-16"
     >
       <div
         aria-hidden="true"

@@ -122,7 +122,7 @@ export default function CaseFiles() {
   return (
     <section
       id="impact"
-      className="relative w-full overflow-hidden  bg-[#0a0e11] px-6 py-24"
+      className="relative w-full overflow-hidden  bg-[#0a0e11] px-6 py-14"
     >
       {/* Background glows: blue top-left, teal bottom-right */}
       <div
@@ -136,14 +136,15 @@ export default function CaseFiles() {
 
       <div className="relative mx-auto  max-w-[1312px]">
         {/* Heading */}
-        <div className="mb-6 pb-4">
-          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
+        <div className="mb-6  border-b border-white/10 pb-2.5">
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400 ">
             04 / Case Files
           </h2>
+
         </div>
 
         {/* Case Files */}
-        <div className="grid  gap-4 md:grid-cols-2">
+        <div className="grid  gap-4 md:grid-cols-2 ">
           {caseFiles.map((item) => {
             const accent = accents[item.accent];
             const isOpen = !!openCards[item.caseNo];

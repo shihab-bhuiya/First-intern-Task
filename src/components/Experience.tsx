@@ -127,7 +127,7 @@ export default function CareerTimeline() {
   };
 
   return (
-    <section id="experience" className="relative w-full bg-[#070b12] py-16 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden">
+    <section id="experience" className="relative w-full bg-[#070b12] py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden">
       {/* Ambient background glow on right */}
       <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -138,7 +138,7 @@ export default function CareerTimeline() {
             <span className="text-slate-600">/</span>
             <span className="text-slate-400 font-medium">EXPERIENCE</span>
           </div>
-        <div className="border-t mt-4 border-slate-800/80 pt-6 mb-8">
+        <div className="border-t mt-2 border-slate-800/80 pt-6 mb-8">
         </div>
 
         {/* Section Heading */}
