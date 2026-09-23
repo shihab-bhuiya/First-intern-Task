@@ -15,10 +15,10 @@ const certificates: Certificate[] = [
 
 export default function Certificates() {
   return (
-    <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6  sm:px-10">
+    <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section label */}
-        <div className="mb-2  p-2 pb-1">
+        <div className="mb-2 p-2 pb-1">
           <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
             06 / Professional Certificates
           </h2>
@@ -27,16 +27,28 @@ export default function Certificates() {
         {/* Divider */}
         <div className="mt-2 h-px w-full bg-white/[0.08]" />
 
-        {/* Certificates */}
-        <div className="mt-6 flex flex-wrap justify-center gap-6 sm:justify-between sm:gap-4">
+        {/* Certificates — same grid as Qualifications so columns line up */}
+        <div
+          className="
+            mt-6
+            grid
+            grid-cols-2
+            gap-6
+            sm:grid-cols-2
+            md:grid-cols-4
+            md:gap-[42px]
+          "
+        >
           {certificates.map((cert) => (
             <div
               key={cert.id}
               className="
                 relative
+                mx-auto
                 flex
                 h-[140px]
-                w-[140px]
+                w-full
+                max-w-[190px]
                 shrink-0
                 flex-col
                 items-center

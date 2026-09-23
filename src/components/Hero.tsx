@@ -93,7 +93,7 @@ const gridStyle = {
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center pt-3  scroll-pb-80 overflow-hidden bg-[#05090d]  lg:min-h-[600px]">
+    <section className="relative flex items-center pt-6  scroll-pb-80 overflow-hidden bg-[#05090d]  lg:min-h-[500px]">
       {/* Background grid */}
       <div
         aria-hidden="true"
