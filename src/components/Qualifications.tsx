@@ -39,17 +39,17 @@ const topBorderColors = [
 
 export default function Qualifications() {
   return (
-    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-4 sm:px-10">
+    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-2 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
-        <div className="mb-2  pb-4">
+        <div className="mb-3  pb-0z  ">
           <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
             07 / Professional Qualifications
           </h2>
         </div>
 
         {/* Divider */}
-        <div className="mt-2 h-px w-full bg-white/[0.08]" />
+        <div className="mt-1 h-px w-full bg-white/[0.08]" />
 
         {/* Cards */}
         <div

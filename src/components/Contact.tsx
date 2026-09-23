@@ -68,11 +68,14 @@ export default function Contact() {
         {/* ================= HEADER ================= */}
         <div
           className="
-            mb-6
-            flex
-            items-center
-            gap-2
-            sm:gap-3
+          mb-6
+          flex
+          items-center
+          gap-2
+          pb-2
+          sm:gap-3
+          border-b
+           border-white/10  
             lg:text-[24px]
           "
         >
@@ -104,8 +107,6 @@ export default function Contact() {
             CONTACT
           </span>
         </div>
-
-        <div className="h-px w-full bg-white/[0.08]" />
 
         {/* ================= HEADING ================= */}
        <h2
