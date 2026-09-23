@@ -169,7 +169,7 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex h-12 w-40 lg:text-[14.5px]  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
-                <LuMail className="text-base text-center sm:text-xl" aria-hidden="true" />
+                <LuMail className="text-[12px] text-center sm:text-xl" aria-hidden="true" />
                 Contact Now
               </Link>
             </div>
