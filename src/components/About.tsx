@@ -142,7 +142,7 @@ export default function About() {
         </div>
 
         {/* Quote callout */}
-        <blockquote className="mt-20 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-mono text-base leading-[1.8] text-zinc-200">
+        <blockquote className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-mono text-base leading-[1.8] text-zinc-200">
           I judge every technology decision by the business outcome it drives —
           <span className="text-[#38BDF8]"> not the shine of the tool</span>.
           Uptime and security are the baseline; the job is turning IT into
