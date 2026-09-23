@@ -174,6 +174,7 @@ export default function Contact() {
                 "
               >
                 <Mail className="h-[13px] w-[13px] shrink-0 text-slate-500" />
+             
 
                 <input
                   id="email"
@@ -274,9 +275,9 @@ export default function Contact() {
                 hover:shadow-[0_0_20px_rgba(57,184,240,0.2)]
               "
             >
-              <Send className="h-[12px] w-[12px]" />
+            
 
-              {status === "sent" ? "Message sent" : "Send message"}
+            <Mail className="w-4 h-4" />  {status === "sent" ? "Message sent" : "Send message"}
             </button>
           </form>
 
