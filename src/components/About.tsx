@@ -12,7 +12,7 @@ interface StatCard {
 
 const stats: StatCard[] = [
   { value: "17", unit: "+", label: "Years in IT leadership" },
-  { prefix: "$", value: "2.4 M", unit: "+", label: "Annual IT budget owned" },
+  { prefix: "$", value: "2.4M", unit: "+", label: "Annual IT budget owned" },
   { value: "8", label: "Branches supported" },
   { value: "99.9", unit: "%", spacedUnit: true, label: "Network uptime" },
 ];
@@ -109,7 +109,7 @@ export default function About() {
                     {/* Subtle Inner Glass Radial Gradient */}
                     <div className="pointer-events-none absolute -left-12 -top-12 h-32 w-32 rounded-full bg-white/5 blur-xl group-hover:bg-sky-400/10" />
 
-                    <p className="relative z-10 flex items-baseline font-[family-name:var(--font-oswald),sans-serif] text-4xl font-medium leading-none text-white sm:text-5xl xl:text-[64px]">
+                    <p className="relative z-10 flex items-baseline font-[family-name:var(--font-oswald),sans-serif] text-3xl font-semibold text-white sm:text-5xl xl:text-[64px]">
                       {stat.prefix && (
                         <span className="mr-2 text-[#38BDF8] drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]">
                           {stat.prefix}
@@ -123,7 +123,7 @@ export default function About() {
                       {stat.unit && (
                         <span
                           className={`text-[#38BDF8] drop-shadow-[0_0_12px_rgba(56,189,248,0.5)] ${
-                            stat.spacedUnit ? "ml-3" : "ml-1"
+                            stat.spacedUnit ? "ml-1" : "ml-1"
                           }`}
                         >
                           {stat.unit}
@@ -131,7 +131,7 @@ export default function About() {
                       )}
                     </p>
 
-                    <p className="relative z-10 mt-5 text-xs font-semibold uppercase tracking-wider text-gray-300 sm:mt-6 sm:text-sm">
+                    <p className="relative z-10 mt-5 text-[8px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
                       {stat.label}
                     </p>
                   </div>
