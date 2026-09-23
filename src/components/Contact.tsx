@@ -114,11 +114,13 @@ export default function Contact() {
     text-[20px]
     uppercase
     leading-[1.15]
+    font-[Manrope]
+    font-semibold
     tracking-[-0.03em]
     text-[#f5eeee]
     sm:text-[42px]
     md:text-[52px]
-    lg:text-[64px]
+    lg:text-[54px]
     lg:leading-[1.18]
   "
 >
@@ -169,6 +171,7 @@ export default function Contact() {
                   border-cyan-900/80
                   bg-[#111720]
                   px-2
+                  w-[280px]
                   transition-colors
                   focus-within:border-cyan-600
                 "
@@ -220,6 +223,7 @@ export default function Contact() {
                   items-start
                   gap-2
                   rounded-[7px]
+                  w-[280px]
                   border
                   border-cyan-900/80
                   bg-[#111720]

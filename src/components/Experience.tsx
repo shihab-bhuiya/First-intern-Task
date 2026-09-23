@@ -133,12 +133,12 @@ export default function CareerTimeline() {
 
       <div className="max-w-[1312px] mx-auto relative z-10">
         {/* Section Tag */}
-        <div className="border-t border-slate-800/80 pt-6 mb-8">
           <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400 uppercase">
             <span className="text-slate-500 font-semibold">05</span>
             <span className="text-slate-600">/</span>
             <span className="text-slate-400 font-medium">EXPERIENCE</span>
           </div>
+        <div className="border-t mt-4 border-slate-800/80 pt-6 mb-8">
         </div>
 
         {/* Section Heading */}
@@ -149,7 +149,7 @@ export default function CareerTimeline() {
         {/* Timeline Container */}
         <div className="relative">
           {/* Continuous Glowing Vertical Cyan Line */}
-          <div className="absolute left-2.5 sm:left-[220px] top-6 bottom-6 w-[2px] bg-[#00a8ff] shadow-[0_0_10px_#00a8ff] z-10" />
+          <div className="absolute left-2.5 sm:left-[220px] top-6 bottom-6 w-[2px] bg-[#00a8ff] shadow-[0_0_10px_#00a8ff] z-20" />
 
           <div className="space-y-5 sm:space-y-12">
             {entries.map((entry) => {
