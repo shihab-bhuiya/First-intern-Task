@@ -23,7 +23,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] py-6"
+      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] py-10"
     >
       {/* Teal tint, bottom right */}
       <div
@@ -42,7 +42,7 @@ export default function About() {
           Mazidul Hakim
         </h2>
 
-        <div className="mt-2 grid items-center gap-12 lg:grid-cols-2 xl:mt-0 xl:grid-cols-[530px_1fr] xl:gap-x-[100px]">
+        <div className="mt-2 font-['Inter'] grid items-center gap-12 lg:grid-cols-2 xl:mt-0 xl:grid-cols-[530px_1fr] xl:gap-x-[100px]">
           {/* Biography */}
           <div className="order-2 lg:order-1">
             <p className="text-base leading-[1.8] text-gray-300">

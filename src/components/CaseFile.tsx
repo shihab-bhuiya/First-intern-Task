@@ -162,18 +162,18 @@ export default function CaseFiles() {
                     {item.category}
                   </span>
 
-                  <span className={`font-mono text-[10px] ${accent.caseNo}`}>
+                  <span className={`font-['Manrope'] text-[10px] ${accent.caseNo}`}>
                     {item.caseNo}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-medium tracking-tight text-white">
+                <h3 className="text-lg font-['Manrope'] font-semibold tracking-tight text-white">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 text-[11px] leading-5 text-gray-400">
+                <p className="mt-2 font-['Inter'] text-[12px] leading-5 text-gray-400">
                   {item.description}
                 </p>
 

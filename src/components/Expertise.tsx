@@ -49,7 +49,7 @@ export default function Skills() {
   return (
     <section
       id="expertise"
-      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pb-8 pt-16"
+      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pb-16 pt-14"
     >
       <div
         aria-hidden="true"
@@ -68,13 +68,13 @@ export default function Skills() {
           {skillGroups.map((group) => (
             <article
               key={group.title}
-              className="rounded-[10px] border border-white/[0.07] bg-[#131821] p-6 transition-colors duration-300 hover:border-white/15"
+              className="rounded-[10px] font-['Manrope'] border border-white/[0.07] bg-[#131821] p-6 transition-colors duration-300 hover:border-white/15"
             >
-              <h3 className="text-xl font-[Manrope]  font-semibold leading-7 text-white">
+              <h3 className="text-xl font-['Manrope']  font-semibold leading-7 text-white">
                 {group.title}
               </h3>
 
-              <p className="mt-4 text-[14px] leading-[30px] text-[#B5B5B5]">
+              <p className="mt-4 font-['Inter'] text-[16px] leading-[30px] text-[#B5B5B5]">
                 {group.description}
               </p>
 

@@ -27,13 +27,18 @@ export default function Navbar() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
         });
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      {
+        rootMargin: "-40% 0px -55% 0px",
+      }
     );
 
     sections.forEach((section) => observer.observe(section));
+
     return () => observer.disconnect();
   }, []);
 
@@ -57,11 +62,12 @@ export default function Navbar() {
           hakim.live
         </Link>
 
-        {/* Desktop: links + CTA grouped on the right */}
+        {/* Desktop: links + CTA */}
         <div className="hidden items-center gap-10 md:flex">
           <ul className="flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = active === item.href;
+
               return (
                 <li key={item.name}>
                   <Link
@@ -75,6 +81,7 @@ export default function Navbar() {
                     }`}
                   >
                     {item.name}
+
                     {isActive && (
                       <span
                         aria-hidden="true"
@@ -87,6 +94,7 @@ export default function Navbar() {
             })}
           </ul>
 
+          {/* Desktop CTA */}
           <Link
             href="#contact"
             className="rounded-lg bg-[#38BDF8] px-5 py-2 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#7DD3FC]"
@@ -95,28 +103,33 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile Hamburger */}
         <button
           type="button"
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-gray-300 transition-colors hover:border-[#38BDF8]/50 hover:text-[#38BDF8] md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-gray-300 md:hidden"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
         >
-          <div className="flex w-5 flex-col gap-1.5">
+          <div className="flex w-[18px] flex-col items-end gap-[5px]">
+            {/* Top line */}
             <span
-              className={`h-px w-full bg-current transition-all duration-300 ${
+              className={`h-[2px] w-[18px] rounded-full bg-gray-300 transition-all duration-300 ${
                 isMenuOpen ? "translate-y-[7px] rotate-45" : ""
               }`}
             />
+
+            {/* Middle line */}
             <span
-              className={`h-px w-full bg-current transition-all duration-300 ${
+              className={`h-[2px] w-[13px] rounded-full bg-gray-300 transition-all duration-300 ${
                 isMenuOpen ? "opacity-0" : ""
               }`}
             />
+
+            {/* Bottom line */}
             <span
-              className={`h-px w-full bg-current transition-all duration-300 ${
+              className={`h-[2px] w-[18px] rounded-full bg-gray-300 transition-all duration-300 ${
                 isMenuOpen ? "-translate-y-[7px] -rotate-45" : ""
               }`}
             />
@@ -124,7 +137,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile navigation */}
+      {/* Mobile Navigation */}
       <div
         id="mobile-navigation"
         className={`border-t border-white/10 bg-[#05090d]/95 backdrop-blur-md transition-all duration-300 md:hidden ${
@@ -137,6 +150,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const isActive = active === item.href;
+
               return (
                 <Link
                   key={item.name}
@@ -146,7 +160,9 @@ export default function Navbar() {
                     closeMenu();
                   }}
                   className={`rounded-md px-4 py-3 text-sm transition-colors hover:bg-white/5 ${
-                    isActive ? "font-medium text-white" : "text-gray-400"
+                    isActive
+                      ? "font-medium text-white"
+                      : "text-gray-400"
                   }`}
                 >
                   {item.name}
@@ -154,6 +170,7 @@ export default function Navbar() {
               );
             })}
 
+            {/* Mobile CTA */}
             <Link
               href="#contact"
               onClick={closeMenu}

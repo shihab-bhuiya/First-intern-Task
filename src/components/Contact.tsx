@@ -115,7 +115,7 @@ export default function Contact() {
     text-[20px]
     uppercase
     leading-[1.15]
-    font-[Manrope]
+    font-['Manrope']
     font-semibold
     tracking-[-0.03em]
     text-[#f5eeee]
@@ -331,8 +331,9 @@ export default function Contact() {
                   block
                   max-w-full
                   break-all
-                  font-mono
-                  text-[20px]
+                  font-['Manrope']
+                  text-[24px]
+                  font-normal
                   leading-6
                   text-slate-200
                   transition-colors

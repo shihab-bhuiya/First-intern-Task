@@ -23,7 +23,7 @@ const nodes: GraphNode[] = [
     id: "hq",
     title: "Singapore HQ",
     x: 345,
-    y: 57,
+    y: 82,
     size: 22,
     dotClass: "bg-[#CCFF00] shadow-[0_0_24px_rgba(204,255,0,0.35)]",
   },
@@ -93,7 +93,7 @@ const gridStyle = {
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center pt-6  scroll-pb-80 overflow-hidden bg-[#05090d]  lg:min-h-[500px]">
+    <section className="relative flex items-center pt-12  scroll-pb-80 overflow-hidden bg-[#05090d]  lg:min-h-[500px]">
       {/* Background grid */}
       <div
         aria-hidden="true"
@@ -124,14 +124,14 @@ export default function Hero() {
             </div>
 
             {/* Heading */}
-            <h1 className="order-2 font-sans text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px]">
+            <h1 className="order-2 font-['Manrope'] text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]">
               Mazidul
               <br />
               <span className="text-[#69C8FF]">Hakim</span>
             </h1>
 
             {/* Description */}
-            <p className="order-4 mt-4 max-w-[600px] text-base leading-7 text-slate-400 lg:order-3">
+            <p className="order-4 mt-4 max-w-[600px] font-['Manrope'] text-[16px] leading-7 text-[#ABABAB] lg:order-3">
               Senior IT leader with 17+ years turning technology functions
               around — network modernisation, cloud migration and cybersecurity
               uplift across complex, multi-site organisations.
@@ -159,7 +159,7 @@ export default function Hero() {
                 className="inline-flex h-12 w-40 items-center gap-2 rounded-[10px] bg-[#131A22] px-7 text-sm lg:text-[14.5px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
                 <LuBriefcase
-                  className="text-base lg:text-[40px  ] sm:text-xl"
+                  className="text-base lg:text-[20px] font-['Manrope'] sm:text-xl"
                   aria-hidden="true"
                 />
                 Career Info
@@ -169,7 +169,7 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex h-12 w-40 lg:text-[14.5px]  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
-                <LuMail className="text-[12px] text-center sm:text-xl" aria-hidden="true" />
+                <LuMail className="text-[12px] text-center lg:text-[20px] font-['Manrope'] sm:text-xl" aria-hidden="true" />
                 Contact Now
               </Link>
             </div>
