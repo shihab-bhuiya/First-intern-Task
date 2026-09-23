@@ -59,7 +59,7 @@ export default function Skills() {
 
       <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20">
         {/* Eyebrow + rule */}
-        <h2 className="border-b border-white/10 pb-2.5 font-mono text-xs font-medium uppercase tracking-widest text-gray-400">
+        <h2 className=" pb-2.5 font-mono text-xs font-medium uppercase tracking-widest text-gray-400">
           03 / Expertise
         </h2>
 
