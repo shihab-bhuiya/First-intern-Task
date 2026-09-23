@@ -340,10 +340,10 @@ export default function Contact() {
             </div>
 
             {/* LinkedIn */}
-            <div className="mt-4">
+            <div className="mt-6">
               <p
                 className="
-                  mb-2
+                  mb-1.5
                   font-mono
                   text-[10px]
                   font-bold
@@ -429,7 +429,8 @@ export default function Contact() {
             className="
               flex
          items-center
-              gap-6
+              gap-12
+              justify-between
               pt-4
               sm:flex-row
               sm:items-end
@@ -462,7 +463,7 @@ export default function Contact() {
               "
             >
               
-              <p className="font-mono text-[10px] text-slate-500 sm:text-[12px]">
+              <p className="font-mono text-[9px] text-slate-500 sm:text-[12px]">
                 © 2026 · All rights reserved
               </p>
             </div>
