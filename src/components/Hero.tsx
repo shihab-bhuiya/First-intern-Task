@@ -153,13 +153,13 @@ export default function Hero() {
             </div>
 
             {/* Action buttons */}
-            <div className="order-5 mt-12 flex justify-center flex-nowrap gap-3 sm:gap-4">
+            <div className="order-5 mt-12 flex lg:justify-start justify-center flex-nowrap gap-3 sm:gap-4">
               <Link
                 href="#experience"
-                className="inline-flex h-12 w-40 items-center gap-2 rounded-[10px] bg-[#131A22] px-7 text-sm font-medium text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-12 w-40 items-center gap-2 rounded-[10px] bg-[#131A22] px-7 text-sm lg:text-[14.5px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
                 <LuBriefcase
-                  className="text-base sm:text-xl"
+                  className="text-base lg:text-[40px  ] sm:text-xl"
                   aria-hidden="true"
                 />
                 Career Info
@@ -167,7 +167,7 @@ export default function Hero() {
 
               <Link
                 href="#contact"
-                className="inline-flex h-12 w-40  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 text-sm font-medium text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-12 w-40 lg:text-[14.5px]  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
                 <LuMail className="text-base text-center sm:text-xl" aria-hidden="true" />
                 Contact Now

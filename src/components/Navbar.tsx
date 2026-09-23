@@ -89,7 +89,7 @@ export default function Navbar() {
 
           <Link
             href="#contact"
-            className="rounded-lg bg-[#38BDF8] px-5 py-2 text-sm font-semibold text-[#05090d] transition-colors duration-300 hover:bg-[#7DD3FC]"
+            className="rounded-lg bg-[#38BDF8] px-5 py-2 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#7DD3FC]"
           >
             {"Let's"} Talk
           </Link>
