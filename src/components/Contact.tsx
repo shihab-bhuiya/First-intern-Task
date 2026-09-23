@@ -108,25 +108,24 @@ export default function Contact() {
         <div className="h-px w-full bg-white/[0.08]" />
 
         {/* ================= HEADING ================= */}
-        <h2
-          className="
-            mt-6
-            text-[34px]
-            uppercase
-            leading-[1.15]
-            tracking-[-0.03em]
-            text-[#f5eeee]
-            sm:text-[42px]
-            md:text-[52px]
-            lg:text-[64px]
-            lg:leading-[1.18]
-          "
-        >
-          Let&apos;s secure what
-          <br />
-          you build
-        </h2>
-
+       <h2
+  className="
+    mt-6
+    text-[20px]
+    uppercase
+    leading-[1.15]
+    tracking-[-0.03em]
+    text-[#f5eeee]
+    sm:text-[42px]
+    md:text-[52px]
+    lg:text-[64px]
+    lg:leading-[1.18]
+  "
+>
+  Let&apos;s secure what
+  <br className="hidden lg:inline" />
+  {" "}you build
+</h2> 
         {/* ================= MAIN CONTENT ================= */}
         <div
           className="

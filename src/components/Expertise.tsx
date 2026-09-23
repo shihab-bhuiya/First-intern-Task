@@ -70,11 +70,11 @@ export default function Skills() {
               key={group.title}
               className="rounded-[10px] border border-white/[0.07] bg-[#131821] p-6 transition-colors duration-300 hover:border-white/15"
             >
-              <h3 className="text-xl font-medium leading-7 text-white">
+              <h3 className="text-xl font-[Manrope]  font-semibold leading-7 text-white">
                 {group.title}
               </h3>
 
-              <p className="mt-4 text-base leading-[30px] text-gray-400">
+              <p className="mt-4 text-[14px] leading-[30px] text-[#B5B5B5]">
                 {group.description}
               </p>
 

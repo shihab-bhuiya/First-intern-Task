@@ -42,8 +42,8 @@ export default function Qualifications() {
     <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-4 sm:px-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
-        <div className="mb-7 border-b border-white/[0.06] pb-4">
-          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
+        <div className="mb-2  pb-4">
+          <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
             07 / Professional Qualifications
           </h2>
         </div>
@@ -74,7 +74,7 @@ export default function Qualifications() {
                   group
                   relative
                   mx-auto
-                  h-[200px]
+                  h-[190px]
                   w-full
                   max-w-[190px]
                   overflow-hidden
@@ -136,7 +136,7 @@ export default function Qualifications() {
                   "
                 />
 
-                <div className="relative z-10 h-[135px] w-full overflow-hidden">
+                <div className="relative z-10 h-[125px] w-full overflow-hidden">
                   <Image
                     src={qualification.imageUrl}
                     alt={qualification.title.replace("\n", " ")}
@@ -146,8 +146,10 @@ export default function Qualifications() {
                       object-cover
                       transition-transform
                       duration-300
-                      px-1
+                      px-2
+                      rounded-t-4xl
                       pt-1.5
+                      pb-1
                       group-hover:scale-[1.08]
                     "
                   />
@@ -158,7 +160,7 @@ export default function Qualifications() {
                     relative
                     z-20
                     flex
-                    h-[64px]
+                    h-[58px]
                     items-center
                     justify-center
                     rounded-b-[23px]
