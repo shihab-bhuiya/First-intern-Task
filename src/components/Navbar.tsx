@@ -174,7 +174,7 @@ export default function Navbar() {
             <Link
               href="#contact"
               onClick={closeMenu}
-              className="mt-3 rounded-lg bg-[#38BDF8] px-4 py-3 text-center text-sm font-semibold text-[#05090d] transition-colors duration-300 hover:bg-[#7DD3FC]"
+              className="mt-3 rounded-lg bg-[#38BDF8] px-4 py-3 text-center font-['Manrope'] text-sm font-semibold text-[#E7E7E7] transition-colors duration-300 hover:bg-[#7DD3FC]"
             >
               {"Let's"} Talk
             </Link>

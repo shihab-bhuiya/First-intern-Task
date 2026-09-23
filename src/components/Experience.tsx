@@ -166,13 +166,13 @@ export default function CareerTimeline() {
                     <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                       {entry.yearRange}
                     </span>
-                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-xs font-mono tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
+                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-xs font-['Manrope'] tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
                       {entry.duration}
                     </span>
                   </div>
 
                   {/* Connector Branch (Horizontal Glowing Line - Desktop Only) */}
-                  <div className="hidden sm:block absolute left-[220px] w-10 h-[2px] bg-[#00a8ff] shadow-[0_0_8px_#00a8ff] z-10" />
+                  <div className="hidden sm:block absolute left-[220px] w-8 h-[2px] bg-[#00a8ff] shadow-[0_0_8px_#00a8ff] z-10" />
 
                   {/* Card Container (Right Column / Full Width on Mobile) */}
                   <div className="w-full pl-7 sm:pl-10 flex-1">
