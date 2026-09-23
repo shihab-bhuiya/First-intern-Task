@@ -45,12 +45,9 @@ const backgroundStyle = {
   `,
 };
 
-export default function Skills() {
+export default function Expertise() {
   return (
-    <section
-      id="expertise"
-      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pb-16 pt-14"
-    >
+      <section id="expertise" className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] md:py-20 py-10">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"

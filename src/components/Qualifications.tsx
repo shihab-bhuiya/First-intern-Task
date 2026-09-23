@@ -39,7 +39,7 @@ const topBorderColors = [
 
 export default function Qualifications() {
   return (
-    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-2 sm:px-10">
+       <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 sm:px-10 md:py-20 py-10">
       <div className="mx-auto w-full max-w-[1312px]">
         {/* Section Label */}
         <div className="mb-3  pb-0z  ">
