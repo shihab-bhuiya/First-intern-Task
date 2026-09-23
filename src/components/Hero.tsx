@@ -14,7 +14,7 @@ interface GraphNode {
   subtitle?: string;
   x: number;
   y: number;
-  size: number; // dot diameter in px
+  size: number;
   dotClass: string;
 }
 
@@ -66,7 +66,11 @@ const nodes: GraphNode[] = [
 ];
 
 // Quadratic curves: [controlX, controlY] are in the same 656 × 554 space
-const connections: { from: string; to: string; control: [number, number] }[] = [
+const connections: {
+  from: string;
+  to: string;
+  control: [number, number];
+}[] = [
   { from: "hq", to: "aus", control: [206, 150] },
   { from: "hq", to: "ph", control: [264, 210] },
   { from: "hq", to: "in", control: [417, 57] },
@@ -89,10 +93,7 @@ const gridStyle = {
 
 export default function Hero() {
   return (
-    <section
-     
-      className="relative flex items-center overflow-hidden bg-[#05090d] pt-[66px] lg:min-h-[700px]"
-    >
+    <section className="relative flex items-center overflow-hidden bg-[#05090d] pt-[66px] lg:min-h-[700px]">
       {/* Background grid */}
       <div
         aria-hidden="true"
@@ -107,74 +108,78 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-[1440px] px-6 md:px-10 xl:px-20">
-        <div className="grid items-center gap-12 py-12 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
+        <div className="grid items-center gap-12 py-8 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
           {/* Left content */}
-          <div className="relative z-10 min-w-0 order-2 lg:order-none">
+          <div className="relative z-10 order-2 flex min-w-0 flex-col lg:order-none">
             {/* Status line */}
-            <div className="mb-4 flex items-center gap-2 font-mono text-[12px] lg:text-sm text-gray-300">
+            <div className="order-1 mb-4 flex items-center gap-2 font-mono text-[12px] text-gray-300 lg:text-sm">
               <span
                 aria-hidden="true"
                 className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#CCFF00]" />
               </span>
+
               IT Manager · Cloud · Cybersecurity
             </div>
 
             {/* Heading */}
-            <h1 className="font-sans text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px]">
+            <h1 className="order-2 font-sans text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px]">
               Mazidul
               <br />
               <span className="text-[#69C8FF]">Hakim</span>
             </h1>
 
             {/* Description */}
-            <p className="mt-4 max-w-[600px] text-base leading-7 text-slate-400">
+            <p className="order-4 mt-4 max-w-[600px] text-base leading-7 text-slate-400 lg:order-3">
               Senior IT leader with 17+ years turning technology functions
               around — network modernisation, cloud migration and cybersecurity
               uplift across complex, multi-site organisations.
             </p>
 
             {/* Pills */}
-        <div className="mt-8 flex flex-nowrap gap-3 sm:gap-4">
-  <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 sm:px-5 font-mono text-[10px] sm:text-[10px] font-semibold text-white">
-    IT Leadership
-  </span>
+            <div className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4">
+              <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-mono text-[10px] font-semibold text-white sm:px-5">
+                IT Leadership
+              </span>
 
-  <span className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-3 sm:px-6 font-mono text-[10px] sm:text-[10px] lg:text-base text-[#CCFF00]">
-    <span
-      aria-hidden="true"
-      className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#CCFF00]"
-    />
-    open to SOC / Cybersecurity
-  </span>
-</div>
+              <span className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-3 font-mono text-[10px] text-[#CCFF00] sm:px-6 lg:text-base">
+                <span
+                  aria-hidden="true"
+                  className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#CCFF00]"
+                />
+                open to SOC / Cybersecurity
+              </span>
+            </div>
 
             {/* Action buttons */}
-           <div className="mt-12 flex flex-nowrap gap-3 sm:gap-4">
-  <Link
-    href="#experience"
-    className="inline-flex h-12 sm:h-14 items-center gap-2 sm:gap-2.5 rounded-[10px] bg-[#131A22] px-4 sm:px-7 text-sm sm:text-lg font-medium text-white transition-colors hover:bg-[#1B2430]"
-  >
-    <LuBriefcase className="text-base sm:text-xl" aria-hidden="true" />
-    Career Info
-  </Link>
+            <div className="order-5 mt-12 flex justify-center flex-nowrap gap-3 sm:gap-4">
+              <Link
+                href="#experience"
+                className="inline-flex h-12 w-40 items-center gap-2 rounded-[10px] bg-[#131A22] px-7 text-sm font-medium text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+              >
+                <LuBriefcase
+                  className="text-base sm:text-xl"
+                  aria-hidden="true"
+                />
+                Career Info
+              </Link>
 
-  <Link
-    href="#contact"
-    className="inline-flex h-12 sm:h-14 items-center gap-2 sm:gap-2.5 rounded-[10px] bg-[#38BDF8] px-4 sm:px-7 text-sm sm:text-lg font-medium text-[#05090d] transition-colors hover:bg-[#7DD3FC]"
-  >
-    <LuMail className="text-base sm:text-xl" aria-hidden="true" />
-    Contact Now
-  </Link>
-</div>
+              <Link
+                href="#contact"
+                className="inline-flex h-12 w-40  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 text-sm font-medium text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+              >
+                <LuMail className="text-base text-center sm:text-xl" aria-hidden="true" />
+                Contact Now
+              </Link>
+            </div>
           </div>
 
           {/* Right: network map */}
           <div
             role="img"
             aria-label="Network map: Singapore HQ connected to Australia, the Philippines, India and Auckland, New Zealand"
-            className="relative order-1 lg:order-none aspect-[656/554] w-full select-none lg:block"
+            className="relative order-1 aspect-[656/554] w-full select-none lg:order-none lg:block"
           >
             <svg
               aria-hidden="true"
@@ -185,6 +190,7 @@ export default function Hero() {
               {connections.map(({ from, to, control }) => {
                 const a = nodeById[from];
                 const b = nodeById[to];
+
                 return (
                   <path
                     key={`${from}-${to}`}
@@ -205,7 +211,7 @@ export default function Hero() {
                   top: `${(node.y / GRAPH_H) * 100}%`,
                 }}
               >
-                {/* Dot, centred on the node coordinate */}
+                {/* Dot */}
                 <span
                   aria-hidden="true"
                   className={`absolute block rounded-full ${node.dotClass}`}
@@ -217,11 +223,12 @@ export default function Hero() {
                   }}
                 />
 
-                {/* Label, sits up and to the right of the dot */}
+                {/* Label */}
                 <div className="absolute left-6 top-[-26px] whitespace-nowrap">
                   <p className="font-mono text-xs leading-4 text-zinc-200">
                     {node.title}
                   </p>
+
                   {node.subtitle && (
                     <p className="mt-2 font-mono text-[10px] uppercase leading-[14px] tracking-wider text-zinc-500">
                       {node.subtitle}
