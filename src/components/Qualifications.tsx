@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 
 interface Qualification {
   id: string;
@@ -39,20 +43,27 @@ const topBorderColors = [
 
 export default function Qualifications() {
   return (
-       <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 sm:px-10 md:py-20 py-10">
-      <div className="mx-auto w-full max-w-[1312px]">
+    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 sm:px-10 md:py-20 py-10">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="mx-auto w-full max-w-[1312px]"
+      >
         {/* Section Label */}
-        <div className="mb-3  pb-0z  ">
+        <motion.div variants={fadeInUp} className="mb-3 pb-0z">
           <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
             07 / Professional Qualifications
           </h2>
-        </div>
+        </motion.div>
 
         {/* Divider */}
         <div className="mt-1 h-px w-full bg-white/[0.08]" />
 
         {/* Cards */}
-        <div
+        <motion.div
+          variants={staggerContainer}
           className="
             mt-4
             grid
@@ -68,8 +79,9 @@ export default function Qualifications() {
               topBorderColors[index % topBorderColors.length];
 
             return (
-              <div
+              <motion.div
                 key={qualification.id}
+                variants={fadeInUp}
                 className="
                   group
                   relative
@@ -184,11 +196,11 @@ export default function Qualifications() {
                     {qualification.title}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
-}
+}

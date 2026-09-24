@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 
 interface Certificate {
   id: string;
@@ -16,19 +20,26 @@ const certificates: Certificate[] = [
 export default function Certificates() {
   return (
     <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] px-6 sm:px-10">
-      <div className="mx-auto w-full max-w-[1312px]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="mx-auto w-full max-w-[1312px]"
+      >
         {/* Section label */}
-        <div className="mb-2 p-2 pb-1">
+        <motion.div variants={fadeInUp} className="mb-2 p-2 pb-1">
           <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
             06 / Professional Certificates
           </h2>
-        </div>
+        </motion.div>
 
         {/* Divider */}
         <div className="mt-2 h-px w-full bg-white/[0.08]" />
 
         {/* Certificates — same grid as Qualifications so columns line up */}
-        <div
+        <motion.div
+          variants={staggerContainer}
           className="
             mt-6
             grid
@@ -40,8 +51,9 @@ export default function Certificates() {
           "
         >
           {certificates.map((cert) => (
-            <div
+            <motion.div
               key={cert.id}
+              variants={fadeInUp}
               className="
                 relative
                 mx-auto
@@ -110,10 +122,10 @@ export default function Certificates() {
               >
                 {cert.name}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
-}
+}

@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { LuBriefcase, LuMail } from "react-icons/lu";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, scaleIn } from "@/lib/motionVariants";
+import { useLenis } from "@/components/SmoothScrollProvider";
 
 /**
  * Graph coordinates live in a 656 × 554 box, which is the size of the
@@ -92,8 +97,26 @@ const gridStyle = {
 };
 
 export default function Hero() {
+  const lenis = useLenis();
+
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      if (lenis) {
+        lenis.scrollTo(targetElement as HTMLElement);
+      } else {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+      window.history.pushState({}, "", href);
+    }
+  };
+
   return (
-    <section className="relative flex items-center pt-12  scroll-pb-80 overflow-hidden bg-[#05090d]  lg:min-h-[500px]">
+    <section className="relative flex items-center pt-12 scroll-pb-80 overflow-hidden bg-[#05090d] lg:min-h-[500px]">
       {/* Background grid */}
       <div
         aria-hidden="true"
@@ -110,9 +133,17 @@ export default function Hero() {
       <div className="relative mx-auto w-full max-w-[1440px] px-6 md:px-10 xl:px-20">
         <div className="grid items-center gap-12 py-4 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
           {/* Left content */}
-          <div className="relative z-10 order-2 flex min-w-0 flex-col lg:order-none">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="relative z-10 order-2 flex min-w-0 flex-col lg:order-none"
+          >
             {/* Status line */}
-            <div className="order-1 mb-4 flex items-center gap-2 font-mono text-[12px] text-gray-300 lg:text-sm">
+            <motion.div
+              variants={fadeInUp}
+              className="order-1 mb-4 flex items-center gap-2 font-mono text-[12px] text-gray-300 lg:text-sm"
+            >
               <span
                 aria-hidden="true"
                 className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]"
@@ -121,24 +152,33 @@ export default function Hero() {
               </span>
 
               IT Manager · Cloud · Cybersecurity
-            </div>
+            </motion.div>
 
             {/* Heading */}
-            <h1 className="order-2 font-['Manrope'] text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]">
+            <motion.h1
+              variants={fadeInUp}
+              className="order-2 font-['Manrope'] text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
+            >
               Mazidul
               <br />
               <span className="text-[#69C8FF]">Hakim</span>
-            </h1>
+            </motion.h1>
 
             {/* Description */}
-            <p className="order-4 mt-4 max-w-[600px] font-['Manrope'] text-[16px] leading-7 text-[#ABABAB] lg:order-3">
+            <motion.p
+              variants={fadeInUp}
+              className="order-4 mt-4 max-w-[600px] font-['Manrope'] text-[16px] leading-7 text-[#ABABAB] lg:order-3"
+            >
               Senior IT leader with 17+ years turning technology functions
               around — network modernisation, cloud migration and cybersecurity
               uplift across complex, multi-site organisations.
-            </p>
+            </motion.p>
 
             {/* Pills */}
-            <div className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4">
+            <motion.div
+              variants={fadeInUp}
+              className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4"
+            >
               <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-mono text-[10px] font-semibold text-white sm:px-5">
                 IT Leadership
               </span>
@@ -150,12 +190,16 @@ export default function Hero() {
                 />
                 open to SOC / Cybersecurity
               </span>
-            </div>
+            </motion.div>
 
             {/* Action buttons */}
-            <div className="order-5 mt-12 flex lg:justify-start justify-center flex-nowrap gap-3 sm:gap-4">
+            <motion.div
+              variants={fadeInUp}
+              className="order-5 mt-12 flex lg:justify-start justify-center flex-nowrap gap-3 sm:gap-4"
+            >
               <Link
                 href="#experience"
+                onClick={(e) => handleScrollTo(e, "#experience")}
                 className="inline-flex h-12 w-40 items-center gap-2 rounded-[10px] bg-[#131A22] px-7 text-sm lg:text-[14.5px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
                 <LuBriefcase
@@ -167,16 +211,20 @@ export default function Hero() {
 
               <Link
                 href="#contact"
-                className="inline-flex h-12 w-40 lg:text-[14.5px]  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                onClick={(e) => handleScrollTo(e, "#contact")}
+                className="inline-flex h-12 w-40 lg:text-[14.5px] items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
                 <LuMail className="text-[12px] text-center lg:text-[20px] font-['Manrope'] sm:text-xl" aria-hidden="true" />
                 Contact Now
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: network map */}
-          <div
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={scaleIn}
             role="img"
             aria-label="Network map: Singapore HQ connected to Australia, the Philippines, India and Auckland, New Zealand"
             className="relative order-1 aspect-[656/554] w-full select-none lg:order-none lg:block"
@@ -237,9 +285,9 @@ export default function Hero() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-}
+}

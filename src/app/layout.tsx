@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import MarquePage from "@/components/Marque";
-import Marquee from "react-fast-marquee";
-
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,22 +36,23 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-export default function RootLayout({ children }: LayoutProps<"/">) {
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-
-       
-        <main>
-
-        {children}
-
-        </main>
-        
-        </body>
+        <SmoothScrollProvider>
+          <main>{children}</main>
+        </SmoothScrollProvider>
+      </body>
     </html>
   );
 }
+

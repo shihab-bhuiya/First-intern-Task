@@ -1,6 +1,9 @@
 'use client';
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
+
 
 type Accent = "blue" | "olive" | "coral" | "teal";
 
@@ -131,36 +134,49 @@ export default function CareerTimeline() {
       {/* Ambient background glow on right */}
       <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-[1312px] mx-auto relative z-10">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="max-w-[1312px] mx-auto relative z-10"
+      >
         {/* Section Tag */}
-          <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400 uppercase">
-            <span className="text-slate-500 font-semibold">05</span>
-            <span className="text-slate-600">/</span>
-            <span className="text-slate-400 font-medium">EXPERIENCE</span>
-          </div>
-        <div className="border-t mt-2 border-slate-800/80 pt-6 mb-8">
-        </div>
+        <motion.div
+          variants={fadeInUp}
+          className="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400 uppercase"
+        >
+          <span className="text-slate-500 font-semibold">05</span>
+          <span className="text-slate-600">/</span>
+          <span className="text-slate-400 font-medium">EXPERIENCE</span>
+        </motion.div>
+        <div className="border-t mt-2 border-slate-800/80 pt-6 mb-8" />
 
         {/* Section Heading */}
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-10 sm:mb-16">
+        <motion.h2
+          variants={fadeInUp}
+          className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-10 sm:mb-16"
+        >
           Career <span className="text-[#00c8ff]">Timeline</span>
-        </h2>
+        </motion.h2>
 
         {/* Timeline Container */}
         <div className="relative">
           {/* Continuous Glowing Vertical Cyan Line */}
           <div className="absolute left-2.5 sm:left-[220px] top-6 bottom-6 w-[2px] bg-[#00a8ff] shadow-[0_0_10px_#00a8ff] z-20" />
 
-          <div className="space-y-5 sm:space-y-12">
+          <motion.div variants={staggerContainer} className="space-y-5 sm:space-y-12">
             {entries.map((entry) => {
               const isOpen = openId === entry.id;
               const styles = accentStyles[entry.accent];
 
               return (
-                <div
+                <motion.div
                   key={entry.id}
+                  variants={fadeInUp}
                   className="relative flex flex-col sm:flex-row items-start sm:items-center group"
                 >
+
                   {/* Left Column: Year Range & Duration Pill (Desktop Only) */}
                   <div className="hidden sm:flex w-[220px] shrink-0 pr-10 text-right flex-col items-end justify-center">
                     <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -232,12 +248,12 @@ export default function CareerTimeline() {
                       )}
                     </button>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

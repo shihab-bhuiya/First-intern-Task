@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 
 const accents = {
   orange: {
@@ -48,7 +50,7 @@ const caseFiles = [
       ["modernized email security", "Cloud Platform"],
     ],
   },
-  {
+  {     
     category: "Collaboration",
     caseNo: "CASE-003",
     title: "Cloud & Collaboration Migration",
@@ -134,26 +136,39 @@ export default function CaseFiles() {
         }}
       />
 
-      <div className="relative mx-auto  max-w-[1312px]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="relative mx-auto max-w-[1312px]"
+      >
         {/* Heading */}
-        <div className="mb-6  border-b border-white/10 pb-2.5">
-          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400 ">
+        <motion.div
+          variants={fadeInUp}
+          className="mb-6 border-b border-white/10 pb-2.5"
+        >
+          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
           </h2>
-
-        </div>
+        </motion.div>
 
         {/* Case Files */}
-        <div className="grid  gap-4 md:grid-cols-2 ">
+        <motion.div
+          variants={staggerContainer}
+          className="grid gap-4 md:grid-cols-2"
+        >
           {caseFiles.map((item) => {
             const accent = accents[item.accent];
             const isOpen = !!openCards[item.caseNo];
 
             return (
-              <article
+              <motion.article
                 key={item.caseNo}
+                variants={fadeInUp}
                 className="flex flex-col rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-6 transition-colors duration-300 hover:border-white/20"
               >
+
                 {/* Top */}
                 <div className="mb-5 flex items-center justify-between gap-3">
                   <span
@@ -222,11 +237,11 @@ export default function CaseFiles() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             );
           })}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

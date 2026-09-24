@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 
 interface StatCard {
   prefix?: string;
@@ -23,7 +25,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] py-10"
+      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] py-14"
     >
       {/* Teal tint, bottom right */}
       <div
@@ -31,23 +33,35 @@ export default function About() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_90%_100%,rgba(8,90,120,0.22),transparent_55%)]"
       />
 
-      <div className="relative mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="relative mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20"
+      >
         {/* Eyebrow + rule */}
-        <p className="border-b border-white/10 pb-2.5 font-mono text-[14px] font-medium uppercase tracking-widest text-gray-400">
+        <motion.p
+          variants={fadeInUp}
+          className="border-b border-white/10 pb-2.5 font-mono text-[14px] font-medium uppercase tracking-widest text-gray-400"
+        >
           02 / About
-        </p>
+        </motion.p>
 
         {/* Heading */}
-        <h2 className="mt-6 font-[Manrope] text-5xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl xl:text-[72px]">
+        <motion.h2
+          variants={fadeInUp}
+          className="mt-6 font-[Manrope] text-5xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl xl:text-[72px]"
+        >
           Mazidul Hakim
-        </h2>
+        </motion.h2>
 
         <div className="mt-2 font-['Inter'] grid items-center gap-12 lg:grid-cols-2 xl:mt-0 xl:grid-cols-[530px_1fr] xl:gap-x-[100px]">
           {/* Biography */}
-          <div className="order-2 lg:order-1">
+          <motion.div variants={fadeInUp} className="order-2 lg:order-1">
             <p className="text-base leading-[1.8] text-gray-300">
               <strong className="font-semibold text-white">
-                Senior IT leader with 17+ years&apos; experience
+                Senior IT leader with 17+ year&apos;s experience
               </strong>{" "}
               owning IT strategy, operations and cybersecurity for multi-branch,
               multi-entity organizations — currently leading the group
@@ -80,10 +94,10 @@ export default function About() {
             >
               {isExpanded ? "Read less" : "Read more..."}
             </button>
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="relative order-1 lg:order-2">
+          <motion.div variants={fadeInUp} className="relative order-1 lg:order-2">
             {/* Background Glows */}
             <div
               aria-hidden="true"
@@ -95,10 +109,14 @@ export default function About() {
             />
 
             {/* Grid */}
-            <div className="relative grid grid-cols-2 gap-5">
+            <motion.div
+              variants={staggerContainer}
+              className="relative grid grid-cols-2 gap-5"
+            >
               {stats.map((stat) => (
-                <div
+                <motion.div
                   key={stat.label}
+                  variants={fadeInUp}
                   className="group relative rounded-[28px] bg-gradient-to-b from-white/30 via-sky-500/20 to-white/5 p-[1.5px] shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] transition-all duration-500 hover:from-sky-400/50 hover:via-cyan-400/30 hover:to-white/20 hover:shadow-[0_12px_40px_0_rgba(56,189,248,0.25)]"
                 >
                   {/* Card Body */}
@@ -135,20 +153,23 @@ export default function About() {
                       {stat.label}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Quote callout */}
-        <blockquote className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-mono text-base leading-[1.8] text-zinc-200">
+        <motion.blockquote
+          variants={fadeInUp}
+          className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-mono text-base leading-[1.8] text-zinc-200"
+        >
           I judge every technology decision by the business outcome it drives —
           <span className="text-[#38BDF8]"> not the shine of the tool</span>.
           Uptime and security are the baseline; the job is turning IT into
           something the business can actually grow on.
-        </blockquote>
-      </div>
+        </motion.blockquote>
+      </motion.div>
     </section>
   );
-}
+}

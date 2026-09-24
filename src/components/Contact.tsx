@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MessageSquare, Send } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
@@ -64,9 +66,16 @@ export default function Contact() {
         "
       />
 
-      <div className="relative mx-auto w-full max-w-[1312px]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={staggerContainer}
+        className="relative mx-auto w-full max-w-[1312px]"
+      >
         {/* ================= HEADER ================= */}
-        <div
+        <motion.div
+          variants={fadeInUp}
           className="
           mb-6
           flex
@@ -106,7 +115,8 @@ export default function Contact() {
           >
             CONTACT
           </span>
-        </div>
+        </motion.div>
+
 
         {/* ================= HEADING ================= */}
        <h2
@@ -476,7 +486,7 @@ export default function Contact() {
             </div>
           </div>
         </footer>
-      </div>
+      </motion.div>
     </section>
   );
 }

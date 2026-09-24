@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useLenis } from "@/components/SmoothScrollProvider";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -13,8 +14,30 @@ const navItems = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("#about");
+  const lenis = useLenis();
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      setActive(href);
+      closeMenu();
+
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        if (lenis) {
+          lenis.scrollTo(targetElement as HTMLElement);
+        } else {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+        window.history.pushState({}, "", href);
+      }
+    }
+  };
 
   // Highlight the nav item whose section is currently in view
   useEffect(() => {
@@ -72,7 +95,7 @@ export default function Navbar() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    onClick={() => setActive(item.href)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     aria-current={isActive ? "true" : undefined}
                     className={`relative pb-1 text-sm transition-colors ${
                       isActive
@@ -97,6 +120,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
             className="rounded-lg bg-[#38BDF8] px-5 py-2 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#7DD3FC]"
           >
             {"Let's"} Talk
@@ -155,10 +179,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  onClick={() => {
-                    setActive(item.href);
-                    closeMenu();
-                  }}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`rounded-md px-4 py-3 text-sm transition-colors hover:bg-white/5 ${
                     isActive
                       ? "font-medium text-white"
@@ -173,7 +194,7 @@ export default function Navbar() {
             {/* Mobile CTA */}
             <Link
               href="#contact"
-              onClick={closeMenu}
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="mt-3 rounded-lg bg-[#38BDF8] px-4 py-3 text-center font-['Manrope'] text-sm font-semibold text-[#E7E7E7] transition-colors duration-300 hover:bg-[#7DD3FC]"
             >
               {"Let's"} Talk
@@ -183,4 +204,4 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+}
