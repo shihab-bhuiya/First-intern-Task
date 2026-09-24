@@ -188,7 +188,7 @@ export default function CaseFiles() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 font-['Inter'] text-[12px] leading-5 text-gray-400">
+                <p className="mt-2 font-['Inter'] text-[10px]  leading-5 text-gray-400">
                   {item.description}
                 </p>
 
@@ -217,7 +217,7 @@ export default function CaseFiles() {
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
-                      <ul className="space-y-3.5">
+                      <ul className="space-y-3">
                         {item.results.map(([result, technology]) => (
                           <li
                             key={result}
