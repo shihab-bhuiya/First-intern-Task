@@ -174,7 +174,7 @@ export default function Contact() {
               <div
                 className="
                   flex
-                  h-[35px]
+                  h-[55px]
                   items-center
                   gap-2
                   rounded-[7px]
@@ -182,6 +182,7 @@ export default function Contact() {
                   border-cyan-900/80
                   bg-[#111720]
                   px-2
+                  
                   w-[280px]
                   transition-colors
                   focus-within:border-cyan-600
@@ -230,7 +231,7 @@ export default function Contact() {
               <div
                 className="
                   flex
-                  h-[79px]
+                  h-[89px]
                   items-start
                   gap-2
                   rounded-[7px]
@@ -239,7 +240,7 @@ export default function Contact() {
                   border-cyan-900/80
                   bg-[#111720]
                   px-2
-                  py-2
+                  py-6
                   transition-colors
                   focus-within:border-cyan-600
                 "

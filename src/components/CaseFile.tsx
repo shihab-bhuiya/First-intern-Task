@@ -122,10 +122,10 @@ export default function CaseFiles() {
   };
 
   return (
-    <section
-      id="impact"
-      className="relative w-full overflow-hidden  bg-[#0a0e11] px-6 pt-8 -pb-2"
-    >
+ <section
+  id="impact"
+  className="relative w-full overflow-hidden  bg-[#0a0e11] px-6 pt-8 pb-16"
+>
       {/* Background glows: blue top-left, teal bottom-right */}
       <div
         aria-hidden
@@ -166,13 +166,13 @@ export default function CaseFiles() {
               <motion.article
                 key={item.caseNo}
                 variants={fadeInUp}
-                className="flex flex-col rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-6 transition-colors duration-300 hover:border-white/20"
+                className="flex flex-col rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-8 pb-10 transition-colors duration-300 hover:border-white/20"
               >
 
                 {/* Top */}
-                <div className="mb-5 flex items-center justify-between gap-3">
+                <div className="mb-8 flex items-center justify-between gap-3">
                   <span
-                    className={`rounded border px-3 py-1.5 font-mono text-[10px] leading-4 ${accent.badge}`}
+                    className={`rounded border px-3 py-2 font-mono text-[10px] leading-4 ${accent.badge}`}
                   >
                     {item.category}
                   </span>
@@ -223,7 +223,7 @@ export default function CaseFiles() {
                             key={result}
                             className="flex items-start justify-between gap-4"
                           >
-                            <span className="flex min-w-0 items-start gap-2 font-mono text-[11px] leading-4 text-emerald-400">
+                            <span className="flex min-w-0 items-start gap-3 font-mono text-[11px] leading-4 text-emerald-400">
                               <span aria-hidden="true">+</span>
                               <span>{result}</span>
                             </span>
