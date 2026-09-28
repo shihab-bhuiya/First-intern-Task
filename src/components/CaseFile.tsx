@@ -124,7 +124,7 @@ export default function CaseFiles() {
   return (
  <section
   id="impact"
-  className="relative w-full overflow-hidden  bg-[#0a0e11] px-6 pt-8 pb-16"
+  className="relative mwx-w-[1312px] w-full overflow-hidden  bg-[#0a0e11] px-6 pt-8 pb-16"
 >
       {/* Background glows: blue top-left, teal bottom-right */}
       <div

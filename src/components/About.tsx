@@ -113,48 +113,43 @@ export default function About() {
               variants={staggerContainer}
               className="relative grid grid-cols-2 gap-5"
             >
-              {stats.map((stat) => (
-                <motion.div
-                  key={stat.label}
-                  variants={fadeInUp}
-                  className="group relative rounded-[28px] bg-gradient-to-b from-white/30 via-sky-500/20 to-white/5 p-[1.5px] shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] transition-all duration-500 hover:from-sky-400/50 hover:via-cyan-400/30 hover:to-white/20 hover:shadow-[0_12px_40px_0_rgba(56,189,248,0.25)]"
-                >
-                  {/* Card Body */}
-                  <div className="relative flex h-full min-h-[210px] flex-col items-center justify-center overflow-hidden rounded-[26px] bg-[#070d14]/80 px-4 text-center backdrop-blur-xl transition-all duration-500 group-hover:bg-[#08121d]/85 sm:px-6">
-                    {/* Top-Edge Highlight Line */}
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-70 group-hover:opacity-100" />
+           {stats.map((stat) => (
+  <motion.div
+    key={stat.label}
+    variants={fadeInUp}
+    className="group relative flex min-h-[210px] flex-col items-center justify-center overflow-hidden rounded-[28px] border border-white/15 bg-white/[0.04] px-4 text-center shadow-[0_8px_32px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-500 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_12px_40px_rgba(56,189,248,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] sm:px-6"
+  >
+    {/* Glass sheen, top-left to transparent */}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.10] via-transparent to-transparent"
+    />
 
-                    {/* Subtle Inner Glass Radial Gradient */}
-                    <div className="pointer-events-none absolute -left-12 -top-12 h-32 w-32 rounded-full bg-white/5 blur-xl group-hover:bg-sky-400/10" />
+    {/* Top-edge highlight */}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+    />
 
-                    <p className="relative z-10 flex items-baseline font-[family-name:var(--font-oswald),sans-serif] text-3xl font-semibold text-white sm:text-5xl xl:text-[64px]">
-                      {stat.prefix && (
-                        <span className="mr-2 text-[#38BDF8] drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]">
-                          {stat.prefix}
-                        </span>
-                      )}
+    <p className="relative z-10 flex items-baseline font-[family-name:var(--font-oswald),sans-serif] text-3xl font-semibold text-white sm:text-5xl xl:text-[64px]">
+      {stat.prefix && (
+        <span className="mr-2 text-[#38BDF8]">{stat.prefix}</span>
+      )}
+      <span>{stat.value}</span>
+      {stat.unit && (
+        <span
+          className={`text-[#38BDF8] ${stat.spacedUnit ? "ml-3" : "ml-1"}`}
+        >
+          {stat.unit}
+        </span>
+      )}
+    </p>
 
-                      <span className="drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                        {stat.value}
-                      </span>
-
-                      {stat.unit && (
-                        <span
-                          className={`text-[#38BDF8] drop-shadow-[0_0_12px_rgba(56,189,248,0.5)] ${
-                            stat.spacedUnit ? "ml-1" : "ml-1"
-                          }`}
-                        >
-                          {stat.unit}
-                        </span>
-                      )}
-                    </p>
-
-                    <p className="relative z-10 mt-5 text-[8px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
-                      {stat.label}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+    <p className="relative z-10 mt-5 text-[8px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
+      {stat.label}
+    </p>
+  </motion.div>
+))}
             </motion.div>
           </motion.div>
         </div>
