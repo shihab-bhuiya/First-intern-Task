@@ -336,12 +336,13 @@ export default function Contact() {
               pt-0
               pl-0
               lg:pl-[55%]
+              leading-[180%]
             "
           >
             <p
               className="
                font-ibm
-                text-[13px]
+                text-[16px]
                 font-bold
               
                 tracking-[2]
@@ -360,7 +361,7 @@ export default function Contact() {
                 className="
                   mb-2
                   font-ibm
-                  text-[12px]
+                  text-[16px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
@@ -396,7 +397,7 @@ export default function Contact() {
                 className="
                   mb-1.5
                   font-ibm
-                  text-[12px]
+                  text-[16px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
