@@ -122,9 +122,9 @@ export default function CaseFiles() {
   };
 
   return (
- <section
+<section
   id="impact"
-  className="relative mwx-w-[1312px] w-full overflow-hidden  bg-[#0a0e11] px-6 pt-8 pb-16"
+  className="relative w-full overflow-hidden bg-[#0a0e11] px-6 pt-4 pb-16 md:pt-6"
 >
       {/* Background glows: blue top-left, teal bottom-right */}
       <div
@@ -144,10 +144,10 @@ export default function CaseFiles() {
         className="relative mx-auto max-w-[1312px]"
       >
         {/* Heading */}
-        <motion.div
-          variants={fadeInUp}
-          className="mb-6 border-b border-white/10 pb-2.5"
-        >
+       <motion.div
+  variants={fadeInUp}
+  className="mb-5 border-b border-white/10 pb-2.5"
+>
           <h2 className="font-ibm text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
           </h2>

@@ -42,17 +42,27 @@ const skillGroups: SkillGroup[] = [
   },
 ];
 
-// Blue haze at the bottom-left and top-right corners
 const backgroundStyle = {
   backgroundImage: `
-    radial-gradient(ellipse 45% 55% at 0% 85%, rgba(30, 64, 175, 0.22), transparent),
-    radial-gradient(ellipse 35% 40% at 100% 0%, rgba(30, 64, 175, 0.18), transparent)
+    radial-gradient(
+      ellipse 45% 55% at 0% 85%,
+      rgba(30, 64, 175, 0.22),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 35% 40% at 100% 0%,
+      rgba(30, 64, 175, 0.18),
+      transparent
+    )
   `,
 };
 
 export default function Expertise() {
   return (
-    <section id="expertise" className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] md:py-20 py-10">
+    <section
+      id="expertise"
+     className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pt-8 pb-10 md:pt-10 md:pb-20"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -69,7 +79,7 @@ export default function Expertise() {
         {/* Eyebrow + rule */}
         <motion.h2
           variants={fadeInUp}
-          className="pb-2.5 font-mono text-xs font-medium uppercase tracking-widest text-gray-400"
+          className="border-b border-white/10 pb-2.5 font-mono text-xs font-medium uppercase tracking-widest text-gray-400"
         >
           03 / Expertise
         </motion.h2>
@@ -77,15 +87,15 @@ export default function Expertise() {
         {/* Skill cards */}
         <motion.div
           variants={staggerContainer}
-          className="mt-8 grid gap-x-3 gap-y-4 md:grid-cols-2 lg:grid-cols-3"
+          className="mt-5 grid gap-x-3 gap-y-4 md:grid-cols-2 lg:grid-cols-3"
         >
           {skillGroups.map((group) => (
             <motion.article
               key={group.title}
               variants={fadeInUp}
-              className="rounded-[10px] font-manrope  border border-white/[0.07] bg-[#131821] p-6 transition-colors duration-300 hover:border-white/15"
+              className="rounded-[10px] border border-white/[0.07] bg-[#131821] p-6 font-manrope transition-colors duration-300 hover:border-white/15"
             >
-              <h3 className="text-xl font-manrope font-semibold leading-7 text-white">
+              <h3 className="font-manrope text-xl font-semibold leading-7 text-white">
                 {group.title}
               </h3>
 

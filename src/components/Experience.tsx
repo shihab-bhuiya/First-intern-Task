@@ -156,9 +156,9 @@ export default function CareerTimeline() {
           variants={fadeInUp}
           className="flex items-center gap-2 text-[14px] font-ibm tracking-wider text-slate-400 uppercase"
         >
-          <span className="text-slate-500 font-semibold">05</span>
+          <span className="text-slate-500 font-semibold text-[14px]" >05</span>
           <span className="text-slate-600">/</span>
-          <span className="text-slate-400 font-medium">EXPERIENCE</span>
+          <span className="text-slate-400 font-medium text-[14px]">EXPERIENCE</span>
         </motion.div>
         <div className="border-t mt-2 border-slate-800/80 pt-6 mb-8" />
 

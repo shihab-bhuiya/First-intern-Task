@@ -23,10 +23,10 @@ export default function About() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section
-      id="about"
-      className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] py-14"
-    >
+   <section
+  id="about"
+  className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pt-14 pb-8"
+>
       {/* Teal tint, bottom right */}
       <div
         aria-hidden="true"
