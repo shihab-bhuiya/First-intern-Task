@@ -63,8 +63,10 @@ const entries: TimelineEntry[] = [
     location: "PIL Australia // Melbourne",
     accent: "blue",
     details: [
-      "Leading systems strategy and infrastructure for the Melbourne office.",
-      "Overseeing a small team of analysts and administrators.",
+      "Own a $2.4M+ annual IT budget and end-to-end responsibility for infrastructure, networks, cloud, cybersecurity, applications and devices across 8 branches in Australia and New Zealand.",
+      "Led the shift from legacy MPLS to Fortinet SASE, and directed a full Azure cloud migration (compute, AVD, identity, Intune).",
+      "Built a group-wide cybersecurity program aligned to Essential 8, consolidating tooling while cutting licensing cost",
+      "Established ITIL-aligned incident, change and problem management across the group",
     ],
   },
   {
@@ -76,8 +78,8 @@ const entries: TimelineEntry[] = [
     location: "PIL Australia // Melbourne",
     accent: "olive",
     details: [
-      "Analyzed and optimized core business systems.",
-      "Partnered with stakeholders on system upgrades.",
+      "Led IT operations across Australia and New Zealand branches and offshore teams in India and the Philippines, working closely with PIL Singapore Head Office. Strengthened cybersecurity and led the transition to cloud infrastructure. Promoted to IT Systems Manager.",
+      
     ],
   },
   {
@@ -88,7 +90,9 @@ const entries: TimelineEntry[] = [
     dateRange: "Jul 2018 — May 2019",
     location: "Shire of Ashburton // WA",
     accent: "coral",
-    details: ["Coordinated ICT operations across council sites."],
+    details: [
+     "Headed an IT team and a $1.8M annual budget, maintaining 99.9% network/system uptime while reducing costs through project-managed upgrades."
+    ],
   },
   {
     id: "4",
@@ -98,7 +102,9 @@ const entries: TimelineEntry[] = [
     dateRange: "Oct 2014 — Jul 2018",
     location: "Shire of Ashburton // WA",
     accent: "teal",
-    details: ["Administered servers, networks, and end-user support."],
+    details: [
+      "Headed the IT Service Desk supporting 250+ users across 14 locations, cutting third-party ICT reliance and delivering annual savings over $100K. Promoted to ICT Coordinator."
+    ],
   },
   {
     id: "5",
@@ -108,7 +114,9 @@ const entries: TimelineEntry[] = [
     dateRange: "Oct 2012 — Sep 2014",
     location: "Shire of Murray // WA",
     accent: "olive",
-    details: ["Provided frontline IT support to council staff."],
+    details: [
+    "Provided 2nd/3rd-line technical support and led continuous improvement of IT processes, policies and documentation, including disaster recovery planning and SharePoint administration."
+    ],
   },
   {
     id: "6",
@@ -118,7 +126,9 @@ const entries: TimelineEntry[] = [
     dateRange: "Jan 2011 — Oct 2012",
     location: "Leading Edge Computers // WA",
     accent: "coral",
-    details: ["Repaired and configured hardware for retail customers."],
+    details: [
+   "Managed network and IT infrastructure design projects for SME and corporate clients — from business analysis through to delivery — the client-facing consulting foundation everything since has built on."
+    ],
   },
 ];
 

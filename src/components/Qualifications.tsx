@@ -43,7 +43,7 @@ const topBorderColors = [
 
 export default function Qualifications() {
   return (
-    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-12 sm:px-10 md:py-20">
+    <section className="mx-auto mt-8 w-full max-w-[1440px]  bg-[#0a0e14] px-6 py-12 sm:px-10 md:py-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -52,8 +52,8 @@ export default function Qualifications() {
         className="mx-auto w-full max-w-[1312px]"
       >
         {/* Section Label */}
-        <motion.div variants={fadeInUp} className="mb-3 pb-0">
-          <h2 className="font-ibm text-[12px] uppercase tracking-[0.12em] text-gray-400">
+        <motion.div variants={fadeInUp} className="mb-3 pb-0 ">
+          <h2 className="font-ibm text-[14px] uppercase tracking-[0.12em] text-gray-400">
             07 / Professional Qualifications
           </h2>
         </motion.div>
@@ -65,7 +65,7 @@ export default function Qualifications() {
         <motion.div
           variants={staggerContainer}
           className="
-            mt-4
+            mt-[32px]
             grid
             grid-cols-2
             gap-4

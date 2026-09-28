@@ -170,14 +170,14 @@ export default function CaseFiles() {
               >
 
                 {/* Top */}
-                <div className="mb-8 flex items-center justify-between gap-3">
+                <div className="mb-8 flex rounded-[6px] items-center justify-between gap-3">
                   <span
-                    className={`rounded border px-3 py-2 font-ibm text-[10px] leading-4 ${accent.badge}`}
+                    className={`rounded bg-[#181F29] border px-3 py-2 font-ibm text-[12px] leading-4 ${accent.badge}`}
                   >
                     {item.category}
                   </span>
 
-                  <span className={` font-ibm  text-[9px] ${accent.caseNo}`}>
+                  <span className={` font-ibm  text-[10px] ${accent.caseNo}`}>
                     {item.caseNo}
                   </span>
                 </div>

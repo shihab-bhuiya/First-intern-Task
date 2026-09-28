@@ -5,6 +5,7 @@ import { LuBriefcase, LuMail } from "react-icons/lu";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, scaleIn } from "@/lib/motionVariants";
 import { useLenis } from "@/components/SmoothScrollProvider";
+import Image from "next/image";
 
 /**
  * Graph coordinates live in a 656 × 554 box, which is the size of the
@@ -200,21 +201,18 @@ export default function Hero() {
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
-                className="inline-flex h-12 w-40 items-center gap-2 font-manrope  rounded-[10px] bg-[#131A22] px-7 text-sm lg:text-[14.5px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-12 w-[213px] items-center gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-7 text-sm lg:text-[20px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
-                <LuBriefcase
-                  className="text-base lg:text-[20px] e sm:text-xl"
-                  aria-hidden="true"
-                />
+              <Image src={'/carrer-infosvg.svg'} width={24} height={24} alt="carrer"/>
                 Career Info
               </Link>
 
               <Link
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
-                className="inline-flex h-12 w-40 lg:text-[14.5px] font-manrope font-semibold  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-5.5 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-12 w-[213px] lg:text-[20px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-5.5 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
-                <LuMail className="text-[12px] text-center lg:text-[20px]  sm:text-xl" aria-hidden="true" />
+               <Image src={'/mail.svg'} alt="mail" width={24} height={24}/>
                 Contact Now
               </Link>
             </motion.div>
