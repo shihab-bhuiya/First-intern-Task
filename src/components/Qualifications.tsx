@@ -87,7 +87,8 @@ export default function Qualifications() {
                   relative
                   mx-auto
                   flex
-                  h-[280px]
+                  h-[173px]
+                  lg:h-[280px]
                   w-full
                   max-w-[260px]
                   flex-col
@@ -155,7 +156,7 @@ export default function Qualifications() {
                 />
 
                 {/* Image: fixed height, same on every card */}
-                <div className="relative z-10 h-[190px] w-full shrink-0 overflow-hidden">
+                <div className="relative z-10 h-[112px] lg:h-[190px] w-full shrink-0 overflow-hidden">
                   <Image
                     src={qualification.imageUrl}
                     alt={qualification.title.replace("\n", " ")}
@@ -197,9 +198,11 @@ export default function Qualifications() {
                       whitespace-pre-line
                       text-center
                       font-manrope
-                      text-[20px]
-                      font-medium
-                      leading-[22px]
+                      text-[14px]
+                      lg:text-[20px]
+                      font-semibold
+                      leading-[120%]
+                      lg:leading-[22px]
                       text-white
                     "
                   >
