@@ -30,13 +30,13 @@ export default function About() {
       {/* Teal tint background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-20 bg-[radial-gradient(ellipse_at_70%_100%,rgba(8,90,120,0.22),transparent_70%)]"
+        className="pointer-events-none absolute inset-220 bg-[radial-gradient(ellipse_at_70%_100%,rgba(8,90,120,0.22),transparent_70%)]"
       />
 
       {/* Bottom Seamless Gradient Transition */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute inset-x-3 -bottom-6 h-24 bg-gradient-to-t from-[#05090d] via-[#05090d]/90 to-transparent z-10" 
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#05090d] via-[#05090d]/60 to-transparent z-0" 
       />
 
       <motion.div
