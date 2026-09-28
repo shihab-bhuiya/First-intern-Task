@@ -180,14 +180,14 @@ export default function Hero() {
               variants={fadeInUp}
               className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4"
             >
-              <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-ibm text-[16px] font-semibold text-white sm:px-5">
+              <span className="inline-flex h-10 text-[10px] items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-ibm lg:text-[16px] font-semibold text-white sm:px-5">
                 IT Leadership
               </span>
 
-              <span className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-3 font-ibm font-semibold  text-[16px] text-[#CCFF00] sm:px-6 lg:text-base">
+              <span className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-3 font-ibm font-semibold text-[10px]  lg:text-[16px] text-[#CCFF00] sm:px-6 lg:text-base">
                 <span
                   aria-hidden="true"
-                  className="h-2.5 w-2.5 font-ibm text-[16px] font-semibold rounded-full bg-[#CCFF00]"
+                  className="h-2.5 w-2.5 font-ibm text-[16px] lg:text-[16px] font-semibold rounded-full bg-[#CCFF00]"
                 />
                 open to SOC / Cybersecurity
               </span>
