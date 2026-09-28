@@ -51,15 +51,15 @@ export default function About() {
         {/* Heading */}
         <motion.h2
           variants={fadeInUp}
-          className="mt-6 font-[Manrope] text-5xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl xl:text-[72px]"
+          className="mt-6 font-manrope text-5xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl xl:text-[72px]"
         >
           Mazidul Hakim
         </motion.h2>
 
-        <div className="mt-2 font-['Inter'] grid items-center gap-12 lg:grid-cols-2 xl:mt-0 xl:grid-cols-[530px_1fr] xl:gap-x-[100px]">
+        <div className="mt-2 font-inter grid items-center gap-12 lg:grid-cols-2 xl:mt-0 xl:grid-cols-[530px_1fr] xl:gap-x-[100px]">
           {/* Biography */}
           <motion.div variants={fadeInUp} className="order-2 lg:order-1">
-            <p className="text-base leading-[1.8] text-gray-300">
+            <p className="text-base font-inter leading-[1.8] text-gray-300">
               <strong className="font-semibold text-white">
                 Senior IT leader with 17+ year&apos;s experience
               </strong>{" "}
@@ -162,7 +162,7 @@ export default function About() {
         {/* Quote callout */}
         <motion.blockquote
           variants={fadeInUp}
-          className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-mono text-base leading-[1.8] text-zinc-200"
+          className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-ibm text-base leading-[1.8] text-zinc-200"
         >
           I judge every technology decision by the business outcome it drives —
           <span className="text-[#38BDF8]"> not the shine of the tool</span>.
@@ -172,4 +172,4 @@ export default function About() {
       </motion.div>
     </section>
   );
-}
+}

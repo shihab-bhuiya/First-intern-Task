@@ -157,7 +157,7 @@ export default function Hero() {
             {/* Heading */}
             <motion.h1
               variants={fadeInUp}
-              className="order-2 font-['Manrope'] text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
+              className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
             >
               Mazidul
               <br />
@@ -167,7 +167,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={fadeInUp}
-              className="order-4 mt-4 max-w-[600px] font-['Manrope'] text-[16px] leading-7 text-[#ABABAB] lg:order-3"
+              className="order-4 mt-4 max-w-[600px] font-manrope text-[16px] leading-7 text-[#ABABAB] lg:order-3"
             >
               Senior IT leader with 17+ years turning technology functions
               around — network modernisation, cloud migration and cybersecurity
@@ -179,14 +179,14 @@ export default function Hero() {
               variants={fadeInUp}
               className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4"
             >
-              <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-mono text-[10px] font-semibold text-white sm:px-5">
+              <span className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-ibm text-[10px] font-semibold text-white sm:px-5">
                 IT Leadership
               </span>
 
               <span className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-full border border-[#CCFF00]/40 bg-[#CCFF00]/5 px-3 font-mono text-[10px] text-[#CCFF00] sm:px-6 lg:text-base">
                 <span
                   aria-hidden="true"
-                  className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#CCFF00]"
+                  className="h-2.5 w-2.5 font-ibm shrink-0 rounded-full bg-[#CCFF00]"
                 />
                 open to SOC / Cybersecurity
               </span>
@@ -200,10 +200,10 @@ export default function Hero() {
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
-                className="inline-flex h-12 w-40 items-center gap-2 rounded-[10px] bg-[#131A22] px-7 text-sm lg:text-[14.5px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-12 w-40 items-center gap-2 font-manrope  rounded-[10px] bg-[#131A22] px-7 text-sm lg:text-[14.5px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
                 <LuBriefcase
-                  className="text-base lg:text-[20px] font-['Manrope'] sm:text-xl"
+                  className="text-base lg:text-[20px] e sm:text-xl"
                   aria-hidden="true"
                 />
                 Career Info
@@ -212,9 +212,9 @@ export default function Hero() {
               <Link
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
-                className="inline-flex h-12 w-40 lg:text-[14.5px] items-center gap-2 rounded-[10px] bg-[#38BDF8] px-6 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-12 w-40 lg:text-[14.5px] font-manrope font-semibold  items-center gap-2 rounded-[10px] bg-[#38BDF8] px-5.5 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
               >
-                <LuMail className="text-[12px] text-center lg:text-[20px] font-['Manrope'] sm:text-xl" aria-hidden="true" />
+                <LuMail className="text-[12px] text-center lg:text-[20px]  sm:text-xl" aria-hidden="true" />
                 Contact Now
               </Link>
             </motion.div>
@@ -290,4 +290,4 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+}
