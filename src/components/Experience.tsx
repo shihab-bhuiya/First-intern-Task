@@ -191,7 +191,7 @@ export default function CareerTimeline() {
                   <div className="hidden sm:block absolute left-[220px] w-8 h-[2px] bg-[#00a8ff] shadow-[0_0_8px_#00a8ff] z-10" />
 
                   {/* Card Container (Right Column / Full Width on Mobile) */}
-                  <div className="w-full pl-7 sm:pl-10 flex-1">
+                <div className="w-full pl-7 sm:pl-10 flex-1 sm:max-w-[800px]">
                     <button
                       type="button"
                       onClick={() => toggle(entry.id)}
