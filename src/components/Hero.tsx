@@ -143,7 +143,7 @@ export default function Hero() {
             {/* Status line */}
             <motion.div
               variants={fadeInUp}
-              className="order-1 mb-4 flex items-center gap-2 font-ibm text-[12px] text-gray-300 lg:text-sm"
+              className="order-1 mb-4 flex items-center gap-2 font-ibm text-[14px] text-gray-300 lg:text-sm"
             >
               <span
                 aria-hidden="true"

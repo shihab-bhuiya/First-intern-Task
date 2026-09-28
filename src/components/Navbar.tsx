@@ -105,12 +105,12 @@ export default function Navbar() {
                   >
                     {item.name}
 
-                    {isActive && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute -bottom-1 left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-[#38BDF8]"
-                      />
-                    )}
+                {isActive && (
+  <span
+    aria-hidden="true"
+    className="absolute -bottom-2 left-1/2 h-[7px] w-[7px] -translate-x-1/2 rounded-full bg-[#38BDF8] shadow-[0_0_8px_rgba(56,189,248,0.8)]"
+  />
+)}
                   </Link>
                 </li>
               );
