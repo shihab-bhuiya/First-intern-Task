@@ -29,7 +29,7 @@ export default function Certificates() {
       >
         {/* Section label */}
         <motion.div variants={fadeInUp} className="mb-2 p-2 pb-1">
-          <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
+          <h2 className="font-ibm text-[12px] uppercase tracking-[0.12em] text-gray-400">
             06 / Professional Certificates
           </h2>
         </motion.div>
@@ -114,6 +114,7 @@ export default function Certificates() {
                   mt-3
                   whitespace-pre-line
                   text-center
+                  font-inter
                   text-[14px]
                   font-medium
                   leading-[18px]

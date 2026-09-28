@@ -166,29 +166,29 @@ export default function CaseFiles() {
               <motion.article
                 key={item.caseNo}
                 variants={fadeInUp}
-                className="flex flex-col rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-8 pb-10 transition-colors duration-300 hover:border-white/20"
+                className="flex flex-col font-ibm rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-8 pb-10 transition-colors duration-300 hover:border-white/20"
               >
 
                 {/* Top */}
                 <div className="mb-8 flex items-center justify-between gap-3">
                   <span
-                    className={`rounded border px-3 py-2 font-mono text-[10px] leading-4 ${accent.badge}`}
+                    className={`rounded border px-3 py-2 font-ibm text-[10px] leading-4 ${accent.badge}`}
                   >
                     {item.category}
                   </span>
 
-                  <span className={`font-['Manrope'] text-[10px] ${accent.caseNo}`}>
+                  <span className={` font-ibm  text-[9px] ${accent.caseNo}`}>
                     {item.caseNo}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-['Manrope'] font-semibold tracking-tight text-white">
+                <h3 className="text-lg font-manrope  font-semibold tracking-tight text-white">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 font-['Inter'] text-[10px]  leading-5 text-gray-400">
+                <p className="mt-2 font-inter text-[10px]  leading-5 text-gray-400">
                   {item.description}
                 </p>
 
@@ -215,27 +215,32 @@ export default function CaseFiles() {
                     isOpen ? "mt-4 grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden">
-                    <div className="flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
-                      <ul className="space-y-3">
-                        {item.results.map(([result, technology]) => (
-                          <li
-                            key={result}
-                            className="flex items-start justify-between gap-4"
-                          >
-                            <span className="flex min-w-0 items-start gap-3 font-mono text-[11px] leading-4 text-emerald-400">
-                              <span aria-hidden="true">+</span>
-                              <span>{result}</span>
-                            </span>
+              <div className="overflow-hidden">
+  <div className="flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
+    <ul className="space-y-3">
+      {item.results.map(([result, technology]) => (
+        <li
+          key={result}
+          className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+        >
+          {/* Result */}
+          <span className="flex min-w-0 items-start gap-3 font-mono text-[11px] leading-4 text-emerald-400">
+            <span aria-hidden="true">+</span>
 
-                            <span className="shrink-0 text-right text-[11px] leading-4 text-gray-200">
-                              {technology}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+            <span className="font-ibm text-[14px] leading-5 lg:text-[12px]">
+              {result}
+            </span>
+          </span>
+
+          {/* Technology */}
+          <span className="ml-5 text-left  text-[14px] font-ibm leading-4 text-gray-200 sm:ml-0 sm:shrink-0 sm:text-right">
+            {technology}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
                 </div>
               </motion.article>
             );

@@ -53,7 +53,7 @@ export default function Qualifications() {
       >
         {/* Section Label */}
         <motion.div variants={fadeInUp} className="mb-3 pb-0z">
-          <h2 className="font-mono text-[12px] uppercase tracking-[0.12em] text-gray-400">
+          <h2 className="font-ibm text-[12px] uppercase tracking-[0.12em] text-gray-400">
             07 / Professional Qualifications
           </h2>
         </motion.div>
@@ -189,6 +189,7 @@ export default function Qualifications() {
                       text-center
                       text-[13px]
                       font-medium
+                      font-manrope 
                       leading-[16px]
                       text-white
                     "
@@ -203,4 +204,4 @@ export default function Qualifications() {
       </motion.div>
     </section>
   );
-}
+}

@@ -155,7 +155,7 @@ export default function CareerTimeline() {
         {/* Section Heading */}
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-10 sm:mb-16"
+          className="text-3xl sm:text-5xl font-bold font-manrope  tracking-tight text-white mb-10 sm:mb-16"
         >
           Career <span className="text-[#00c8ff]">Timeline</span>
         </motion.h2>
@@ -179,10 +179,10 @@ export default function CareerTimeline() {
 
                   {/* Left Column: Year Range & Duration Pill (Desktop Only) */}
                   <div className="hidden sm:flex w-[220px] shrink-0 pr-10 text-right flex-col items-end justify-center">
-                    <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    <span className="text-xl sm:text-2xl font-manrope  font-bold text-white tracking-tight">
                       {entry.yearRange}
                     </span>
-                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-xs font-['Manrope'] tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
+                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-xs font-manrope  tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
                       {entry.duration}
                     </span>
                   </div>
@@ -207,13 +207,13 @@ export default function CareerTimeline() {
                       {/* Card Content Header */}
                       <div className="relative z-10 flex items-start justify-between gap-3">
                         <div>
-                          <h3 className="text-base sm:text-xl font-semibold text-white tracking-tight">
+                          <h3 className="text-base sm:text-xl font-manrope  font-semibold text-white tracking-tight">
                             {entry.title}
                           </h3>
                           <p className="mt-1 text-xs sm:text-sm text-slate-400">
-                            <span className="font-semibold text-slate-200">{entry.dateRange}</span>
+                            <span className="font-semibold font-inter text-slate-200">{entry.dateRange}</span>
                             <span className="mx-1.5 sm:mx-2 text-slate-500">·</span>
-                            <span>{entry.location}</span>
+                            <span className="font-inter">{entry.location}</span>
                           </p>
                         </div>
 

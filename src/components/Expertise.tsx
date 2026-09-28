@@ -83,13 +83,13 @@ export default function Expertise() {
             <motion.article
               key={group.title}
               variants={fadeInUp}
-              className="rounded-[10px] font-['Manrope'] border border-white/[0.07] bg-[#131821] p-6 transition-colors duration-300 hover:border-white/15"
+              className="rounded-[10px] font-manrope  border border-white/[0.07] bg-[#131821] p-6 transition-colors duration-300 hover:border-white/15"
             >
-              <h3 className="text-xl font-['Manrope'] font-semibold leading-7 text-white">
+              <h3 className="text-xl font-manrope font-semibold leading-7 text-white">
                 {group.title}
               </h3>
 
-              <p className="mt-4 font-['Inter'] text-[16px] leading-[30px] text-[#B5B5B5]">
+              <p className="mt-4 font-inter text-[16px] leading-[30px] text-[#B5B5B5]">
                 {group.description}
               </p>
 
@@ -97,7 +97,7 @@ export default function Expertise() {
                 {group.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-full bg-white/[0.06] px-[15px] py-2.5 font-mono text-xs leading-4 text-gray-400"
+                    className="rounded-full bg-white/[0.06] px-[15px] py-2.5 font-ibm text-xs leading-4 text-gray-400"
                   >
                     {skill}
                   </li>
@@ -109,4 +109,4 @@ export default function Expertise() {
       </motion.div>
     </section>
   );
-}
+}

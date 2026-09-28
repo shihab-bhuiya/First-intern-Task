@@ -90,7 +90,7 @@ export default function Contact() {
         >
           <span
             className="
-              font-mono
+              font-ibm
               text-[14px]
               tracking-[0.08em]
               text-slate-400
@@ -106,7 +106,7 @@ export default function Contact() {
 
           <span
             className="
-              font-mono
+             font-ibm
               text-[14px]
               tracking-[0.08em]
               text-slate-400
@@ -125,7 +125,7 @@ export default function Contact() {
     text-[20px]
     uppercase
     leading-[1.15]
-    font-['Manrope']
+    font-manrope 
     font-semibold
     tracking-[-0.03em]
     text-[#f5eeee]
@@ -156,13 +156,13 @@ export default function Contact() {
           {/* ================= FORM ================= */}
           <form onSubmit={handleSubmit} className="w-full">
             {/* Email */}
-            <div>
+            <div className="font-ibm">
               <label
                 htmlFor="email"
                 className="
                   mb-1.5
                   block
-                  font-mono
+                
                   text-[12px]
                   tracking-wide
                   text-slate-300
@@ -219,7 +219,7 @@ export default function Contact() {
                 className="
                   mb-1.5
                   block
-                  font-mono
+               font-ibm
                   text-[12px]
                   tracking-wide
                   text-slate-300
@@ -281,9 +281,9 @@ export default function Contact() {
                 rounded-[7px]
                 bg-[#39b8f0]
                 px-4
-                font-mono
-                text-[9px]
-                font-medium
+                font-manrope 
+                text-[14px]
+                font-semibold
                 uppercase
                 text-white
                 transition-all
@@ -307,7 +307,7 @@ export default function Contact() {
           >
             <p
               className="
-                font-mono
+               font-ibm
                 text-[13px]
                 font-bold
               
@@ -326,8 +326,8 @@ export default function Contact() {
               <p
                 className="
                   mb-2
-                  font-mono
-                  text-[10px]
+                  font-ibm
+                  text-[12px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
@@ -342,7 +342,7 @@ export default function Contact() {
                   block
                   max-w-full
                   break-all
-                  font-['Manrope']
+                  font-manrope 
                   text-[24px]
                   font-normal
                   leading-6
@@ -362,8 +362,8 @@ export default function Contact() {
               <p
                 className="
                   mb-1.5
-                  font-mono
-                  text-[10px]
+                  font-ibm
+                  text-[12px]
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
@@ -379,8 +379,8 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  font-mono
-                  text-[18px]
+                  font-ibm
+                  text-[24px]
                   uppercase
                   text-emerald-300
                   transition-colors
@@ -403,7 +403,7 @@ export default function Contact() {
                   justify-center
                   lg:justify-end
                   lg:text-[16px]
-                
+                font-manrope 
                   gap-x-8
                   gap-y-2
                 
@@ -412,28 +412,28 @@ export default function Contact() {
               >
                 <Link
                   href="#about"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                  className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   About
                 </Link>
 
                 <Link
                   href="#impact"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                  className=" text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   Impact
                 </Link>
 
                 <Link
                   href="#expertise"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                  className=" text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   Expertise
                 </Link>
 
                 <Link
                   href="#experience"
-                  className="font-mono text-[10px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+                  className=" text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
                 >
                   Experience
                 </Link>
@@ -459,8 +459,9 @@ export default function Contact() {
             {/* Name */}
             <p
               className="
-                text-[20px]
+                text-[16px]
                 font-medium
+                font-manrope 
                 tracking-tight
                 text-slate-200
                 sm:text-[24px]
@@ -481,7 +482,7 @@ export default function Contact() {
               "
             >
               
-              <p className="font-mono text-[9px] text-slate-500 sm:text-[12px]">
+              <p className="font-ibm text-[10px] text-slate-500 sm:text-[12px]">
                 © 2026 · All rights reserved
               </p>
             </div>
