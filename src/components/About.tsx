@@ -30,7 +30,7 @@ export default function About() {
       {/* Teal tint background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-220 bg-[radial-gradient(ellipse_at_70%_100%,rgba(8,90,120,0.22),transparent_70%)]"
+        className="pointer-events-none absolute inset-20 bg-[radial-gradient(ellipse_at_70%_100%,rgba(8,90,120,0.22),transparent_70%)]"
       />
 
       {/* Bottom Seamless Gradient Transition */}
