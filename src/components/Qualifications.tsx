@@ -86,7 +86,7 @@ export default function Qualifications() {
                   group
                   relative
                   mx-auto
-                  h-[190px]
+                 h-[207px]
                   w-full
                   max-w-[190px]
                   overflow-hidden
@@ -148,7 +148,9 @@ export default function Qualifications() {
                   "
                 />
 
-                <div className="relative z-10 h-[135px] w-full overflow-hidden">
+                {/* Image   size measurement */}
+
+                <div className="relative z-10 h-[152px] w-full overflow-hidden">
                   <Image
                     src={qualification.imageUrl}
                     alt={qualification.title.replace("\n", " ")}
