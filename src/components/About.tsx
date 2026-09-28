@@ -150,7 +150,7 @@ export default function About() {
       )}
     </p>
 
-    <p className="relative font-tusker-4500 z-10 mt-5 text-[8px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
+    <p className="relative font-tusker-4500 z-10 mt-5 text-[12px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
       {stat.label}
     </p>
   </motion.div>

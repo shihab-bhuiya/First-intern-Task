@@ -1,9 +1,8 @@
 'use client';
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
-
 
 type Accent = "blue" | "olive" | "coral" | "teal";
 
@@ -79,7 +78,6 @@ const entries: TimelineEntry[] = [
     accent: "olive",
     details: [
       "Led IT operations across Australia and New Zealand branches and offshore teams in India and the Philippines, working closely with PIL Singapore Head Office. Strengthened cybersecurity and led the transition to cloud infrastructure. Promoted to IT Systems Manager.",
-      
     ],
   },
   {
@@ -91,7 +89,7 @@ const entries: TimelineEntry[] = [
     location: "Shire of Ashburton // WA",
     accent: "coral",
     details: [
-     "Headed an IT team and a $1.8M annual budget, maintaining 99.9% network/system uptime while reducing costs through project-managed upgrades."
+      "Headed an IT team and a $1.8M annual budget, maintaining 99.9% network/system uptime while reducing costs through project-managed upgrades.",
     ],
   },
   {
@@ -103,7 +101,7 @@ const entries: TimelineEntry[] = [
     location: "Shire of Ashburton // WA",
     accent: "teal",
     details: [
-      "Headed the IT Service Desk supporting 250+ users across 14 locations, cutting third-party ICT reliance and delivering annual savings over $100K. Promoted to ICT Coordinator."
+      "Headed the IT Service Desk supporting 250+ users across 14 locations, cutting third-party ICT reliance and delivering annual savings over $100K. Promoted to ICT Coordinator.",
     ],
   },
   {
@@ -115,7 +113,7 @@ const entries: TimelineEntry[] = [
     location: "Shire of Murray // WA",
     accent: "olive",
     details: [
-    "Provided 2nd/3rd-line technical support and led continuous improvement of IT processes, policies and documentation, including disaster recovery planning and SharePoint administration."
+      "Provided 2nd/3rd-line technical support and led continuous improvement of IT processes, policies and documentation, including disaster recovery planning and SharePoint administration.",
     ],
   },
   {
@@ -127,7 +125,7 @@ const entries: TimelineEntry[] = [
     location: "Leading Edge Computers // WA",
     accent: "coral",
     details: [
-   "Managed network and IT infrastructure design projects for SME and corporate clients — from business analysis through to delivery — the client-facing consulting foundation everything since has built on."
+      "Managed network and IT infrastructure design projects for SME and corporate clients — from business analysis through to delivery — the client-facing consulting foundation everything since has built on.",
     ],
   },
 ];
@@ -140,7 +138,10 @@ export default function CareerTimeline() {
   };
 
   return (
-    <section id="experience" className="relative w-full bg-[#070b12] py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden">
+    <section
+      id="experience"
+      className="relative w-full bg-[#070b12] py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden"
+    >
       {/* Ambient background glow on right */}
       <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -156,7 +157,7 @@ export default function CareerTimeline() {
           variants={fadeInUp}
           className="flex items-center gap-2 text-[14px] font-ibm tracking-wider text-slate-400 uppercase"
         >
-          <span className="text-slate-500 font-semibold text-[14px]" >05</span>
+          <span className="text-slate-500 font-semibold text-[14px]">05</span>
           <span className="text-slate-600">/</span>
           <span className="text-slate-400 font-medium text-[14px]">EXPERIENCE</span>
         </motion.div>
@@ -165,7 +166,7 @@ export default function CareerTimeline() {
         {/* Section Heading */}
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl sm:text-5xl font-bold font-manrope  tracking-tight text-white mb-10 sm:mb-16"
+          className="text-3xl sm:text-5xl font-bold font-manrope tracking-tight text-white mb-10 sm:mb-16"
         >
           Career <span className="text-[#00c8ff]">Timeline</span>
         </motion.h2>
@@ -186,13 +187,12 @@ export default function CareerTimeline() {
                   variants={fadeInUp}
                   className="relative flex flex-col sm:flex-row items-start sm:items-center group"
                 >
-
                   {/* Left Column: Year Range & Duration Pill (Desktop Only) */}
                   <div className="hidden sm:flex w-[220px] shrink-0 pr-10 text-right flex-col items-end justify-center">
-                    <span className="text-xl sm:text-2xl font-manrope  font-bold text-white tracking-tight">
+                    <span className="text-xl sm:text-2xl font-manrope font-bold text-white tracking-tight">
                       {entry.yearRange}
                     </span>
-                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-[12px] font-ibm  tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
+                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-[12px] font-ibm tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
                       {entry.duration}
                     </span>
                   </div>
@@ -201,27 +201,38 @@ export default function CareerTimeline() {
                   <div className="hidden sm:block absolute left-[220px] w-8 h-[2px] bg-[#00a8ff] shadow-[0_0_8px_#00a8ff] z-10" />
 
                   {/* Card Container (Right Column / Full Width on Mobile) */}
-                <div className="w-full pl-7 sm:pl-10 flex-1 sm:max-w-[800px]">
-                    <button
-                      type="button"
+                  <div className="w-full pl-7 sm:pl-10 flex-1 sm:max-w-[800px]">
+                    <div
+                      role="button"
+                      tabIndex={0}
                       onClick={() => toggle(entry.id)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          toggle(entry.id);
+                        }
+                      }}
                       aria-expanded={isOpen}
-                      className={`w-full relative text-left rounded-2xl border transition-all duration-300 ${styles.border} ${styles.cardBg} backdrop-blur-md p-4 sm:p-6 overflow-hidden group/card hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]`}
+                      className={`w-full relative text-left cursor-pointer rounded-2xl border transition-[border-color,box-shadow] duration-300 ${styles.border} ${styles.cardBg} backdrop-blur-md p-4 sm:p-6 overflow-hidden group/card hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)] [transform:translateZ(0)]`}
                     >
                       {/* Top glowing accent line */}
                       <div className={`absolute top-0 inset-x-0 h-[2px] ${styles.topLine}`} />
 
                       {/* Top inner gradient glow */}
-                      <div className={`absolute top-0 inset-x-0 h-24 bg-gradient-to-b ${styles.glow} pointer-events-none`} />
+                      <div
+                        className={`absolute top-0 inset-x-0 h-24 bg-gradient-to-b ${styles.glow} pointer-events-none`}
+                      />
 
                       {/* Card Content Header */}
                       <div className="relative z-10 flex items-start justify-between gap-3">
                         <div>
-                          <h3 className="text-base sm:text-xl font-manrope  font-semibold text-white tracking-tight">
+                          <h3 className="text-base sm:text-xl font-manrope font-semibold text-white tracking-tight">
                             {entry.title}
                           </h3>
                           <p className="mt-1 text-xs sm:text-sm text-slate-400">
-                            <span className="font-semibold font-inter text-slate-200">{entry.dateRange}</span>
+                            <span className="font-semibold font-inter text-slate-200">
+                              {entry.dateRange}
+                            </span>
                             <span className="mx-1.5 sm:mx-2 text-slate-500">·</span>
                             <span className="font-inter">{entry.location}</span>
                           </p>
@@ -237,26 +248,32 @@ export default function CareerTimeline() {
                       </div>
 
                       {/* Expandable Details */}
-                      {entry.details && (
-                        <div
-                          className={`grid transition-all duration-300 ease-in-out ${
-                            isOpen
-                              ? "grid-rows-[1fr] opacity-100 mt-3 pt-3 sm:mt-4 sm:pt-4 border-t border-slate-800/60"
-                              : "grid-rows-[0fr] opacity-0"
-                          }`}
-                        >
-                          <div className="overflow-hidden">
-                            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside">
-                              {entry.details.map((detail, idx) => (
-                                <li key={idx} className="leading-relaxed font-inter text-[16px">
-                                  {detail}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      )}
-                    </button>
+                      <AnimatePresence initial={false}>
+                        {isOpen && entry.details && (
+                          <motion.div
+                            key="details"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="relative z-10 overflow-hidden"
+                          >
+                            <div className="mt-3 pt-3 sm:mt-4 sm:pt-4 border-t border-slate-800/60">
+                              <ul className="space-y-1.5 sm:space-y-2 text-slate-300 list-disc list-inside">
+                                {entry.details.map((detail, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="leading-relaxed font-inter text-sm sm:text-base"
+                                  >
+                                    {detail}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   </div>
                 </motion.div>
               );
@@ -267,4 +284,3 @@ export default function CareerTimeline() {
     </section>
   );
 }
-

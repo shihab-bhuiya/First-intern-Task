@@ -168,7 +168,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={fadeInUp}
-              className="order-4 mt-4 max-w-[600px] font-manrope text-[16px] leading-7 text-[#ABABAB] lg:order-3"
+              className="order-4 mt-4 max-w-[600px] font-manrope text-[14px] lg:text[16px] leading-7 text-[#ABABAB] lg:order-3"
             >
               Senior IT leader with 17+ years turning technology functions
               around — network modernisation, cloud migration and cybersecurity
@@ -196,21 +196,21 @@ export default function Hero() {
             {/* Action buttons */}
             <motion.div
               variants={fadeInUp}
-              className="order-5 mt-12 flex lg:justify-start justify-center flex-nowrap gap-3 sm:gap-4"
+              className="order-5 mt-12 flex w-full  lg:justify-start justify-between flex-nowrap gap-2.5 sm:gap-4"
             >
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
-                className="inline-flex h-[56px] w-[213px] items-center gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-7 text-sm lg:text-[20px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-[56px]  items-center  gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-[18px] lg:text-[20px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg"
               >
-              <Image src={'/carrer-infosvg.svg'} width={24} height={24} alt="carrer"/>
+              <Image src={'/carrer-infosvg.svg'} width={24} height={24} alt="carrer" className=""/>
                 Career Info
               </Link>
 
               <Link
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
-                className="inline-flex h-[56px] w-[213px] lg:text-[20px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-5.5 lg:px-4 text-sm font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:px-7 sm:text-lg"
+                className="inline-flex h-[56px]  text-[14px] lg:text-[20px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg"
               >
                <Image src={'/mail.svg'} alt="mail" width={24} height={24}/>
                 Contact Now
