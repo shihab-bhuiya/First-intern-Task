@@ -196,7 +196,7 @@ export default function Hero() {
             {/* Action buttons */}
             <motion.div
               variants={fadeInUp}
-              className="order-5 mt-12 flex w-full max-w-[1312px] lg:justify-start justify-between flex-nowrap gap-2.5 sm:gap-4"
+              className="order-5 mt-12 flex w-full max-w-[1312px] lg:justify-start justify-between flex-nowrap lg:gap-2.5 sm:gap-4"
             >
               <Link
                 href="#experience"
