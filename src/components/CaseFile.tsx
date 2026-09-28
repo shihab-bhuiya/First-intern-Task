@@ -113,9 +113,7 @@ const caseFiles = [
 ] as const;
 
 export default function CaseFiles() {
-  // Card that shows the blue border on mobile. First card by default.
   const [activeCard, setActiveCard] = useState<string>(caseFiles[0].caseNo);
-  // Card whose details are expanded on mobile. null = all collapsed.
   const [openCard, setOpenCard] = useState<string | null>(null);
 
   const toggleCard = (caseNo: string) => {
@@ -126,16 +124,12 @@ export default function CaseFiles() {
   return (
     <section
       id="impact"
-      className="relative w-full overflow-hidden bg-[#0a0e11] px-6 pt-4 pb-16 md:pt-6"
+      className="relative w-full bg-[#070b10] px-6 pt-4 pb-16 md:pt-6"
     >
-      {/* Background glows: blue top-left, teal bottom-right */}
+      {/* Continuous radial gradient top-left to seamlessly continue from previous section */}
       <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse 55% 45% at 0% 0%, rgba(37,99,235,0.20), transparent 70%), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(20,184,166,0.14), transparent 70%)",
-        }}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_0%_0%,rgba(37,99,235,0.15),transparent_70%),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(20,184,166,0.12),transparent_70%)]"
       />
 
       <motion.div
@@ -143,7 +137,7 @@ export default function CaseFiles() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
-        className="relative mx-auto max-w-[1312px]"
+        className="relative z-10 mx-auto max-w-[1312px]"
       >
         {/* Heading */}
         <motion.div
@@ -197,7 +191,7 @@ export default function CaseFiles() {
                   {item.description}
                 </p>
 
-                {/* Results: always visible on md+; collapsible on mobile */}
+                {/* Results */}
                 <div
                   className={`grid transition-[grid-template-rows] duration-300 ease-out md:mt-5 md:!grid-rows-[1fr] ${
                     isOpen ? "mt-4 grid-rows-[1fr]" : "grid-rows-[0fr]"
@@ -211,7 +205,6 @@ export default function CaseFiles() {
                             key={result}
                             className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
                           >
-                            {/* Result */}
                             <span className="flex min-w-0 items-start gap-3 font-mono text-[11px] leading-4 text-emerald-400">
                               <span aria-hidden="true">+</span>
 
@@ -220,7 +213,6 @@ export default function CaseFiles() {
                               </span>
                             </span>
 
-                            {/* Technology */}
                             <span className="ml-5 text-left text-[14px] font-ibm leading-4 text-gray-200 sm:ml-0 sm:shrink-0 sm:text-right">
                               {technology}
                             </span>
@@ -231,7 +223,7 @@ export default function CaseFiles() {
                   </div>
                 </div>
 
-                {/* Mobile-only toggle, below the details. Hidden on md+. */}
+                {/* Mobile-only toggle */}
                 <button
                   type="button"
                   onClick={(e) => {

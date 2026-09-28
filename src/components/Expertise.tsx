@@ -42,31 +42,16 @@ const skillGroups: SkillGroup[] = [
   },
 ];
 
-const backgroundStyle = {
-  backgroundImage: `
-    radial-gradient(
-      ellipse 45% 55% at 0% 85%,
-      rgba(30, 64, 175, 0.22),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 35% 40% at 100% 0%,
-      rgba(30, 64, 175, 0.18),
-      transparent
-    )
-  `,
-};
-
 export default function Expertise() {
   return (
     <section
       id="expertise"
-     className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pt-8 pb-10 md:pt-10 md:pb-20"
+      className="relative scroll-mt-[66px] bg-[#070b10] pt-8 pb-10 md:pt-10 md:pb-16"
     >
+      {/* Soft continuous radial background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={backgroundStyle}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_50%,rgba(30,64,175,0.18),transparent_100%),radial-gradient(ellipse_50%_50%_at_100%_100%,rgba(30,64,175,0.12),transparent_100%)]"
       />
 
       <motion.div
@@ -74,7 +59,7 @@ export default function Expertise() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
-        className="relative mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20"
+        className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20"
       >
         {/* Eyebrow + rule */}
         <motion.h2

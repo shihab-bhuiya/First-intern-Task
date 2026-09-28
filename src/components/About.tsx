@@ -23,14 +23,20 @@ export default function About() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-   <section
-  id="about"
-  className="relative scroll-mt-[66px] overflow-hidden bg-[#05090d] pt-14 pb-8"
->
-      {/* Teal tint, bottom right */}
+    <section
+      id="about"
+      className="relative scroll-mt-[66px] bg-[#05090d] pt-14 pb-8"
+    >
+      {/* Teal tint background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_90%_100%,rgba(8,90,120,0.22),transparent_55%)]"
+        className="pointer-events-none absolute inset-20 bg-[radial-gradient(ellipse_at_70%_100%,rgba(8,90,120,0.22),transparent_70%)]"
+      />
+
+      {/* Bottom Seamless Gradient Transition */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute inset-x-3 -bottom-6 h-24 bg-gradient-to-t from-[#05090d] via-[#05090d]/90 to-transparent z-10" 
       />
 
       <motion.div
@@ -38,12 +44,12 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
-        className="relative mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20"
+        className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-10 xl:px-20"
       >
         {/* Eyebrow + rule */}
         <motion.p
           variants={fadeInUp}
-          className="border-b border-white/10 pb-2.5 font-ibm text-[14px] font-medium uppercase tracking-widest text-gray-400"
+          className="pb-2.5 font-ibm text-[14px] font-medium uppercase tracking-widest text-gray-400"
         >
           02 / About
         </motion.p>
@@ -69,7 +75,7 @@ export default function About() {
               business.
             </p>
 
-            {/* Mobile Expandable Container / Always Visible on Desktop */}
+            {/* Mobile Expandable Container */}
             <div className={`${isExpanded ? "block" : "hidden"} lg:block`}>
               <p className="mt-7 text-base leading-[1.8] text-gray-400">
                 I build and run distributed onshore/offshore teams, own technology
@@ -87,7 +93,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* Mobile Toggle Button (Hidden on Desktop) */}
+            {/* Mobile Toggle Button */}
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="mt-4 font-mono text-sm font-medium text-[#38BDF8] underline decoration-[#38BDF8]/30 underline-offset-4 transition-colors hover:text-[#0EA5E9] lg:hidden"
@@ -97,7 +103,7 @@ export default function About() {
           </motion.div>
 
           {/* Stats */}
-          <motion.div variants={fadeInUp} className="relative font-tusker-4500 order-1 lg:order-2">
+          <motion.div variants={fadeInUp} className="relative order-1 lg:order-2">
             {/* Background Glows */}
             <div
               aria-hidden="true"
@@ -111,50 +117,48 @@ export default function About() {
             {/* Grid */}
             <motion.div
               variants={staggerContainer}
-              className="relative grid grid-cols-2 gap-5"
+              className="relative z-10 grid grid-cols-2 gap-5"
             >
-           {stats.map((stat) => (
-  <motion.div
-    key={stat.label}
-    variants={fadeInUp}
-                style={{
-    fontFamily: "Tusker Grotesk",
-    fontWeight: 4500,
-  }}
-    
-    className="group relative flex min-h-[210px] font-tusker-4500  flex-col items-center justify-center overflow-hidden rounded-[28px] border border-white/15 bg-white/[0.04] px-4 text-center shadow-[0_8px_32px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-500 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_12px_40px_rgba(56,189,248,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] sm:px-6"
-  >
-    {/* Glass sheen, top-left to transparent */}
-    <div
-      aria-hidden="true"
-      className="pointer-events-none font-tusker-4500 absolute inset-0 bg-gradient-to-br from-white/[0.10] via-transparent to-transparent"
-    />
+              {stats.map((stat) => (
+                <motion.div
+                  key={stat.label}
+                  variants={fadeInUp}
+                  style={{
+                    fontFamily: "Tusker Grotesk",
+                    fontWeight: 4500,
+                  }}
+                  className="group relative flex min-h-[210px] flex-col items-center justify-center overflow-hidden rounded-[28px] border border-white/15 bg-white/[0.04] px-4 text-center shadow-[0_8px_32px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-500 hover:border-sky-400/40 hover:bg-white/[0.07] hover:shadow-[0_12px_40px_rgba(56,189,248,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] sm:px-6"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.10] via-transparent to-transparent"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                  />
 
-    {/* Top-edge highlight */}
-    <div
-      aria-hidden="true"
-      className="pointer-events-none font-tusker absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
-    />
+                  <p className="relative z-10 flex items-baseline text-3xl font-semibold text-white sm:text-5xl xl:text-[64px]">
+                    {stat.prefix && (
+                      <span className="mr-2 text-[#38BDF8]">{stat.prefix}</span>
+                    )}
+                    <span>{stat.value}</span>
+                    {stat.unit && (
+                      <span
+                        className={`text-[#38BDF8] ${
+                          stat.spacedUnit ? "ml-3" : "ml-1"
+                        }`}
+                      >
+                        {stat.unit}
+                      </span>
+                    )}
+                  </p>
 
-    <p className="relative z-10 flex items-baseline font-tusker-4500 text-3xl font-semibold text-white sm:text-5xl xl:text-[64px]">
-      {stat.prefix && (
-        <span className="mr-2 text-[#38BDF8] font-tusker-4500">{stat.prefix}</span>
-      )}
-      <span>{stat.value}</span>
-      {stat.unit && (
-        <span
-          className={`text-[#38BDF8] font-tusker-4500 ${stat.spacedUnit ? "ml-3" : "ml-1"}`}
-        >
-          {stat.unit}
-        </span>
-      )}
-    </p>
-
-    <p className="relative font-tusker-4500 z-10 mt-5 text-[12px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
-      {stat.label}
-    </p>
-  </motion.div>
-))}
+                  <p className="relative z-10 mt-5 text-[12px] font-semibold uppercase tracking-normal text-gray-300 sm:mt-6 sm:text-sm">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
@@ -162,8 +166,8 @@ export default function About() {
         {/* Quote callout */}
         <motion.blockquote
           variants={fadeInUp}
-          className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 font-tusker text-base leading-[1.8] text-zinc-200"
-    >
+          className="mt-10 border-l-4 border-[#38BDF8] bg-[#0D131B] px-5 py-3.5 text-base leading-[1.8] text-zinc-200"
+        >
           I judge every technology decision by the business outcome it drives —
           <span className="text-[#38BDF8]"> not the shine of the tool</span>.
           Uptime and security are the baseline; the job is turning IT into
