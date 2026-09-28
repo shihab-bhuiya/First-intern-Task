@@ -50,7 +50,7 @@ const caseFiles = [
       ["modernized email security", "Cloud Platform"],
     ],
   },
-  {     
+  {
     category: "Collaboration",
     caseNo: "CASE-003",
     title: "Cloud & Collaboration Migration",
@@ -113,19 +113,21 @@ const caseFiles = [
 ] as const;
 
 export default function CaseFiles() {
-  // Tracks which cards are expanded on small screens. Empty on mount so
-  // every card starts collapsed and the same height on mobile.
-  const [openCards, setOpenCards] = useState<Record<string, boolean>>({});
+  // Card that shows the blue border on mobile. First card by default.
+  const [activeCard, setActiveCard] = useState<string>(caseFiles[0].caseNo);
+  // Card whose details are expanded on mobile. null = all collapsed.
+  const [openCard, setOpenCard] = useState<string | null>(null);
 
   const toggleCard = (caseNo: string) => {
-    setOpenCards((prev) => ({ ...prev, [caseNo]: !prev[caseNo] }));
+    setActiveCard(caseNo);
+    setOpenCard((prev) => (prev === caseNo ? null : caseNo));
   };
 
   return (
-<section
-  id="impact"
-  className="relative w-full overflow-hidden bg-[#0a0e11] px-6 pt-4 pb-16 md:pt-6"
->
+    <section
+      id="impact"
+      className="relative w-full overflow-hidden bg-[#0a0e11] px-6 pt-4 pb-16 md:pt-6"
+    >
       {/* Background glows: blue top-left, teal bottom-right */}
       <div
         aria-hidden
@@ -144,10 +146,10 @@ export default function CaseFiles() {
         className="relative mx-auto max-w-[1312px]"
       >
         {/* Heading */}
-       <motion.div
-  variants={fadeInUp}
-  className="mb-5 border-b border-white/10 pb-2.5"
->
+        <motion.div
+          variants={fadeInUp}
+          className="mb-5 border-b border-white/10 pb-2.5"
+        >
           <h2 className="font-ibm text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
           </h2>
@@ -160,15 +162,18 @@ export default function CaseFiles() {
         >
           {caseFiles.map((item) => {
             const accent = accents[item.accent];
-            const isOpen = !!openCards[item.caseNo];
+            const isOpen = openCard === item.caseNo;
+            const isActive = activeCard === item.caseNo;
 
             return (
               <motion.article
                 key={item.caseNo}
                 variants={fadeInUp}
-                className="flex flex-col font-ibm rounded-2xl border-[#38BDF8] border-2 lg:border-none bg-[#131820] p-8 pb-10 transition-colors duration-300 hover:border-white/20"
+                onClick={() => setActiveCard(item.caseNo)}
+                className={`flex flex-col font-ibm rounded-2xl border-2 bg-[#131820] p-8 pb-10 transition-colors duration-300 md:border-transparent md:hover:border-white/20 lg:border-none ${
+                  isActive ? "border-[#38BDF8]" : "border-transparent"
+                }`}
               >
-
                 {/* Top */}
                 <div className="mb-8 flex rounded-[6px] items-center justify-between gap-3">
                   <span
@@ -177,25 +182,62 @@ export default function CaseFiles() {
                     {item.category}
                   </span>
 
-                  <span className={` font-ibm  text-[10px] ${accent.caseNo}`}>
+                  <span className={`font-ibm text-[10px] ${accent.caseNo}`}>
                     {item.caseNo}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-manrope  font-semibold tracking-tight text-white">
+                <h3 className="text-lg font-manrope font-semibold tracking-tight text-white">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 font-inter text-[12px]  leading-5 text-gray-400">
+                <p className="mt-2 font-inter text-[12px] leading-5 text-gray-400">
                   {item.description}
                 </p>
 
-                {/* Mobile-only toggle. Hidden on md+ where results always show. */}
+                {/* Results: always visible on md+; collapsible on mobile */}
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out md:mt-5 md:!grid-rows-[1fr] ${
+                    isOpen ? "mt-4 grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
+                      <ul className="space-y-3">
+                        {item.results.map(([result, technology]) => (
+                          <li
+                            key={result}
+                            className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+                          >
+                            {/* Result */}
+                            <span className="flex min-w-0 items-start gap-3 font-mono text-[11px] leading-4 text-emerald-400">
+                              <span aria-hidden="true">+</span>
+
+                              <span className="font-ibm text-[14px] leading-5 lg:text-[12px]">
+                                {result}
+                              </span>
+                            </span>
+
+                            {/* Technology */}
+                            <span className="ml-5 text-left text-[14px] font-ibm leading-4 text-gray-200 sm:ml-0 sm:shrink-0 sm:text-right">
+                              {technology}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile-only toggle, below the details. Hidden on md+. */}
                 <button
                   type="button"
-                  onClick={() => toggleCard(item.caseNo)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleCard(item.caseNo);
+                  }}
                   aria-expanded={isOpen}
                   className="mt-5 flex items-center gap-2 text-[13px] font-medium text-white md:hidden"
                 >
@@ -207,41 +249,6 @@ export default function CaseFiles() {
                     }`}
                   />
                 </button>
-
-                {/* Results: always visible on md+; collapsible on mobile so
-                    every collapsed card matches height. */}
-                <div
-                  className={`grid transition-[grid-template-rows] duration-300 ease-out md:mt-5 md:!grid-rows-[1fr] ${
-                    isOpen ? "mt-4 grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
-                >
-              <div className="overflow-hidden">
-  <div className="flex flex-1 flex-col justify-center rounded-lg bg-[#181f29] p-4">
-    <ul className="space-y-3">
-      {item.results.map(([result, technology]) => (
-        <li
-          key={result}
-          className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
-        >
-          {/* Result */}
-          <span className="flex min-w-0 items-start gap-3 font-mono text-[11px] leading-4 text-emerald-400">
-            <span aria-hidden="true">+</span>
-
-            <span className="font-ibm text-[14px] leading-5 lg:text-[12px]">
-              {result}
-            </span>
-          </span>
-
-          {/* Technology */}
-          <span className="ml-5 text-left  text-[14px] font-ibm leading-4 text-gray-200 sm:ml-0 sm:shrink-0 sm:text-right">
-            {technology}
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
-                </div>
               </motion.article>
             );
           })}

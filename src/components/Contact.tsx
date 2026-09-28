@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
@@ -79,14 +78,14 @@ export default function Contact() {
         <motion.div
           variants={fadeInUp}
           className="
-          mb-6
-          flex
-          items-center
-          gap-2
-          pb-2
-          sm:gap-3
-          border-b
-           border-white/10  
+            mb-6
+            flex
+            items-center
+            gap-2
+            pb-2
+            sm:gap-3
+            border-b
+            border-white/10
             lg:text-[24px]
           "
         >
@@ -108,7 +107,7 @@ export default function Contact() {
 
           <span
             className="
-             font-ibm
+              font-ibm
               text-[14px]
               tracking-[0.08em]
               text-slate-400
@@ -119,28 +118,27 @@ export default function Contact() {
           </span>
         </motion.div>
 
-
         {/* ================= HEADING ================= */}
-       <h2
-  className="
-    mt-6
-    text-[64px]
-    uppercase
-    leading-[76px]
-    font-manrope 
-    font-semibold
-    tracking-[-0.03em]
-    text-[#f5eeee]
-    sm:text-[42px]
-    md:text-[52px]
-    lg:text-[54px]
-    lg:leading-[1.18]
-  "
->
-  Let&apos;s secure what
-  <br className="hidden lg:inline" />
-  {" "}you build
-</h2> 
+        <h2
+          className="
+            mt-6
+            text-[64px]
+            uppercase
+            leading-[76px]
+            font-manrope
+            font-semibold
+            tracking-[-0.03em]
+            text-[#f5eeee]
+            sm:text-[42px]
+            md:text-[52px]
+            lg:text-[54px]
+            lg:leading-[1.18]
+          "
+        >
+          Let&apos;s secure what
+          <br className="hidden lg:inline" /> you build
+        </h2>
+
         {/* ================= MAIN CONTENT ================= */}
         <div
           className="
@@ -164,7 +162,6 @@ export default function Contact() {
                 className="
                   mb-1.5
                   block
-                
                   text-[16px]
                   font-semibold
                   tracking-wide
@@ -174,129 +171,166 @@ export default function Contact() {
                 Email
               </label>
 
-            <div
-  className="
-    flex
-    h-[62px]
-    w-[472px]
-    items-center
-    gap-2
-    rounded-[16px]
-    bg-gradient-to-l
-    from-[#184F68]
-    to-[#8ECAE6]
-    p-[1px]
-  "
->
-  <div
-    className="
-      flex
-      h-full
-      w-full
-      items-center
-      gap-2
-      rounded-[15px]
-      bg-[#131820]
-      px-4
-      py-[16.5px]
-    "
-  >
-    <Image
-      src="/mail-1.svg"
-      width={24}
-      height={24}
-      alt="mail"
-    />
+              <div
+                className="
+                  flex
+                  h-[62px]
+                  w-[350px]
+                  lg:w-[472px]
+                  items-center
+                  gap-2
+                  rounded-[16px]
+                  bg-gradient-to-l
+                  from-[#184F68]
+                  to-[#8ECAE6]
+                  p-[1px]
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-full
+                    w-full
+                    items-center
+                    gap-2
+                    rounded-[15px]
+                    bg-[#131820]
+                    px-4
+                    py-[16.5px]
+                  "
+                >
+                  {/* Icon: same color as the placeholder (slate-600) */}
+                  <span
+                    aria-hidden="true"
+                    className="
+                      h-6
+                      w-6
+                      shrink-0
+                      bg-slate-600
+                      [mask-image:url(/mail-1.svg)]
+                      [mask-position:center]
+                      [mask-repeat:no-repeat]
+                      [mask-size:contain]
+                      [-webkit-mask-image:url(/mail-1.svg)]
+                      [-webkit-mask-position:center]
+                      [-webkit-mask-repeat:no-repeat]
+                      [-webkit-mask-size:contain]
+                    "
+                  />
 
-    <input
-      id="email"
-      type="email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      placeholder="Enter your email"
-      className="
-        h-full
-        w-full
-        min-w-0
-        bg-transparent
-        font-inter
-        text-[16px]
-        text-white
-        outline-none
-        placeholder:text-slate-600
-      "
-    />
-  </div>
-</div>
+                  <input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="
+                      h-full
+                      w-full
+                      min-w-0
+                      bg-transparent
+                      font-inter
+                      text-[16px]
+                      text-[#5E5E5E]
+                      outline-none
+                      placeholder:text-slate-600
+                    "
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Message */}
-            <div className="mt-3">
-              <label
-                htmlFor="message"
-                className="
-                  mb-1.5
-                  block
-               font-ibm
-                  text-[16px]
-                  
-                  font-semibold
-                  tracking-wide
-                  text-slate-300
-                "
-              >
-                Message
-              </label>
-
-             <div
-  className="
-    w-[472px]
-    rounded-[16px]
-    bg-gradient-to-r
-    from-[#184F68]
-    to-[#8ECAE6]
-    p-px
-    transition-all
-    focus-within:from-cyan-600
-    focus-within:to-cyan-300
-  "
->
-  <div
+            {/* Message */}
+<div className="mt-3">
+  <label
+    htmlFor="message"
     className="
-      flex
-      h-[182px]
-      items-start
-      gap-2
-      rounded-[15px]
-      bg-[#131820]   /* must match your section's background color */
-      pl-[16px]
-      pt-[18px]
+      mb-1.5
+      block
+      font-ibm
+      text-[16px]
+      font-semibold
+      tracking-wide
+      text-slate-300
     "
   >
-    <Image src="/message-02.svg" alt="message" width={24} height={24} />
+    Message
+  </label>
 
-    <textarea
-      id="message"
-      value={message}
-      onChange={(e) => setMessage(e.target.value)}
-      placeholder="Write your message here..."
+  <div
+    className="
+      w-[350px]
+      lg:w-[472px]
+      rounded-[16px]
+      bg-gradient-to-r
+      from-[#184F68]
+      to-[#8ECAE6]
+      p-px
+      transition-all
+      focus-within:from-cyan-600
+      focus-within:to-cyan-300
+    "
+  >
+    <div
       className="
-        h-full
-        w-full
-        min-w-0
-        resize-none
-        bg-transparent
-        font-inter
-        text-[16px]
-        leading-4
-        text-white
-        outline-none
-        placeholder:text-slate-600
+        flex
+        h-[182px]
+        items-start
+        gap-2
+        overflow-hidden
+        rounded-[15px]
+        bg-[#131820]
+        px-4
+        pt-[18px]
       "
-    />
+    >
+      {/* Message Icon */}
+      <span
+        aria-hidden="true"
+        className="
+          mt-[2px]
+          h-6
+          w-6
+          shrink-0
+          bg-slate-600
+          [mask-image:url(/message-02.svg)]
+          [mask-position:center]
+          [mask-repeat:no-repeat]
+          [mask-size:contain]
+          [-webkit-mask-image:url(/message-02.svg)]
+          [-webkit-mask-position:center]
+          [-webkit-mask-repeat:no-repeat]
+          [-webkit-mask-size:contain]
+        "
+      />
+
+      {/* Message */}
+      <textarea
+        id="message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="Write your message here..."
+        className="
+          m-0
+          h-full
+          w-full
+          min-w-0
+          resize-none
+          border-0
+          bg-transparent
+          p-0
+          font-inter
+          text-[16px]
+          leading-6
+          text-white
+          outline-none
+          placeholder:text-slate-600
+        "
+      />
+    </div>
   </div>
 </div>
-            </div>
 
             {/* Send button */}
             <button
@@ -307,6 +341,7 @@ export default function Contact() {
                 h-[55px]
                 w-[218px]
                 items-center
+                
                 gap-2
                 rounded-[14px]
                 bg-[#39b8f0]
@@ -314,7 +349,7 @@ export default function Contact() {
                 pr-[32px]
                 pl-[32px]
                 pb-[12px]
-                font-manrope 
+                font-manrope
                 text-[16px]
                 font-semibold
                 uppercase
@@ -324,9 +359,13 @@ export default function Contact() {
                 hover:shadow-[0_0_20px_rgba(57,184,240,0.2)]
               "
             >
-            
-
-            <Image src={'/sent-message-rame.svg'} width={24} height={24} alt="sent-message"/>  {status === "sent" ? "Message sent" : "Send message"}
+              <Image
+                src="/sent-message-rame.svg"
+                width={24}
+                height={24}
+                alt="sent-message"
+              />
+              {status === "sent" ? "Message sent" : "Send message"}
             </button>
           </form>
 
@@ -341,10 +380,9 @@ export default function Contact() {
           >
             <p
               className="
-               font-ibm
+                font-ibm
                 text-[16px]
                 font-bold
-              
                 tracking-[2]
                 mb-6
                 text-lime-400
@@ -376,7 +414,7 @@ export default function Contact() {
                   block
                   max-w-full
                   break-all
-                  font-manrope 
+                  font-manrope
                   text-[24px]
                   font-normal
                   leading-6
@@ -408,7 +446,7 @@ export default function Contact() {
                 LINKEDIN
               </p>
 
-              <a
+              <Link
                 href="https://linkedin.com/in/shihab-bhuiya"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -424,54 +462,54 @@ export default function Contact() {
                 "
               >
                 Connect
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-<nav
-                className="
-                  flex
-                  flex-wrap
-                  items-center
-                  mt-6
-                  justify-center
-                  lg:justify-end
-                  lg:text-[16px]
-                font-manrope 
-                  gap-x-8
-                  gap-y-2
-                
-                  sm:gap-6
-                "
-              >
-                <Link
-                  href="#about"
-                  className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  About
-                </Link>
 
-                <Link
-                  href="#impact"
-                  className=" text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  Impact
-                </Link>
+        <nav
+          className="
+            flex
+            flex-wrap
+            items-center
+            mt-6
+            justify-center
+            lg:justify-end
+            lg:text-[16px]
+            font-manrope
+            gap-x-8
+            gap-y-2
+            sm:gap-6
+          "
+        >
+          <Link
+            href="#about"
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+          >
+            About
+          </Link>
 
-                <Link
-                  href="#expertise"
-                  className=" text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  Expertise
-                </Link>
+          <Link
+            href="#impact"
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+          >
+            Impact
+          </Link>
 
-                <Link
-                  href="#experience"
-                  className=" text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-                >
-                  Experience
-                </Link>
-              </nav>
+          <Link
+            href="#expertise"
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+          >
+            Expertise
+          </Link>
+
+          <Link
+            href="#experience"
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
+          >
+            Experience
+          </Link>
+        </nav>
 
         {/* ================= FOOTER ================= */}
         <footer className="mt-4 lg:mt-2 sm:mt-[67px]">
@@ -480,7 +518,7 @@ export default function Contact() {
           <div
             className="
               flex
-         items-center
+              items-center
               gap-12
               justify-between
               pt-4
@@ -495,7 +533,7 @@ export default function Contact() {
               className="
                 text-[24px]
                 font-medium
-                font-manrope 
+                font-manrope
                 tracking-tight
                 text-slate-200
                 sm:text-[24px]
@@ -516,7 +554,6 @@ export default function Contact() {
                 sm:gap-5
               "
             >
-              
               <p className="font-ibm text-[10px] text-slate-500 sm:text-[12px]">
                 © 2026 · All rights reserved
               </p>
