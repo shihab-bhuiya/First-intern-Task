@@ -43,7 +43,7 @@ const topBorderColors = [
 
 export default function Qualifications() {
   return (
-    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 sm:px-10 md:py-20 py-12">
+    <section className="mx-auto mt-8 w-full max-w-[1440px] bg-[#0a0e14] px-6 py-12 sm:px-10 md:py-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -52,7 +52,7 @@ export default function Qualifications() {
         className="mx-auto w-full max-w-[1312px]"
       >
         {/* Section Label */}
-        <motion.div variants={fadeInUp} className="mb-3 pb-0z">
+        <motion.div variants={fadeInUp} className="mb-3 pb-0">
           <h2 className="font-ibm text-[12px] uppercase tracking-[0.12em] text-gray-400">
             07 / Professional Qualifications
           </h2>
@@ -68,7 +68,7 @@ export default function Qualifications() {
             mt-4
             grid
             grid-cols-2
-            gap-6
+            gap-4
             sm:grid-cols-2
             md:grid-cols-4
             md:gap-[42px]
@@ -86,9 +86,11 @@ export default function Qualifications() {
                   group
                   relative
                   mx-auto
-                 h-[207px]
+                  flex
+                  h-[280px]
                   w-full
-                  max-w-[190px]
+                  max-w-[260px]
+                  flex-col
                   overflow-hidden
                   rounded-[24px]
                   border
@@ -107,16 +109,19 @@ export default function Qualifications() {
                   borderColor: `${accentColor}88`,
                 }}
               >
+                {/* Top-left glow */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.28),transparent_42%)]"
                 />
 
+                {/* Soft blur highlight */}
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-x-3 top-2 h-3.5 rounded-full bg-[#272937 ] blur-xl"
+                  className="pointer-events-none absolute inset-x-3 top-2 h-3.5 rounded-full bg-[#272937] blur-xl"
                 />
 
+                {/* Accent top bar */}
                 <div
                   className="
                     pointer-events-none
@@ -134,6 +139,7 @@ export default function Qualifications() {
                   }}
                 />
 
+                {/* Top sheen */}
                 <div
                   className="
                     pointer-events-none
@@ -148,40 +154,41 @@ export default function Qualifications() {
                   "
                 />
 
-                {/* Image   size measurement */}
-
-                <div className="relative z-10 h-[152px] w-full overflow-hidden">
+                {/* Image: fixed height, same on every card */}
+                <div className="relative z-10 h-[190px] w-full shrink-0 overflow-hidden">
                   <Image
                     src={qualification.imageUrl}
                     alt={qualification.title.replace("\n", " ")}
                     fill
                     sizes="(max-width: 768px) 45vw, 190px"
                     className="
+                      rounded-t-4xl
                       object-cover
+                      px-2
+                      pb-1
+                      pt-1
                       transition-transform
                       duration-300
-                      px-2
-                      rounded-t-4xl
-                      pt-1.5
-                      pb-1
                       group-hover:scale-[1.08]
                     "
                   />
                 </div>
 
+                {/* Text: fills leftover space, pinned to bottom with padding */}
                 <div
                   className="
                     relative
                     z-20
                     flex
-                    h-[58px]
-                    items-center
+                    flex-1
+                    items-end
                     justify-center
                     rounded-b-[23px]
                     border-t
                     border-white/10
                     bg-white/[0.08]
                     px-3
+                    pb-4
                     backdrop-blur-md
                   "
                 >
@@ -189,10 +196,10 @@ export default function Qualifications() {
                     className="
                       whitespace-pre-line
                       text-center
-                      text-[13px]
+                      font-manrope
+                      text-[20px]
                       font-medium
-                      font-manrope 
-                      leading-[16px]
+                      leading-[22px]
                       text-white
                     "
                   >

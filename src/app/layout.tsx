@@ -7,8 +7,11 @@ import {
   IBM_Plex_Mono,
 } from "next/font/google";
 
+
 import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,6 +79,8 @@ export default function RootLayout({
         ${manrope.variable}
         ${inter.variable}
         ${ibmPlexMono.variable}
+        {tusker4500.variable}
+         
         h-full
         antialiased
       `}

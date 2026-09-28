@@ -5,6 +5,7 @@ import { Mail, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
+import Image from "next/image";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
@@ -27,6 +28,7 @@ export default function Contact() {
         mt-8
         overflow-hidden
         bg-[#090d14]
+        pt-[66px]
         px-4
         py-7
         text-white
@@ -122,9 +124,9 @@ export default function Contact() {
        <h2
   className="
     mt-6
-    text-[20px]
+    text-[64px]
     uppercase
-    leading-[1.15]
+    leading-[76px]
     font-manrope 
     font-semibold
     tracking-[-0.03em]
@@ -163,7 +165,8 @@ export default function Contact() {
                   mb-1.5
                   block
                 
-                  text-[12px]
+                  text-[16px]
+                  font-semibold
                   tracking-wide
                   text-slate-300
                 "
@@ -171,45 +174,60 @@ export default function Contact() {
                 Email
               </label>
 
-              <div
-                className="
-                  flex
-                  h-[55px]
-                  items-center
-                  gap-2
-                  rounded-[7px]
-                  border
-                  border-cyan-900/80
-                  bg-[#111720]
-                  px-2
-                  
-                  w-[280px]
-                  transition-colors
-                  focus-within:border-cyan-600
-                "
-              >
-                <Mail className="h-[13px] w-[13px] shrink-0 text-slate-500" />
-             
+            <div
+  className="
+    flex
+    h-[62px]
+    w-[472px]
+    items-center
+    gap-2
+    rounded-[16px]
+    bg-gradient-to-l
+    from-[#184F68]
+    to-[#8ECAE6]
+    p-[1px]
+  "
+>
+  <div
+    className="
+      flex
+      h-full
+      w-full
+      items-center
+      gap-2
+      rounded-[15px]
+      bg-[#131820]
+      px-4
+      py-[16.5px]
+    "
+  >
+    <Image
+      src="/mail-1.svg"
+      width={24}
+      height={24}
+      alt="mail"
+    />
 
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="
-                    h-full
-                    w-full
-                    min-w-0
-                    bg-transparent
-                    font-mono
-                    text-[9px]
-                    text-white
-                    outline-none
-                    placeholder:text-slate-600
-                  "
-                />
-              </div>
+    <input
+      id="email"
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      placeholder="Enter your email"
+      className="
+        h-full
+        w-full
+        min-w-0
+        bg-transparent
+        font-inter
+        text-[16px]
+        text-white
+        outline-none
+        placeholder:text-slate-600
+      "
+    />
+  </div>
+</div>
             </div>
 
             {/* Message */}
@@ -220,7 +238,9 @@ export default function Contact() {
                   mb-1.5
                   block
                font-ibm
-                  text-[12px]
+                  text-[16px]
+                  
+                  font-semibold
                   tracking-wide
                   text-slate-300
                 "
@@ -228,45 +248,54 @@ export default function Contact() {
                 Message
               </label>
 
-              <div
-                className="
-                  flex
-                  h-[89px]
-                  items-start
-                  gap-2
-                  rounded-[7px]
-                  w-[280px]
-                  border
-                  border-cyan-900/80
-                  bg-[#111720]
-                  px-2
-                  py-6
-                  transition-colors
-                  focus-within:border-cyan-600
-                "
-              >
-                <MessageSquare className="mt-[1px] h-[13px] w-[13px] shrink-0 text-slate-500" />
+             <div
+  className="
+    w-[472px]
+    rounded-[16px]
+    bg-gradient-to-r
+    from-[#184F68]
+    to-[#8ECAE6]
+    p-px
+    transition-all
+    focus-within:from-cyan-600
+    focus-within:to-cyan-300
+  "
+>
+  <div
+    className="
+      flex
+      h-[182px]
+      items-start
+      gap-2
+      rounded-[15px]
+      bg-[#131820]   /* must match your section's background color */
+      pl-[16px]
+      pt-[18px]
+    "
+  >
+    <Image src="/message-02.svg" alt="message" width={24} height={24} />
 
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Write your message here..."
-                  className="
-                    h-full
-                    w-full
-                    min-w-0
-                    resize-none
-                    bg-transparent
-                    font-mono
-                    text-[9px]
-                    leading-4
-                    text-white
-                    outline-none
-                    placeholder:text-slate-600
-                  "
-                />
-              </div>
+    <textarea
+      id="message"
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      placeholder="Write your message here..."
+      className="
+        h-full
+        w-full
+        min-w-0
+        resize-none
+        bg-transparent
+        font-inter
+        text-[16px]
+        leading-4
+        text-white
+        outline-none
+        placeholder:text-slate-600
+      "
+    />
+  </div>
+</div>
             </div>
 
             {/* Send button */}
@@ -275,14 +304,18 @@ export default function Contact() {
               className="
                 mt-4
                 flex
-                h-[31px]
+                h-[55px]
+                w-[218px]
                 items-center
                 gap-2
-                rounded-[7px]
+                rounded-[14px]
                 bg-[#39b8f0]
-                px-4
+                pt-[12px]
+                pr-[32px]
+                pl-[32px]
+                pb-[12px]
                 font-manrope 
-                text-[14px]
+                text-[16px]
                 font-semibold
                 uppercase
                 text-white
@@ -293,7 +326,7 @@ export default function Contact() {
             >
             
 
-            <Mail className="w-4 h-4" />  {status === "sent" ? "Message sent" : "Send message"}
+            <Image src={'/sent-message-rame.svg'} width={24} height={24} alt="sent-message"/>  {status === "sent" ? "Message sent" : "Send message"}
             </button>
           </form>
 
@@ -459,12 +492,13 @@ export default function Contact() {
             {/* Name */}
             <p
               className="
-                text-[16px]
+                text-[24px]
                 font-medium
                 font-manrope 
                 tracking-tight
                 text-slate-200
                 sm:text-[24px]
+                lg:text-[24px]
               "
             >
               Mazidul Hakim

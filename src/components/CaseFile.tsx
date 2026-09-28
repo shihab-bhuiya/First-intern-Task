@@ -148,7 +148,7 @@ export default function CaseFiles() {
           variants={fadeInUp}
           className="mb-6 border-b border-white/10 pb-2.5"
         >
-          <h2 className="font-mono text-[14px] uppercase tracking-[0.12em] text-gray-400">
+          <h2 className="font-ibm text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
           </h2>
         </motion.div>
@@ -188,7 +188,7 @@ export default function CaseFiles() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 font-inter text-[10px]  leading-5 text-gray-400">
+                <p className="mt-2 font-inter text-[12px]  leading-5 text-gray-400">
                   {item.description}
                 </p>
 

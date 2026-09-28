@@ -58,9 +58,9 @@ export default function Certificates() {
                 relative
                 mx-auto
                 flex
-                h-[170px]
+                h-[204px]
                 w-full
-                max-w-[190px]
+                max-w-[204px]
                 shrink-0
                 flex-col
                 items-center
@@ -102,9 +102,9 @@ export default function Certificates() {
                 <Image
                   src={cert.iconUrl}
                   alt={cert.name.replace("\n", " ")}
-                  width={56}
-                  height={56}
-                  className="h-full w-full object-contain p-[3px]"
+                  width={80}
+                  height={80}
+                  className="h-[80px] w-[80px] object-contain p-[3px]"
                 />
               </div>
 
@@ -115,9 +115,9 @@ export default function Certificates() {
                   whitespace-pre-line
                   text-center
                   font-inter
-                  text-[14px]
-                  font-medium
-                  leading-[18px]
+                  text-[20px]
+                  font-semibold
+                  leading-[24px]
                   text-[#d9dce1]
                 "
               >

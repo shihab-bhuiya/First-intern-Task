@@ -144,7 +144,7 @@ export default function CareerTimeline() {
         {/* Section Tag */}
         <motion.div
           variants={fadeInUp}
-          className="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400 uppercase"
+          className="flex items-center gap-2 text-[14px] font-ibm tracking-wider text-slate-400 uppercase"
         >
           <span className="text-slate-500 font-semibold">05</span>
           <span className="text-slate-600">/</span>
@@ -182,7 +182,7 @@ export default function CareerTimeline() {
                     <span className="text-xl sm:text-2xl font-manrope  font-bold text-white tracking-tight">
                       {entry.yearRange}
                     </span>
-                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-xs font-manrope  tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
+                    <span className="mt-1.5 px-3 py-0.5 rounded-full border border-sky-800/60 bg-[#091524] text-[#00c8ff] text-[12px] font-ibm  tracking-wide font-medium shadow-[0_0_10px_rgba(0,200,255,0.1)]">
                       {entry.duration}
                     </span>
                   </div>
@@ -238,7 +238,7 @@ export default function CareerTimeline() {
                           <div className="overflow-hidden">
                             <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside">
                               {entry.details.map((detail, idx) => (
-                                <li key={idx} className="leading-relaxed">
+                                <li key={idx} className="leading-relaxed font-inter text-[16px">
                                   {detail}
                                 </li>
                               ))}

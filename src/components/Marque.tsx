@@ -21,7 +21,7 @@ const MarquePage = () => {
       <div className="flex w-max animate-marquee gap-8">
         {items.map((item, key) => (
           <div key={key} className="flex items-center  gap-6">
-            <span className="whitespace-nowrap font-mono text-xs font-semibold text-white">
+            <span className="whitespace-nowrap font-inter text-xs font-semibold text-white">
               {item}
             </span>
 
