@@ -58,7 +58,7 @@ export default function Certificates() {
                 relative
                 mx-auto
                 flex
-                h-[140px]
+                h-[170px]
                 w-full
                 max-w-[190px]
                 shrink-0
