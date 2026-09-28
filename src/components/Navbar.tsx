@@ -80,7 +80,7 @@ export default function Navbar() {
         >
           <span
             aria-hidden="true"
-            className="h-[10px] w-[10px] rounded-full bg-[#38BDF8] shadow-[0_0_8px_rgba(56,189,248,0.6)]"
+            className="h-[10px] w-[10px] font-ibm rounded-full bg-[#38BDF8] shadow-[0_0_8px_rgba(56,189,248,0.6)]"
           />
           hakim.live
         </Link>
@@ -97,7 +97,7 @@ export default function Navbar() {
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
                     aria-current={isActive ? "true" : undefined}
-                    className={`relative pb-1 text-sm transition-colors ${
+                    className={`relative font-manrope  pb-1 text-sm transition-colors ${
                       isActive
                         ? "font-medium text-white"
                         : "text-gray-400 hover:text-white"
@@ -121,7 +121,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="rounded-lg bg-[#38BDF8] px-5 py-2 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#7DD3FC]"
+            className="rounded-lg bg-[#38BDF8] px-5 py-2 font-manrope  text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#7DD3FC]"
           >
             {"Let's"} Talk
           </Link>
@@ -204,4 +204,4 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+}
