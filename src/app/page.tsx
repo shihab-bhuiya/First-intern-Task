@@ -14,7 +14,7 @@ import Expertise from "@/components/Expertise";
 
 export default function Home() {
   return (
-    <div className="mx-auto bg-[#0a0e14] max-w[1440px] w-full">
+    <div className="mx-auto bg-[#0A0E12] max-w[1440px] w-full">
       <Navbar />
       <Hero />
       <Marquee>
