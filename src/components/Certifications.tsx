@@ -44,10 +44,10 @@ export default function Certificates() {
             mt-[32px]
             grid
             grid-cols-2
-            gap-6
+            gap-8
             sm:grid-cols-2
             md:grid-cols-4
-            md:gap-[42px]
+            md:gap-[120px]
           "
         >
           {certificates.map((cert) => (
@@ -127,10 +127,10 @@ export default function Certificates() {
           ))}
         </motion.div>
       </motion.div>
-       <div className="absolute -left-[280px] top-1 w-[900px] h-[800px] ">
+       <div className="absolute -left-[370px] top-1 w-[900px] h-[800px] ">
         <Image src={'/qualification-gradient.svg'} alt="qualification-gradient" width={700} height={700}/>
       </div>
-      <div className="absolute -left-[180px] w-[900px] h-[800px] ">
+      <div className="absolute -left-[270px] w-[900px] h-[800px] ">
         <Image src={'/qualification-gradient.svg'} alt="qualification-gradient" width={700} height={700}/>
       </div>
     </section>

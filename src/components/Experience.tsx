@@ -293,7 +293,7 @@ export default function CareerTimeline() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-20 overflow-hidden [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent_100%)] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent_100%)]"
       >
-        <div className="absolute -right-[290px] -top-[15%] h-[1400px] w-[800px]">
+        <div className="absolute -right-[450px] -top-[15%] h-[1400px] w-[800px]">
           <Image
             src="/caseFile-gradientsvg.svg"
             alt=""
@@ -302,7 +302,7 @@ export default function CareerTimeline() {
             className={svgEdgeFade}
           />
         </div>
-        <div className="absolute -right-[620px] top-[5%] h-[1200px] w-[700px]">
+        <div className="absolute -right-[320px] top-[10%] h-[1200px] w-[700px]">
           <Image
             src="/caseFile-gradientsvg.svg"
             alt=""

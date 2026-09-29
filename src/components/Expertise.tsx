@@ -106,7 +106,7 @@ export default function Expertise() {
             </motion.article>
           ))}
         </motion.div>
-        <div className="absolute z-10 h-[900px] w-[900px] -bottom-[490px] -left-[380px] ">
+        <div className="absolute z-10 h-[900px] w-[900px] -bottom-[490px] -left-[450px] ">
           <Image src={'/expertice-gradient.svg'} alt="expertice-gradient" width={1700} height={1700} />
         </div>
       </motion.div>

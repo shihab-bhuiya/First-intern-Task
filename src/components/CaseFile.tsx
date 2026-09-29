@@ -115,27 +115,21 @@ const caseFiles = [
 
 export default function CaseFiles() {
   const [activeCard, setActiveCard] = useState<string>(caseFiles[0].caseNo);
-  const [openCard, setOpenCard] = useState<string | null>(null);
+  // First card is open by default (affects mobile only; desktop always shows details)
+  const [openCard, setOpenCard] = useState<string | null>(caseFiles[0].caseNo);
 
   const toggleCard = (caseNo: string) => {
     setActiveCard(caseNo);
     setOpenCard((prev) => (prev === caseNo ? null : caseNo));
   };
-  // bg-[#070b10]
 
   return (
     <section
       id="impact"
-      className="relative w-full  px-6 pt-4 pb-16 md:pt-6"
+      className="relative w-full overflow-x-clip px-6 pt-4 pb-16 md:pt-6"
     >
-      {/* Background glows.
-          The blue glow is centered lower (0% 35%) with a short vertical radius,
-          so it is fully transparent at the top edge of the section — no seam line. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 "
-      />
-{/* bg-[radial-gradient(ellipse_55%_30%_at_0%_35%,rgba(37,99,235,0.15),transparent_100%),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(20,184,166,0.12),transparent_70%)] */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0" />
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -144,10 +138,7 @@ export default function CaseFiles() {
         className="relative z-10 mx-auto max-w-[1312px]"
       >
         {/* Heading */}
-        <motion.div
-          variants={fadeInUp}
-          className="mb-5  pb-2.5"
-        >
+        <motion.div variants={fadeInUp} className="mb-5 pb-2.5">
           <h2 className="font-ibm text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
           </h2>
@@ -173,9 +164,9 @@ export default function CaseFiles() {
                 }`}
               >
                 {/* Top */}
-                <div className="mb-8 flex rounded-[6px] items-center justify-between gap-3">
+                <div className="mb-8 flex items-center justify-between gap-3 rounded-[6px]">
                   <span
-                    className={`rounded bg-[#181F29] border px-3 py-2 font-ibm text-[12px] leading-4 ${accent.badge}`}
+                    className={`rounded border bg-[#181F29] px-3 py-2 font-ibm text-[12px] leading-4 ${accent.badge}`}
                   >
                     {item.category}
                   </span>
@@ -186,7 +177,7 @@ export default function CaseFiles() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-manrope font-semibold tracking-tight text-white">
+                <h3 className="font-manrope text-lg font-semibold tracking-tight text-white">
                   {item.title}
                 </h3>
 
@@ -217,7 +208,7 @@ export default function CaseFiles() {
                               </span>
                             </span>
 
-                            <span className="ml-5 text-left text-[14px] font-ibm leading-4 text-gray-200 sm:ml-0 sm:shrink-0 sm:text-right">
+                            <span className="ml-5 text-left font-ibm text-[14px] leading-4 text-gray-200 sm:ml-0 sm:shrink-0 sm:text-right">
                               {technology}
                             </span>
                           </li>
@@ -250,9 +241,19 @@ export default function CaseFiles() {
           })}
         </motion.div>
       </motion.div>
-       <div className="absolute z-20 w-[800px] h-[1400px] -right-[290px] -bottom-[65%]  ">
-              <Image src={'/caseFile-gradientsvg.svg'} alt="experience-gradient" width={1900} height={1900}/>
-            </div>
+
+      {/* Decorative gradient: non-interactive, clipped by the section */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-[70%] -right-[400px] z-20 h-[1400px] w-[800px]"
+      >
+        <Image
+          src="/caseFile-gradientsvg.svg"
+          alt=""
+          width={1900}
+          height={1900}
+        />
+      </div>
     </section>
   );
 }

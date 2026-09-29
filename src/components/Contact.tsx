@@ -124,7 +124,7 @@ export default function Contact() {
         <h2
           className="
             mt-6
-            text-[64px]
+            text-[24px]
             uppercase
             leading-[76px]
             font-manrope
