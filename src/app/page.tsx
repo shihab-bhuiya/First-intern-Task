@@ -11,10 +11,10 @@ import Qualifications from "@/components/Qualifications";
 import Marquee from "react-fast-marquee";
 import Expertise from "@/components/Expertise";
 
-
+// bg-[#0A0E12]
 export default function Home() {
   return (
-    <div className="mx-auto bg-[#0A0E12] max-w[1440px] w-full">
+    <div className="mx-auto  max-w[1440px] w-full">
       <Navbar />
       <Hero />
       <Marquee>

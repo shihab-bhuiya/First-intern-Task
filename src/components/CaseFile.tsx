@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
+import Image from "next/image";
 
 const accents = {
   orange: {
@@ -120,18 +121,21 @@ export default function CaseFiles() {
     setActiveCard(caseNo);
     setOpenCard((prev) => (prev === caseNo ? null : caseNo));
   };
+  // bg-[#070b10]
 
   return (
     <section
       id="impact"
-      className="relative w-full bg-[#070b10] px-6 pt-4 pb-16 md:pt-6"
+      className="relative w-full  px-6 pt-4 pb-16 md:pt-6"
     >
-      {/* Continuous radial gradient top-left to seamlessly continue from previous section */}
+      {/* Background glows.
+          The blue glow is centered lower (0% 35%) with a short vertical radius,
+          so it is fully transparent at the top edge of the section — no seam line. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_0%_0%,rgba(37,99,235,0.15),transparent_70%),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(20,184,166,0.12),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 "
       />
-
+{/* bg-[radial-gradient(ellipse_55%_30%_at_0%_35%,rgba(37,99,235,0.15),transparent_100%),radial-gradient(ellipse_50%_40%_at_100%_100%,rgba(20,184,166,0.12),transparent_70%)] */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -246,6 +250,9 @@ export default function CaseFiles() {
           })}
         </motion.div>
       </motion.div>
+       <div className="absolute z-20 w-[800px] h-[1400px] -right-[290px] -bottom-[65%]  ">
+              <Image src={'/caseFile-gradientsvg.svg'} alt="experience-gradient" width={1900} height={1900}/>
+            </div>
     </section>
   );
 }

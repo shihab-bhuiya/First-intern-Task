@@ -41,9 +41,11 @@ const topBorderColors = [
   "#e0583a", // red/orange
 ];
 
+// bg-[#0a0e14]
+
 export default function Qualifications() {
   return (
-    <section className="mx-auto mt-8 w-full max-w-[1440px]  bg-[#0a0e14] px-6 py-12 sm:px-10 md:py-20">
+    <section className="mx-auto mt-8 w-full max-w-[1440px]   px-6 py-12 sm:px-10 md:py-20">
       <motion.div
         initial="hidden"
         whileInView="visible"

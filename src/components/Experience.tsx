@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
+import Image from "next/image";
 
 type Accent = "blue" | "olive" | "coral" | "teal";
 
@@ -137,10 +138,12 @@ export default function CareerTimeline() {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  // bg-[#070b12] 
+
   return (
     <section
       id="experience"
-      className="relative w-full bg-[#070b12] py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden"
+      className="relative w-full py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Ambient background glow on right */}
       <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
@@ -281,6 +284,12 @@ export default function CareerTimeline() {
           </motion.div>
         </div>
       </motion.div>
+       <div className="absolute z-20 w-[800px] h-[1400px] -right-[290px] -top-[15%]  ">
+        <Image src={'/caseFile-gradientsvg.svg'} alt="experience-gradient" width={1900} height={1900}/>
+      </div>
+      <div className="absolute z-20 w-[700px] h-[1200px] -right-[620px] top-[5%]  ">
+        <Image src={'/caseFile-gradientsvg.svg'} alt="experience-gradient" width={1900} height={1900}/>
+      </div>
     </section>
   );
 }

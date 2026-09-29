@@ -19,6 +19,8 @@ export default function Contact() {
     setStatus("sent");
   };
 
+  // bg-[#090d14]
+
   return (
     <section
       id="contact"
@@ -26,7 +28,7 @@ export default function Contact() {
         relative
         mt-8
         overflow-hidden
-        bg-[#090d14]
+        
         pt-[66px]
         px-4
         py-7

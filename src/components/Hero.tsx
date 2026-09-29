@@ -115,9 +115,9 @@ export default function Hero() {
       window.history.pushState({}, "", href);
     }
   };
-
+// bg-[#05090d]
   return (
-    <section className="relative flex items-center pt-12 scroll-pb-80 overflow-hidden bg-[#05090d] lg:min-h-[500px]">
+    <section className="relative flex items-center pt-12 scroll-pb-80 overflow-hidden  lg:min-h-[500px]">
       {/* Background grid */}
       <div
         aria-hidden="true"

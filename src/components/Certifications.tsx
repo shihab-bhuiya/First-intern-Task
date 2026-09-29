@@ -16,10 +16,10 @@ const certificates: Certificate[] = [
   { id: "3", name: "Exinda ECNA", iconUrl: "/circle-3.svg" },
   { id: "4", name: "Next-Gen\nFirewall", iconUrl: "/circle-4.svg" },
 ];
-
+// bg-[#090d14]
 export default function Certificates() {
   return (
-    <section className="w-full mx-auto max-w-[1440px] bg-[#090d14] py-14 px-6 sm:px-10">
+    <section className="w-full relative mx-auto max-w-[1440px]  py-14 px-6 sm:px-10">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -127,6 +127,12 @@ export default function Certificates() {
           ))}
         </motion.div>
       </motion.div>
+       <div className="absolute -left-[280px] top-1 w-[900px] h-[800px] ">
+        <Image src={'/qualification-gradient.svg'} alt="qualification-gradient" width={700} height={700}/>
+      </div>
+      <div className="absolute -left-[180px] w-[900px] h-[800px] ">
+        <Image src={'/qualification-gradient.svg'} alt="qualification-gradient" width={700} height={700}/>
+      </div>
     </section>
   );
 }

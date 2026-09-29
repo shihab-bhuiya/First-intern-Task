@@ -19,6 +19,7 @@ const stats: StatCard[] = [
   { value: "8", label: "Branches supported" },
   { value: "99.9", unit: "%", spacedUnit: true, label: "Network uptime" },
 ];
+// bg-[#05090d]
 
 export default function About() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -26,14 +27,14 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-[66px] bg-[#05090d] pt-14 pb-8"
+      className="relative scroll-mt-[66px]  pt-14 pb-8"
     >
       {/* Teal tint background (fills the whole section so no visible edge) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_closest-side_at_70%_100%,rgba(8,90,120,0.22),transparent)]"
+        className="pointer-events-none absolute inset-0 "
       />
-
+{/* bg-[radial-gradient(ellipse_closest-side_at_70%_100%,rgba(8,90,120,0.22),transparent)] */}
       {/* Bottom Seamless Gradient Transition */}
       <div
         aria-hidden="true"
@@ -164,9 +165,9 @@ export default function About() {
             <Image
               src={"/about-grtadientsvg.svg"}
               alt="gradient"
-              width={900}
-              height={900}
-              className="absolute -right-[220px] -bottom-[690px] z-30 h-[1300px] w-[1300px]"
+              width={1300}
+              height={1300}
+              className="absolute -right-[320px] -bottom-[690px] z-30 h-[1300px] w-[1300px]"
             />
           </motion.div>
         </div>

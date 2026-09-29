@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
+import Image from "next/image";
 
 interface SkillGroup {
   title: string;
@@ -42,17 +43,21 @@ const skillGroups: SkillGroup[] = [
   },
 ];
 
+// bg-[#070b10]
+
 export default function Expertise() {
   return (
     <section
       id="expertise"
-      className="relative scroll-mt-[66px] bg-[#070b10] pt-8 pb-10 md:pt-10 md:pb-16"
+      className="relative scroll-mt-[66px]  pt-8 pb-10 md:pt-10 md:pb-16"
     >
       {/* Soft continuous radial background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_50%,rgba(30,64,175,0.18),transparent_100%),radial-gradient(ellipse_50%_50%_at_100%_100%,rgba(30,64,175,0.12),transparent_100%)]"
+        className="pointer-events-none absolute inset-0 "
       />
+      
+{/* bg-[radial-gradient(ellipse_60%_50%_at_0%_50%,rgba(30,64,175,0.18),transparent_100%),radial-gradient(ellipse_50%_50%_at_100%_100%,rgba(30,64,175,0.12),transparent_100%)] */}
 
       <motion.div
         initial="hidden"
@@ -101,6 +106,9 @@ export default function Expertise() {
             </motion.article>
           ))}
         </motion.div>
+        <div className="absolute z-10 h-[900px] w-[900px] -bottom-[490px] -left-[380px] ">
+          <Image src={'/expertice-gradient.svg'} alt="expertice-gradient" width={1700} height={1700} />
+        </div>
       </motion.div>
     </section>
   );
