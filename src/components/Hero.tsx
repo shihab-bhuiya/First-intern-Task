@@ -122,15 +122,15 @@ export default function Hero() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
-        // style={gridStyle}
+        style={gridStyle}
       />
 
       {/* Soft indigo tint, bottom right */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 "
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(99,102,241,0.09),transparent_55%)] "
       />
-{/* bg-[radial-gradient(ellipse_at_bottom_right,rgba(99,102,241,0.09),transparent_55%)] */}
+
       <div className="relative mx-auto w-full max-w-[1440px] px-6 md:px-10 xl:px-20">
         <div className="grid items-center gap-12 py-4 lg:grid-cols-2 xl:grid-cols-[600px_1fr] xl:gap-6 xl:py-10">
           {/* Left content */}
