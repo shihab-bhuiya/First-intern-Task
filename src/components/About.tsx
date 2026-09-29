@@ -19,7 +19,6 @@ const stats: StatCard[] = [
   { value: "8", label: "Branches supported" },
   { value: "99.9", unit: "%", spacedUnit: true, label: "Network uptime" },
 ];
-// bg-[#05090d]
 
 export default function About() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,18 +26,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-[66px]  pt-14 pb-8"
+      className="relative scroll-mt-[66px] overflow-x-clip pt-14 pb-8"
     >
-      {/* Teal tint background (fills the whole section so no visible edge) */}
+      {/* Teal tint: centered mid-section so it is fully transparent at every edge.
+          Delete this div if you don't want the extra teal glow. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 "
-      />
-{/* bg-[radial-gradient(ellipse_closest-side_at_70%_100%,rgba(8,90,120,0.22),transparent)] */}
-      {/* Bottom Seamless Gradient Transition */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-gradient-to-t from-[#05090d] via-[#05090d]/60 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_70%_50%,rgba(8,90,120,0.22),transparent_100%)]"
       />
 
       <motion.div

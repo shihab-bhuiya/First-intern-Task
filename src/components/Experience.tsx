@@ -146,7 +146,7 @@ export default function CareerTimeline() {
       className="relative w-full py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Ambient background glow on right */}
-      <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px]  rounded-full blur-[140px] pointer-events-none" />
 
       <motion.div
         initial="hidden"

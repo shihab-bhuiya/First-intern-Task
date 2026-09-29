@@ -146,7 +146,7 @@ export default function CaseFiles() {
         {/* Heading */}
         <motion.div
           variants={fadeInUp}
-          className="mb-5 border-b border-white/10 pb-2.5"
+          className="mb-5  pb-2.5"
         >
           <h2 className="font-ibm text-[14px] uppercase tracking-[0.12em] text-gray-400">
             04 / Case Files
