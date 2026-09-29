@@ -11,17 +11,37 @@ import Image from "next/image";
 export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!email.trim() || !message.trim()) return;
+    if (!email.trim() || !message.trim() || status === "sending") return;
 
-    setStatus("sent");
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), message: message.trim() }),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      setEmail("");
+      setMessage("");
+
+      // return the button to normal after 4 seconds
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
-
-  // bg-[#090d14]
 
   return (
     <section
@@ -30,7 +50,6 @@ export default function Contact() {
         relative
         mt-8
         overflow-hidden
-        
         pt-[66px]
         px-4
         py-7
@@ -215,6 +234,7 @@ export default function Contact() {
                   <input
                     id="email"
                     type="email"
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
@@ -235,89 +255,89 @@ export default function Contact() {
             </div>
 
             {/* Message */}
-            {/* Message */}
             <div className="mt-3">
               <label
                 htmlFor="message"
                 className="
-      mb-1.5
-      block
-      font-ibm
-      text-[16px]
-      font-semibold
-      tracking-wide
-      text-slate-300
-    ">
+                  mb-1.5
+                  block
+                  font-ibm
+                  text-[16px]
+                  font-semibold
+                  tracking-wide
+                  text-slate-300
+                ">
                 Message
               </label>
 
               <div
                 className="
-      w-full
-      lg:w-[472px]
-      rounded-[16px]
-      bg-gradient-to-r
-      from-[#184F68]
-      to-[#8ECAE6]
-      p-px
-      transition-all
-      focus-within:from-cyan-600
-      focus-within:to-cyan-300
-    ">
+                  w-full
+                  lg:w-[472px]
+                  rounded-[16px]
+                  bg-gradient-to-r
+                  from-[#184F68]
+                  to-[#8ECAE6]
+                  p-px
+                  transition-all
+                  focus-within:from-cyan-600
+                  focus-within:to-cyan-300
+                ">
                 <div
                   className="
-        flex
-        h-[182px]
-        items-start
-        gap-2
-        overflow-hidden
-        rounded-[15px]
-        bg-[#131820]
-        px-4
-        pt-[18px]
-      ">
+                    flex
+                    h-[182px]
+                    items-start
+                    gap-2
+                    overflow-hidden
+                    rounded-[15px]
+                    bg-[#131820]
+                    px-4
+                    pt-[18px]
+                  ">
                   {/* Message Icon */}
                   <span
                     aria-hidden="true"
                     className={`
-          mt-[2px]
-          h-6
-          w-6
-          shrink-0
-          ${message ? "bg-white" : "bg-slate-600"}
-          [mask-image:url(/message-02.svg)]
-          [mask-position:center]
-          [mask-repeat:no-repeat]
-          [mask-size:contain]
-          [-webkit-mask-image:url(/message-02.svg)]
-          [-webkit-mask-position:center]
-          [-webkit-mask-repeat:no-repeat]
-          [-webkit-mask-size:contain]
-        `}
+                      mt-[2px]
+                      h-6
+                      w-6
+                      shrink-0
+                      ${message ? "bg-white" : "bg-slate-600"}
+                      [mask-image:url(/message-02.svg)]
+                      [mask-position:center]
+                      [mask-repeat:no-repeat]
+                      [mask-size:contain]
+                      [-webkit-mask-image:url(/message-02.svg)]
+                      [-webkit-mask-position:center]
+                      [-webkit-mask-repeat:no-repeat]
+                      [-webkit-mask-size:contain]
+                    `}
                   />
 
-                  {/* Message */}
                   <textarea
                     id="message"
+                    required
+                    maxLength={5000}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Write your message here..."
                     className="
-          m-0
-          h-full
-          w-full
-          min-w-0
-          resize-none
-          border-0
-          bg-transparent
-          p-0
-          font-inter
-          text-[16px]
-          leading-6
-          text-white
-          outline-none
-          placeholder:text-slate-600
-        "
+                      m-0
+                      h-full
+                      w-full
+                      min-w-0
+                      resize-none
+                      border-0
+                      bg-transparent
+                      p-0
+                      font-inter
+                      text-[16px]
+                      leading-6
+                      text-white
+                      outline-none
+                      placeholder:text-slate-600
+                    "
                   />
                 </div>
               </div>
@@ -326,13 +346,13 @@ export default function Contact() {
             {/* Send button */}
             <button
               type="submit"
+              disabled={status === "sending"}
               className="
                 mt-4
                 flex
                 h-[55px]
                 w-[218px]
                 items-center
-                
                 gap-2
                 rounded-[14px]
                 bg-[#39b8f0]
@@ -348,6 +368,8 @@ export default function Contact() {
                 transition-all
                 hover:bg-[#4ac4f5]
                 hover:shadow-[0_0_20px_rgba(57,184,240,0.2)]
+                disabled:cursor-not-allowed
+                disabled:opacity-60
               ">
               <Image
                 src="/sent-message-rame.svg"
@@ -355,8 +377,20 @@ export default function Contact() {
                 height={24}
                 alt="sent-message"
               />
-              {status === "sent" ? "Message sent" : "Send message"}
+              {status === "sending"
+                ? "Sending..."
+                : status === "sent"
+                ? "Message sent"
+                : status === "error"
+                ? "Try again"
+                : "Send message"}
             </button>
+
+            {status === "error" && (
+              <p className="mt-2 font-ibm text-[14px] text-red-400">
+                Something went wrong. Please try again or email directly.
+              </p>
+            )}
           </form>
 
           {/* ================= DIRECT CONTACT ================= */}
