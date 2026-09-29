@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import Link from "next/link";
@@ -102,7 +104,7 @@ export default function Hero() {
 
   const handleScrollTo = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     e.preventDefault();
     const targetElement = document.querySelector(href);
@@ -115,7 +117,7 @@ export default function Hero() {
       window.history.pushState({}, "", href);
     }
   };
-// bg-[#05090d]
+  // bg-[#05090d]
   return (
     <section className="relative flex items-center pt-12 scroll-pb-80 overflow-hidden  lg:min-h-[500px]">
       {/* Background grid */}
@@ -138,28 +140,23 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="relative z-10 order-2 flex min-w-0 flex-col lg:order-none"
-          >
+            className="relative z-10 order-2 flex min-w-0 flex-col lg:order-none">
             {/* Status line */}
             <motion.div
               variants={fadeInUp}
-              className="order-1 mb-4 flex items-center gap-2 font-ibm text-[14px] text-gray-300 lg:text-sm"
-            >
+              className="order-1 mb-4 flex items-center gap-2 font-ibm text-[14px] text-gray-300 lg:text-sm">
               <span
                 aria-hidden="true"
-                className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]"
-              >
+                className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#CCFF00]" />
               </span>
-
               IT Manager · Cloud · Cybersecurity
             </motion.div>
 
             {/* Heading */}
             <motion.h1
               variants={fadeInUp}
-              className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
-            >
+              className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]">
               Mazidul
               <br />
               <span className="text-[#69C8FF]">Hakim</span>
@@ -168,8 +165,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={fadeInUp}
-              className="order-4 mt-4 max-w-[600px] font-manrope text-[14px] lg:text[16px] leading-7 text-[#ABABAB] lg:order-3"
-            >
+              className="order-4 mt-4 max-w-[600px] font-manrope text-[14px] lg:text[16px] leading-7 text-[#ABABAB] lg:order-3">
               Senior IT leader with 17+ years turning technology functions
               around — network modernisation, cloud migration and cybersecurity
               uplift across complex, multi-site organisations.
@@ -178,8 +174,7 @@ export default function Hero() {
             {/* Pills */}
             <motion.div
               variants={fadeInUp}
-              className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4"
-            >
+              className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4">
               <span className="inline-flex h-10 text-[10px] items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-ibm lg:text-[16px] font-semibold text-white sm:px-5">
                 IT Leadership
               </span>
@@ -196,23 +191,26 @@ export default function Hero() {
             {/* Action buttons */}
             <motion.div
               variants={fadeInUp}
-              className="order-5 mt-12 flex w-full max-w-[1312px] lg:justify-start justify-between flex-nowrap lg:gap-2.5 sm:gap-4"
-            >
+              className="order-5 mt-12 flex w-full max-w-[1312px] lg:justify-start justify-between flex-nowrap lg:gap-2.5 sm:gap-4">
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
-                className="inline-flex h-[56px]  items-center  gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-[18px] lg:text-[16px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg"
-              >
-              <Image src={'/carrer-infosvg.svg'} width={24} height={24} alt="carrer" className=""/>
+                className="inline-flex h-[56px]  items-center  gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-[18px] lg:text-[16px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg">
+                <Image
+                  src={"/carrer-infosvg.svg"}
+                  width={24}
+                  height={24}
+                  alt="carrer"
+                  className=""
+                />
                 Career Info
               </Link>
 
               <Link
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
-                className="inline-flex h-[56px]  text-[14px] lg:text-[16px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg"
-              >
-               <Image src={'/mail.svg'} alt="mail" width={24} height={24}/>
+                className="inline-flex h-[56px]  text-[14px] lg:text-[16px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg">
+                <Image src={"/mail.svg"} alt="mail" width={24} height={24} />
                 Contact Now
               </Link>
             </motion.div>
@@ -225,14 +223,12 @@ export default function Hero() {
             variants={scaleIn}
             role="img"
             aria-label="Network map: Singapore HQ connected to Australia, the Philippines, India and Auckland, New Zealand"
-            className="relative order-1 aspect-[656/554] w-full select-none lg:order-none lg:block"
-          >
+            className="relative order-1 aspect-[656/554] w-full select-none lg:order-none lg:block">
             <svg
               aria-hidden="true"
               viewBox={`0 0 ${GRAPH_W} ${GRAPH_H}`}
               className="absolute inset-0 h-full w-full"
-              fill="none"
-            >
+              fill="none">
               {connections.map(({ from, to, control }) => {
                 const a = nodeById[from];
                 const b = nodeById[to];
@@ -255,8 +251,7 @@ export default function Hero() {
                 style={{
                   left: `${(node.x / GRAPH_W) * 100}%`,
                   top: `${(node.y / GRAPH_H) * 100}%`,
-                }}
-              >
+                }}>
                 {/* Dot */}
                 <span
                   aria-hidden="true"
