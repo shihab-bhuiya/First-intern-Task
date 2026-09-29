@@ -131,6 +131,10 @@ const entries: TimelineEntry[] = [
   },
 ];
 
+// Fades the SVG's own top and left edges so its bounding box never shows.
+const svgEdgeFade =
+  "[-webkit-mask-composite:source-in] [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_300px),linear-gradient(to_right,transparent,black_300px)] [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,black_300px),linear-gradient(to_right,transparent,black_300px)]";
+
 export default function CareerTimeline() {
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -138,16 +142,11 @@ export default function CareerTimeline() {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
-  // bg-[#070b12] 
-
   return (
     <section
       id="experience"
       className="relative w-full py-12 sm:py-20 px-4 sm:px-8 md:px-16 overflow-hidden"
     >
-      {/* Ambient background glow on right */}
-      <div className="absolute top-1/2 -right-36 -translate-y-1/2 w-[600px] h-[600px]  rounded-full blur-[140px] pointer-events-none" />
-
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -284,11 +283,34 @@ export default function CareerTimeline() {
           </motion.div>
         </div>
       </motion.div>
-       <div className="absolute z-20 w-[800px] h-[1400px] -right-[290px] -top-[15%]  ">
-        <Image src={'/caseFile-gradientsvg.svg'} alt="experience-gradient" width={1900} height={1900}/>
-      </div>
-      <div className="absolute z-20 w-[700px] h-[1200px] -right-[620px] top-[5%]  ">
-        <Image src={'/caseFile-gradientsvg.svg'} alt="experience-gradient" width={1900} height={1900}/>
+
+      {/* Glow SVGs.
+          - Wrapper is clipped to the section and faded at the top and bottom
+            edges, so the glow never ends in a hard line between sections.
+          - Each SVG has its own edge fade, so its bounding box never shows.
+          - pointer-events-none so the glow can't block clicks on the cards. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-20 overflow-hidden [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent_100%)] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent_100%)]"
+      >
+        <div className="absolute -right-[290px] -top-[15%] h-[1400px] w-[800px]">
+          <Image
+            src="/caseFile-gradientsvg.svg"
+            alt=""
+            width={1900}
+            height={1900}
+            className={svgEdgeFade}
+          />
+        </div>
+        <div className="absolute -right-[620px] top-[5%] h-[1200px] w-[700px]">
+          <Image
+            src="/caseFile-gradientsvg.svg"
+            alt=""
+            width={1900}
+            height={1900}
+            className={svgEdgeFade}
+          />
+        </div>
       </div>
     </section>
   );
