@@ -42,16 +42,19 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mazidul Hakim | Full Stack Developer",
+  metadataBase: new URL("https://mazidulhakim.vercel.app"),
+  title: "Mazidul Hakim | Senior IT Leader",
   description:
-    "Mazidul Hakim is a full stack developer specializing in modern web applications using React, Next.js, TypeScript, and Node.js.",
+    "Mazidul Hakim is a senior IT leader with 17+ years of experience in technology strategy, cloud migration, infrastructure modernisation, and cybersecurity.",
   keywords: [
     "Mazidul Hakim",
-    "Full Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript Developer",
-    "Web Developer",
+    "Senior IT Leader",
+    "IT Strategy",
+    "Cybersecurity",
+    "Cloud Migration",
+    "Infrastructure Modernisation",
+    "SASE",
+    "Technology Leadership",
   ],
   authors: [
     {
