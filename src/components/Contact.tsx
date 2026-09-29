@@ -196,11 +196,11 @@ export default function Contact() {
                   {/* Icon: same color as the placeholder (slate-600) */}
                   <span
                     aria-hidden="true"
-                    className="
+                    className={`
                       h-6
                       w-6
                       shrink-0
-                      bg-slate-600
+                      ${email ? "bg-white" : "bg-slate-600"}
                       [mask-image:url(/mail-1.svg)]
                       [mask-position:center]
                       [mask-repeat:no-repeat]
@@ -209,7 +209,7 @@ export default function Contact() {
                       [-webkit-mask-position:center]
                       [-webkit-mask-repeat:no-repeat]
                       [-webkit-mask-size:contain]
-                    "
+                    `}
                   />
 
                   <input
@@ -218,17 +218,17 @@ export default function Contact() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="
+                    className={`
                       h-full
                       w-full
                       min-w-0
                       bg-transparent
                       font-inter
                       text-[16px]
-                      text-[#5E5E5E]
+                      ${email ? "text-white" : "text-[#5E5E5E]"}
                       outline-none
                       placeholder:text-slate-600
-                    "
+                    `}
                   />
                 </div>
               </div>
@@ -279,12 +279,12 @@ export default function Contact() {
                   {/* Message Icon */}
                   <span
                     aria-hidden="true"
-                    className="
+                    className={`
           mt-[2px]
           h-6
           w-6
           shrink-0
-          bg-slate-600
+          ${message ? "bg-white" : "bg-slate-600"}
           [mask-image:url(/message-02.svg)]
           [mask-position:center]
           [mask-repeat:no-repeat]
@@ -293,7 +293,7 @@ export default function Contact() {
           [-webkit-mask-position:center]
           [-webkit-mask-repeat:no-repeat]
           [-webkit-mask-size:contain]
-        "
+        `}
                   />
 
                   {/* Message */}
