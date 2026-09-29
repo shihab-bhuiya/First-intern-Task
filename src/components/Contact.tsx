@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import { useState } from "react";
@@ -36,8 +38,7 @@ export default function Contact() {
         sm:px-6
         md:px-8
         lg:px-10
-      "
-    >
+      ">
       {/* Bottom-left teal glow */}
       <div
         className="
@@ -74,8 +75,7 @@ export default function Contact() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
-        className="relative mx-auto w-full max-w-[1312px]"
-      >
+        className="relative mx-auto w-full max-w-[1312px]">
         {/* ================= HEADER ================= */}
         <motion.div
           variants={fadeInUp}
@@ -89,8 +89,7 @@ export default function Contact() {
             border-b
             border-white/10
             lg:text-[24px]
-          "
-        >
+          ">
           <span
             className="
               font-ibm
@@ -98,8 +97,7 @@ export default function Contact() {
               tracking-[0.08em]
               text-slate-400
               sm:text-[14px]
-            "
-          >
+            ">
             08
           </span>
 
@@ -114,8 +112,7 @@ export default function Contact() {
               tracking-[0.08em]
               text-slate-400
               sm:text-[14px]
-            "
-          >
+            ">
             CONTACT
           </span>
         </motion.div>
@@ -135,8 +132,7 @@ export default function Contact() {
             md:text-[52px]
             lg:text-[54px]
             lg:leading-[1.18]
-          "
-        >
+          ">
           Let&apos;s secure what
           <br className="hidden lg:inline" /> you build
         </h2>
@@ -153,8 +149,7 @@ export default function Contact() {
             lg:mt-5
             lg:grid-cols-[260px_2fr]
             lg:gap-[190px]
-          "
-        >
+          ">
           {/* ================= FORM ================= */}
           <form onSubmit={handleSubmit} className="w-full">
             {/* Email */}
@@ -168,8 +163,7 @@ export default function Contact() {
                   font-semibold
                   tracking-wide
                   text-slate-300
-                "
-              >
+                ">
                 Email
               </label>
 
@@ -177,7 +171,7 @@ export default function Contact() {
                 className="
                   flex
                   h-[62px]
-                  w-[350px]
+                  w-full
                   lg:w-[472px]
                   items-center
                   gap-2
@@ -186,8 +180,7 @@ export default function Contact() {
                   from-[#184F68]
                   to-[#8ECAE6]
                   p-[1px]
-                "
-              >
+                ">
                 <div
                   className="
                     flex
@@ -199,8 +192,7 @@ export default function Contact() {
                     bg-[#131820]
                     px-4
                     py-[16.5px]
-                  "
-                >
+                  ">
                   {/* Icon: same color as the placeholder (slate-600) */}
                   <span
                     aria-hidden="true"
@@ -244,10 +236,10 @@ export default function Contact() {
 
             {/* Message */}
             {/* Message */}
-<div className="mt-3">
-  <label
-    htmlFor="message"
-    className="
+            <div className="mt-3">
+              <label
+                htmlFor="message"
+                className="
       mb-1.5
       block
       font-ibm
@@ -255,14 +247,13 @@ export default function Contact() {
       font-semibold
       tracking-wide
       text-slate-300
-    "
-  >
-    Message
-  </label>
+    ">
+                Message
+              </label>
 
-  <div
-    className="
-      w-[350px]
+              <div
+                className="
+      w-full
       lg:w-[472px]
       rounded-[16px]
       bg-gradient-to-r
@@ -272,10 +263,9 @@ export default function Contact() {
       transition-all
       focus-within:from-cyan-600
       focus-within:to-cyan-300
-    "
-  >
-    <div
-      className="
+    ">
+                <div
+                  className="
         flex
         h-[182px]
         items-start
@@ -285,12 +275,11 @@ export default function Contact() {
         bg-[#131820]
         px-4
         pt-[18px]
-      "
-    >
-      {/* Message Icon */}
-      <span
-        aria-hidden="true"
-        className="
+      ">
+                  {/* Message Icon */}
+                  <span
+                    aria-hidden="true"
+                    className="
           mt-[2px]
           h-6
           w-6
@@ -305,15 +294,15 @@ export default function Contact() {
           [-webkit-mask-repeat:no-repeat]
           [-webkit-mask-size:contain]
         "
-      />
+                  />
 
-      {/* Message */}
-      <textarea
-        id="message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Write your message here..."
-        className="
+                  {/* Message */}
+                  <textarea
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Write your message here..."
+                    className="
           m-0
           h-full
           w-full
@@ -329,10 +318,10 @@ export default function Contact() {
           outline-none
           placeholder:text-slate-600
         "
-      />
-    </div>
-  </div>
-</div>
+                  />
+                </div>
+              </div>
+            </div>
 
             {/* Send button */}
             <button
@@ -359,8 +348,7 @@ export default function Contact() {
                 transition-all
                 hover:bg-[#4ac4f5]
                 hover:shadow-[0_0_20px_rgba(57,184,240,0.2)]
-              "
-            >
+              ">
               <Image
                 src="/sent-message-rame.svg"
                 width={24}
@@ -378,8 +366,7 @@ export default function Contact() {
               pl-0
               lg:pl-[55%]
               leading-[180%]
-            "
-          >
+            ">
             <p
               className="
                 font-ibm
@@ -390,8 +377,7 @@ export default function Contact() {
                 text-lime-400
                 sm:text-[14px]
                 lg:text-[16px]
-              "
-            >
+              ">
               OR REACH ME DIRECTLY
             </p>
 
@@ -405,8 +391,7 @@ export default function Contact() {
                   font-bold
                   tracking-[0.08em]
                   text-sky-400
-                "
-              >
+                ">
                 EMAIL
               </p>
 
@@ -425,8 +410,7 @@ export default function Contact() {
                   hover:text-white
                   sm:text-[20px]
                   lg:text-[24px]
-                "
-              >
+                ">
                 mazidulhakim@gmail.com
               </Link>
             </div>
@@ -443,8 +427,7 @@ export default function Contact() {
                   text-sky-400
                   sm:text-[14px]
                   lg:text-[16px]
-                "
-              >
+                ">
                 LINKEDIN
               </p>
 
@@ -461,8 +444,7 @@ export default function Contact() {
                   hover:text-emerald-200
                   sm:text-[20px]
                   lg:text-[24px]
-                "
-              >
+                ">
                 Connect
               </Link>
             </div>
@@ -482,33 +464,28 @@ export default function Contact() {
             gap-x-8
             gap-y-2
             sm:gap-6
-          "
-        >
+          ">
           <Link
             href="#about"
-            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-          >
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]">
             About
           </Link>
 
           <Link
             href="#impact"
-            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-          >
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]">
             Impact
           </Link>
 
           <Link
             href="#expertise"
-            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-          >
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]">
             Expertise
           </Link>
 
           <Link
             href="#experience"
-            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]"
-          >
+            className="text-[12px] text-slate-500 transition-colors hover:text-slate-300 sm:text-[12px]">
             Experience
           </Link>
         </nav>
@@ -528,8 +505,7 @@ export default function Contact() {
               sm:items-end
               sm:justify-between
               sm:gap-4
-            "
-          >
+            ">
             {/* Name */}
             <p
               className="
@@ -540,8 +516,7 @@ export default function Contact() {
                 text-slate-200
                 sm:text-[24px]
                 lg:text-[24px]
-              "
-            >
+              ">
               Mazidul Hakim
             </p>
 
@@ -554,8 +529,7 @@ export default function Contact() {
                 gap-4
                 sm:items-end
                 sm:gap-5
-              "
-            >
+              ">
               <p className="font-ibm text-[10px] text-slate-500 sm:text-[12px]">
                 © 2026 · All rights reserved
               </p>

@@ -194,11 +194,11 @@ export default function Hero() {
             {/* Action buttons */}
             <motion.div
               variants={fadeInUp}
-              className="order-5 mt-12 flex w-full max-w-[1312px] lg:justify-start justify-between flex-nowrap lg:gap-2.5 sm:gap-4">
+              className="order-5 mt-10 flex w-full max-w-[1312px] lg:justify-start gap-4 justify-between flex-nowrap lg:gap-2.5 sm:gap-4">
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
-                className="inline-flex h-[56px]  items-center  gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-[18px] lg:text-[16px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg">
+                className="inline-flex h-[56px]  items-center w-full gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-[18px] lg:text-[16px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg">
                 <Image
                   src={"/carrer-infosvg.svg"}
                   width={24}
@@ -212,7 +212,7 @@ export default function Hero() {
               <Link
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
-                className="inline-flex h-[56px]  text-[14px] lg:text-[16px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg">
+                className="inline-flex h-[56px]  text-[14px] w-full lg:text-[16px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg">
                 <Image src={"/mail.svg"} alt="mail" width={24} height={24} />
                 Contact Now
               </Link>

@@ -114,12 +114,10 @@ const caseFiles = [
 ] as const;
 
 export default function CaseFiles() {
-  const [activeCard, setActiveCard] = useState<string>(caseFiles[0].caseNo);
   // First card is open by default (affects mobile only; desktop always shows details)
   const [openCard, setOpenCard] = useState<string | null>(caseFiles[0].caseNo);
 
   const toggleCard = (caseNo: string) => {
-    setActiveCard(caseNo);
     setOpenCard((prev) => (prev === caseNo ? null : caseNo));
   };
 
@@ -152,15 +150,18 @@ export default function CaseFiles() {
           {caseFiles.map((item) => {
             const accent = accents[item.accent];
             const isOpen = openCard === item.caseNo;
-            const isActive = activeCard === item.caseNo;
 
             return (
               <motion.article
                 key={item.caseNo}
                 variants={fadeInUp}
-                onClick={() => setActiveCard(item.caseNo)}
+                onClick={() => {
+                  if (window.matchMedia("(max-width: 767px)").matches) {
+                    toggleCard(item.caseNo);
+                  }
+                }}
                 className={`flex flex-col font-ibm rounded-2xl border-2 bg-[#131820] p-8 pb-10 transition-colors duration-300 md:border-transparent md:hover:border-white/20 lg:border-none ${
-                  isActive ? "border-[#38BDF8]" : "border-transparent"
+                  isOpen ? "border-[#38BDF8]" : "border-transparent"
                 }`}
               >
                 {/* Top */}
