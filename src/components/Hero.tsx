@@ -154,13 +154,16 @@ export default function Hero() {
             </motion.div>
 
             {/* Heading */}
-            <motion.h1
-              variants={fadeInUp}
-              className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]">
-              Mazidul
-              <br />
-              <span className="text-[#69C8FF]">Hakim</span>
-            </motion.h1>
+           <motion.h1
+  variants={fadeInUp}
+  className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
+>
+  Mazidul
+  <br />
+  <span className="bg-gradient-to-r from-[#3BBDFB] via-[#A3E1FC] to-[#3BBDFB] bg-clip-text text-transparent">
+    Hakim
+  </span>
+</motion.h1>
 
             {/* Description */}
             <motion.p
