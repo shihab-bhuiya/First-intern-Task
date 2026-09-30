@@ -2,7 +2,7 @@
 
 A modern personal portfolio website for Mazidul Hakim built with Next.js 16, React 19, TypeScript, and Tailwind CSS. The project presents a professional digital profile with a dark, premium tech aesthetic and sections covering leadership, experience, skill sets, case studies, certifications, and contact information.
 
-# Live Link : https://first-intern-task-mhbw.vercel.app/
+# Live Link :
 
 ## Project overview
 
