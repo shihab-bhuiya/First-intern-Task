@@ -429,8 +429,9 @@ export default function Contact() {
                 EMAIL
               </p>
 
-              <Link
-                href="mailto:mazidulhakim@gmail.com"
+              <a
+                href="mailto:mazidul.hakim@outlook.com "
+                target="_blank"
                 className="
                   block
                   max-w-full
@@ -445,8 +446,8 @@ export default function Contact() {
                   sm:text-[20px]
                   lg:text-[24px]
                 ">
-                mazidulhakim@gmail.com
-              </Link>
+                mazidul.hakim@outlook.com 
+              </a>
             </div>
 
             {/* LinkedIn */}
@@ -466,7 +467,7 @@ export default function Contact() {
               </p>
 
               <Link
-                href="https://linkedin.com/in/shihab-bhuiya"
+                href="http://linkedin.com/in/mazidulhakim"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="

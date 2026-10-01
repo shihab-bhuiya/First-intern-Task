@@ -22,6 +22,21 @@ const accents = {
 };
 
 const caseFiles = [
+   {
+    category: "Data / AI Automation",
+    caseNo: "CASE-001",
+    title: "Intelligent Data Processing (IDP)Challenge",
+    description:
+      "Data came from multiple sources and formats. Moving it between business applications was manual and slow, while preparing reports and forecasts required significant manual effort. Built an AI-powered IDP system to automate the entire process.",
+    accent: "cyan",
+    results: [
+      ["automated data processing across multiple systems", "AI Agents"],
+      ["removed manual data entry between applications", "System Integration"],
+      ["upgraded server operating environment", "Server OS"],
+      ["automated forecasting without manual calculations", "AI Forecasting"],
+      ["automated reporting and saved hours of manual work", "Automated Reporting"],
+    ],
+  },
   {
     category: "Infrastructure / Resilience",
     caseNo: "CASE-001",
@@ -42,7 +57,7 @@ const caseFiles = [
     title: "Cybersecurity Uplift",
     description:
       "Fragmented security tooling and inconsistent access control across a distributed workforce. Deployed Fortinet NGFW, client VPN, organization-wide MFA, password management, and migrated email security to a cloud platform.",
-    accent: "cyan",
+    accent: "green",
     results: [
       ["consolidated fragmented security tooling", "Fortinet NGFW"],
       ["secured remote workforce access", "Client VPN"],
@@ -72,7 +87,7 @@ const caseFiles = [
     title: "Cloud Backup & Disaster Recovery",
     description:
       "Backup and recovery was manual, slow, and not cloud-resilient. Implemented cloud-based backup integrating with AWS, alongside SaaS backup for Office 365 data, creating a more resilient and scalable data protection strategy.",
-    accent: "cyan",
+    accent: "orange",
     results: [
       ["automated cloud-based backup", "AWS"],
       ["protected critical Office 365 data", "SaaS Backup"],
@@ -87,7 +102,7 @@ const caseFiles = [
     title: "Network & WAN Redesign",
     description:
       "Legacy managed WAN limited flexibility and reliability across branches. Directed the upgrade to fibre connectivity across all sites and transitioned network operations to a cloud-managed gateway for greater control, availability, and scalability.",
-    accent: "cyan",
+    accent: "green",
     results: [
       ["upgraded branch connectivity across all network sites", "Fibre"],
       ["reduced dependency on legacy managed WAN", "WAN Redesign"],
@@ -102,7 +117,22 @@ const caseFiles = [
     title: "Virtualisation Overhaul",
     description:
       "Aging server hardware and a legacy virtualisation platform were constraining performance. Replaced the infrastructure with Tier 1 hardware, migrated to Hyper-V, and upgraded the server OS and mail platform to improve overall system performance and stability.",
-    accent: "green",
+    accent: "cyan",
+    results: [
+      ["replaced server hardware infrastructure", "Tier 1 Hardware"],
+      ["modernised virtualisation platform", "Hyper-V"],
+      ["upgraded server operating environment", "Server OS"],
+      ["upgraded enterprise mail platform", "Mail Platform"],
+      ["improved system stability by up to 50%", "Performance"],
+    ],
+  },
+  {
+    category: "Infrastructure / Performance",
+    caseNo: "CASE-008",
+    title: "Virtualisation Overhaul",
+    description:
+      "Aging server hardware and a legacy virtualisation platform were constraining performance. Replaced the infrastructure with Tier 1 hardware, migrated to Hyper-V, and upgraded the server OS and mail platform to improve overall system performance and stability.",
+    accent: "orange",
     results: [
       ["replaced server hardware infrastructure", "Tier 1 Hardware"],
       ["modernised virtualisation platform", "Hyper-V"],

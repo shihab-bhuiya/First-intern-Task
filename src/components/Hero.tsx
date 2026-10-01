@@ -79,11 +79,11 @@ const connections: {
   to: string;
   control: [number, number];
 }[] = [
-  { from: "hq", to: "aus", control: [206, 150] },
-  { from: "hq", to: "ph", control: [264, 210] },
-  { from: "hq", to: "in", control: [417, 57] },
-  { from: "aus", to: "nz", control: [86, 430] },
-];
+    { from: "hq", to: "aus", control: [206, 150] },
+    { from: "hq", to: "ph", control: [264, 210] },
+    { from: "hq", to: "in", control: [417, 57] },
+    { from: "aus", to: "nz", control: [86, 430] },
+  ];
 
 const nodeById = Object.fromEntries(nodes.map((n) => [n.id, n]));
 
@@ -150,20 +150,20 @@ export default function Hero() {
                 className="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#CCFF00]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#CCFF00]" />
               </span>
-              IT Manager · Cloud · Cybersecurity
+              IT Leadership · Cloud · AI · Cybersecurity
             </motion.div>
 
             {/* Heading */}
-           <motion.h1
-  variants={fadeInUp}
-  className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
->
-  Mazidul
-  <br />
-  <span className="bg-gradient-to-r from-[#3BBDFB] via-[#A3E1FC] to-[#3BBDFB] bg-clip-text text-transparent">
-    Hakim
-  </span>
-</motion.h1>
+            <motion.h1
+              variants={fadeInUp}
+              className="order-2 font-manrope text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-[80px] lg:text-[84px]"
+            >
+              Mazidul
+              <br />
+              <span className="bg-gradient-to-r from-[#3BBDFB] via-[#A3E1FC] to-[#3BBDFB] bg-clip-text text-transparent">
+                Hakim
+              </span>
+            </motion.h1>
 
             {/* Description */}
             <motion.p
@@ -177,7 +177,7 @@ export default function Hero() {
             {/* Pills */}
             <motion.div
               variants={fadeInUp}
-              className="order-3 mt-4 flex flex-nowrap gap-3 sm:gap-4 lg:order-4">
+              className="order-3 mt-4 flex flex-wrap gap-3 sm:gap-4 lg:order-4">
               <span className="inline-flex h-10 text-[10px] items-center whitespace-nowrap rounded-full bg-[#131A22] px-4 font-ibm lg:text-[16px] font-semibold text-white sm:px-5">
                 IT Leadership
               </span>
@@ -187,7 +187,7 @@ export default function Hero() {
                   aria-hidden="true"
                   className="h-2.5 w-2.5 font-ibm text-[16px] lg:text-[16px] font-semibold rounded-full bg-[#CCFF00]"
                 />
-                open to SOC / Cybersecurity
+                Open to Sr.IT & Security Leadership roles
               </span>
             </motion.div>
 
@@ -198,7 +198,7 @@ export default function Hero() {
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
-                className="flex items-center justify-center h-[56px]  items-center w-full lg:w-[194px] gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-[18px] lg:text-[16px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg">
+                className="flex items-center justify-center h-[56px] text-[14px]  w-full lg:w-[194px] gap-2 font-manrope  rounded-[12px] bg-[#131A22] px-4 lg:text-[16px] font-semibold lg:px-6 text-white transition-colors hover:bg-[#1B2430] sm:h-14 sm:gap-2.5  sm:text-lg">
                 <Image
                   src={"/carrer-infosvg.svg"}
                   width={24}
@@ -209,18 +209,11 @@ export default function Hero() {
                 Career Info
               </Link>
 
-              {/* <Link
+              <Link
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
-                className="inline-flex h-[56px]  text-[14px] w-full lg:w-[194px]  lg:text-[16px] font-manrope font-semibold  items-center gap-2 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg">
-                <Image src={"/mail.svg"} alt="mail" width={24} height={24} />
-                Contact Now
-              </Link> */}
-
-               <Link
-                href="#contact"
-                onClick={(e) => handleScrollTo(e, "#contact")}
-                className="flex items-center justify-center h-[56px]  text-[14px] w-full lg:w-[194px]  lg:text-[16px] font-manrope font-semibold  items-center gap-3 rounded-[12px] bg-[#38BDF8] px-[18px] lg:px-4 font-semibold text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5  sm:text-lg">
+                className="flex items-center justify-center h-[56px] text-[14px] w-full lg:w-[194px]  gap-2 font-manrope rounded-[12px] bg-[#38BDF8] px-4 lg:text-[16px] font-semibold lg:px-6 text-[#05090d] transition-colors hover:bg-[#7DD3FC] sm:h-14 sm:gap-2.5 sm:text-lg"
+                >
                 <Image src={"/mail.svg"} alt="mail" width={24} height={24} />
                 Contact Now
               </Link>
@@ -228,68 +221,89 @@ export default function Hero() {
           </motion.div>
 
           {/* Right: network map */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={scaleIn}
-            role="img"
-            aria-label="Network map: Singapore HQ connected to Australia, the Philippines, India and Auckland, New Zealand"
-            className="relative order-1 aspect-[656/554] w-full select-none lg:order-none lg:block">
-            <svg
-              aria-hidden="true"
-              viewBox={`0 0 ${GRAPH_W} ${GRAPH_H}`}
-              className="absolute inset-0 h-full w-full"
-              fill="none">
-              {connections.map(({ from, to, control }) => {
-                const a = nodeById[from];
-                const b = nodeById[to];
+<div className="netmap-wrap" aria-hidden="true"> 
+  <svg viewBox="0 0 380 340"> 
+    {/* <!-- connecting lines --> */} 
+    <path id="line1" d="M 70 220 C 130 140, 160 110, 206 93" fill="none" stroke="rgba(244,241,234,0.16)" strokeWidth="1.4" /> 
+    <path id="line2" d="M 214 93 C 255 105, 275 155, 296 186" fill="none" stroke="rgba(244,241,234,0.16)" strokeWidth="1.4" /> 
+    <path id="line3" d="M 207 95 C 175 145, 145 205, 133 255" fill="none" stroke="rgba(244,241,234,0.16)" strokeWidth="1.4" /> 
+    <path id="line4" d="M 73 223 C 103 253, 123 278, 146 297" fill="none" stroke="rgba(244,241,234,0.16)" strokeWidth="1.4" /> 
 
-                return (
-                  <path
-                    key={`${from}-${to}`}
-                    d={`M ${a.x} ${a.y} Q ${control[0]} ${control[1]} ${b.x} ${b.y}`}
-                    stroke="#2A313B"
-                    strokeWidth={1}
-                  />
-                );
-              })}
-            </svg>
+    {/* travelling pulses */} 
+    <circle r="3" fill="#CCFF00"> 
+      <animateMotion dur="4.5s" repeatCount="indefinite" path="M 70 220 C 130 140, 160 110, 206 93" /> 
+    </circle> 
 
-            {nodes.map((node) => (
-              <div
-                key={node.id}
-                className="absolute"
-                style={{
-                  left: `${(node.x / GRAPH_W) * 100}%`,
-                  top: `${(node.y / GRAPH_H) * 100}%`,
-                }}>
-                {/* Dot */}
-                <span
-                  aria-hidden="true"
-                  className={`absolute block rounded-full ${node.dotClass}`}
-                  style={{
-                    width: node.size,
-                    height: node.size,
-                    left: -node.size / 2,
-                    top: -node.size / 2,
-                  }}
-                />
+    <circle r="3" fill="#60A5FA"> 
+      <animateMotion dur="5.2s" repeatCount="indefinite" path="M 214 93 C 255 105, 275 155, 296 186" /> 
+    </circle> 
 
-                {/* Label */}
-                <div className="absolute left-6 top-[-26px] whitespace-nowrap">
-                  <p className="font-mono text-xs leading-4 text-zinc-200">
-                    {node.title}
-                  </p>
+    <circle r="3" fill="#60A5FA"> 
+      <animateMotion dur="6s" repeatCount="indefinite" path="M 207 95 C 175 145, 145 205, 133 255" /> 
+    </circle> 
 
-                  {node.subtitle && (
-                    <p className="mt-2 font-mono text-[10px] uppercase leading-[14px] tracking-wider text-zinc-500">
-                      {node.subtitle}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+    <circle r="3" fill="#F8FAFC"> 
+      <animateMotion dur="5.6s" repeatCount="indefinite" path="M 73 223 C 103 253, 123 278, 146 297" /> 
+    </circle> 
+
+    {/* node: Head Office */} 
+    <circle cx="210" cy="90" r="5.5" fill="#CCFF00" /> 
+
+    <circle 
+      cx="210" 
+      cy="90" 
+      r="5.5" 
+      fill="none" 
+      stroke="#CCFF00" 
+      strokeWidth="1.5" 
+      opacity="0.6" 
+    > 
+      <animate attributeName="r" values="5.5;16;5.5" dur="3s" repeatCount="indefinite" /> 
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite" /> 
+    </circle> 
+
+    <text x="222" y="86" className="netmap-node-label"> 
+      Singapore HQ 
+    </text> 
+
+    {/* node: Australia */} 
+    <circle cx="70" cy="220" r="5" fill="#F8FAFC" /> 
+    <text x="82" y="216" className="netmap-node-label"> 
+      Australia 
+    </text> 
+    <text x="82" y="230" className="netmap-label"> 
+      8 branches 
+    </text> 
+
+    {/* node: India offshore */} 
+    <circle cx="300" cy="190" r="4.5" fill="#60A5FA" /> 
+    <text x="312" y="186" className="netmap-node-label"> 
+      India 
+    </text> 
+    <text x="312" y="200" className="netmap-label"> 
+      offshore team 
+    </text> 
+
+    {/* node: Philippines offshore */} 
+    <circle cx="130" cy="260" r="4.5" fill="#60A5FA" /> 
+    <text x="142" y="256" className="netmap-node-label"> 
+      Philippines 
+    </text> 
+    <text x="142" y="270" className="netmap-label"> 
+      offshore team 
+    </text> 
+
+    {/* node: Auckland, NZ */} 
+    <circle cx="150" cy="300" r="4.5" fill="#F8FAFC" /> 
+    <text x="162" y="296" className="netmap-node-label"> 
+      Auckland 
+    </text> 
+    <text x="162" y="310" className="netmap-label"> 
+      New Zealand 
+    </text> 
+  </svg> 
+</div>
+
         </div>
       </div>
     </section>

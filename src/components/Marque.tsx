@@ -17,7 +17,7 @@ const MarquePage = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden bg-[#FFEDE2]/10 py-2">
+    <div className="overflow-hidden bg-[#FFEDE2]/10 py-2 pl-10">
       <div className="flex w-max animate-marquee items-center gap-10">
         {[...items, ...items].map((item, index) => (
           <div

@@ -13,8 +13,8 @@ interface Qualification {
 const qualifications: Qualification[] = [
   {
     id: "1",
-    title: "Diploma of\nManagement",
-    imageUrl: "/u1.svg",
+    title: "Diploma of \nManagement",
+    imageUrl: "/u3.svg",
   },
   {
     id: "2",
@@ -23,12 +23,12 @@ const qualifications: Qualification[] = [
   },
   {
     id: "3",
-    title: "Grad. Dip. Internet\nComputing",
-    imageUrl: "/u3.svg",
+    title: "Grad. Dip. Internet \nComputing",
+    imageUrl: "/u1.svg",
   },
   {
     id: "4",
-    title: "Diploma of\nManagement",
+    title: "Bachelor of Computer \nApplication",
     imageUrl: "/u4.svg",
   },
 ];

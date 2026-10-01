@@ -61,31 +61,21 @@ export default function About() {
         <div className="mt-2 font-inter grid items-center gap-12 lg:grid-cols-2 xl:mt-0 xl:grid-cols-[530px_1fr] xl:gap-x-[100px]">
           {/* Biography */}
           <motion.div variants={fadeInUp} className="order-2 lg:order-1">
-            <p className="text-base font-inter leading-[1.8] text-gray-300">
+            <p className="text-base font-inter leading-[1.8] text-gray-300 md:mt-5">
               <strong className="font-semibold text-white">
-                Senior IT leader with 17+ year&apos;s experience
+                Senior IT leader with 17+ years&apos; experience
               </strong>{" "}
-              owning IT strategy, operations and cybersecurity for multi-branch,
-              multi-entity organizations — currently leading the group
-              technology function for an international shipping and logistics
-              business.
+              owning IT strategy, operations and cybersecurity for multi-branch, multi-entity organizations, currently leading the group technology function for an international shipping and logistics business.
             </p>
 
             {/* Mobile Expandable Container */}
             <div className={`${isExpanded ? "block" : "hidden"} lg:block`}>
               <p className="mt-7 text-base leading-[1.8] text-gray-400">
-                I build and run distributed onshore/offshore teams, own technology
-                budgets, and partner directly with senior leadership to turn
-                business growth priorities into a clear, funded technology
-                roadmap.
+                I build and run distributed onshore/offshore teams, own technology budgets, and partner directly with senior leadership to turn business growth priorities into a clear, funded technology roadmap. An early adopter of AI at work, I focus on building <strong className="font-semibold text-white">AI-driven automation and control</strong> across the business.
               </p>
 
               <p className="mt-7 text-base leading-[1.8] text-gray-400">
-                My track record is taking full ownership of a technology function
-                and transforming it: replacing legacy network infrastructure with
-                a modern SASE architecture, delivering a full cloud migration,
-                and embedding ITIL-aligned governance — while staying close enough
-                to the technical detail to be the escalation point when it counts.
+                My track record is taking full ownership of a technology function and transforming it: replacing legacy network infrastructure with a modern SASE architecture, delivering a full cloud migration, and embedding ITIL-aligned governance, while staying close enough to the technical detail to be the escalation point when it counts.
               </p>
             </div>
 
@@ -141,9 +131,8 @@ export default function About() {
                     <span>{stat.value}</span>
                     {stat.unit && (
                       <span
-                        className={`text-[#38BDF8] ${
-                          stat.spacedUnit ? "ml-3" : "ml-1"
-                        }`}
+                        className={`text-[#38BDF8] ${stat.spacedUnit ? "ml-3" : "ml-1"
+                          }`}
                       >
                         {stat.unit}
                       </span>

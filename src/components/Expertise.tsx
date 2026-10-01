@@ -14,22 +14,22 @@ const skillGroups: SkillGroup[] = [
   {
     title: "Cloud & identity",
     description: "Design and manage secure, scalable cloud environments.",
-    skills: ["AWS", "Azure", "Microsoft 365", "MFA", "Entra ID", "Intune"],
+    skills: ["CyberArk", "DUO", "AVD (Azure Virtual Desktop)"],
   },
   {
     title: "Network & security",
     description: "Architect resilient, zero-trust network infrastructure.",
-    skills: ["Cisco", "Fortinet SASE", "Aruba", "Meraki", "Palo Alto"],
+    skills: ["HP Aruba switches", "Cisco routers & switches", "Ubiquiti AP", "Network Identity Management", "Fortinet firewalls (physical & virtual)"],
   },
   {
     title: "Cybersecurity",
     description: "Build layered defence and real-time threat visibility.",
-    skills: ["Defender", "CrowdStrike", "Essential 8", "Sentinel", "DLP"],
+    skills: ["Proofpoint", "CrowdStrike", "Menlo Security", "Tanium"],
   },
   {
     title: "Data, AI & automation",
     description: "Turn operational data into decision-ready insight.",
-    skills: ["Copilot", "Snowflake", "Power BI", "CargoWise"],
+    skills: ["Claude", "SharePoint", "Power Platform", "M-Files", "HP TRIM"],
   },
   {
     title: "Virtualization & DR",
@@ -39,7 +39,7 @@ const skillGroups: SkillGroup[] = [
   {
     title: "Leadership",
     description: "Lead distributed teams and multi-million dollar budgets.",
-    skills: ["Team leadership", "Vendor Operations", "Budget ownership"],
+    skills: ["Freshdesk","Team leadership", "Vendor Operations", "Budget ownership"],
   },
 ];
 
