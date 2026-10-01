@@ -6,6 +6,7 @@
   --background: #0a0e12;
   --foreground: #171717;
 }
+
 html,
 body {
   max-width: 100%;
@@ -14,8 +15,7 @@ body {
 
 @font-face {
   font-family: "Tusker Grotesk 4500";
-  src: url("/fonts/TuskerGrotesk/TuskerGrotesk-4500Medium.ttf")
-    format("truetype");
+  src: url("/fonts/TuskerGrotesk/TuskerGrotesk-4500Medium.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -63,4 +63,47 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* Hero section network design css */
+/* .netmap-wrap {
+  position: relative;
+  width: 612px;
+  height: 552px;
+  max-width: 700px;
+}
+
+.netmap-wrap svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+} */
+
+.netmap-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 612px;
+  aspect-ratio: 612 / 552;
+  height: auto;
+  margin: 0 auto;
+}
+
+.netmap-wrap svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.netmap-node-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  fill: #F8FAFC;
+  font-weight: 600;
+}
+
+.netmap-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  fill: #94A3B8;
 }
