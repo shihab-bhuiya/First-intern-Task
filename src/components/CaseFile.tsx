@@ -39,7 +39,7 @@ const caseFiles = [
   },
   {
     category: "Infrastructure / Resilience",
-    caseNo: "CASE-001",
+    caseNo: "CASE-002",
     title: "Infrastructure Modernization",
     description:
       "Aging on-prem server and storage infrastructure with no disaster recovery. Replaced legacy infrastructure with Dell modular servers and EMC storage, introduced new L3 Cisco switching, repurposed legacy hardware into a dedicated DR site, and deployed Veeam backup.",
@@ -53,7 +53,7 @@ const caseFiles = [
   },
   {
     category: "Security / Risk",
-    caseNo: "CASE-002",
+    caseNo: "CASE-003",
     title: "Cybersecurity Uplift",
     description:
       "Fragmented security tooling and inconsistent access control across a distributed workforce. Deployed Fortinet NGFW, client VPN, organization-wide MFA, password management, and migrated email security to a cloud platform.",
@@ -68,7 +68,7 @@ const caseFiles = [
   },
   {
     category: "Collaboration",
-    caseNo: "CASE-003",
+    caseNo: "CASE-004",
     title: "Cloud & Collaboration Migration",
     description:
       "On-prem Exchange was a single point of failure with no modern collaboration tooling. Migrated to Microsoft 365, including Exchange Online, Teams and SharePoint — rolled out Azure AD, and introduced hybrid cloud storage.",
@@ -83,7 +83,7 @@ const caseFiles = [
   },
   {
     category: "Data / Continuity",
-    caseNo: "CASE-004",
+    caseNo: "CASE-005",
     title: "Cloud Backup & Disaster Recovery",
     description:
       "Backup and recovery was manual, slow, and not cloud-resilient. Implemented cloud-based backup integrating with AWS, alongside SaaS backup for Office 365 data, creating a more resilient and scalable data protection strategy.",
@@ -98,7 +98,7 @@ const caseFiles = [
   },
   {
     category: "Network / Connectivity",
-    caseNo: "CASE-005",
+    caseNo: "CASE-006",
     title: "Network & WAN Redesign",
     description:
       "Legacy managed WAN limited flexibility and reliability across branches. Directed the upgrade to fibre connectivity across all sites and transitioned network operations to a cloud-managed gateway for greater control, availability, and scalability.",
@@ -113,7 +113,7 @@ const caseFiles = [
   },
   {
     category: "Infrastructure / Performance",
-    caseNo: "CASE-006",
+    caseNo: "CASE-007",
     title: "Virtualisation Overhaul",
     description:
       "Aging server hardware and a legacy virtualisation platform were constraining performance. Replaced the infrastructure with Tier 1 hardware, migrated to Hyper-V, and upgraded the server OS and mail platform to improve overall system performance and stability.",
