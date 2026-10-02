@@ -194,7 +194,7 @@ export default function Hero() {
             {/* Action buttons */}
             <motion.div
               variants={fadeInUp}
-              className="order-5 mt-10 flex w-full max-w-[1312px] lg:justify-start gap-4 justify-between flex-nowrap lg:gap-2.5 sm:gap-4">
+              className="order-5 mt-10 md:mb-0 mb-5 flex w-full max-w-[1312px] lg:justify-start gap-4 justify-between flex-nowrap lg:gap-2.5 sm:gap-4">
               <Link
                 href="#experience"
                 onClick={(e) => handleScrollTo(e, "#experience")}
