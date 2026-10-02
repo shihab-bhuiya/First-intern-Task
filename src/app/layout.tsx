@@ -10,6 +10,7 @@ import {
 
 import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -90,7 +91,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SmoothScrollProvider>
-          <main>{children}</main>
+          <main>{children}
+             <Toaster />
+          </main>
         </SmoothScrollProvider>
       </body>
     </html>
