@@ -7,6 +7,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 import Image from "next/image";
+import toast from "react-hot-toast";
+import { error } from "console";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
@@ -30,7 +32,7 @@ export default function Contact() {
       });
 
       if (!res.ok) throw new Error("Request failed");
-
+      toast.success("Email send successfully ")
       setStatus("sent");
       setEmail("");
       setMessage("");
@@ -39,6 +41,7 @@ export default function Contact() {
       setTimeout(() => setStatus("idle"), 4000);
     } catch {
       setStatus("error");
+      toast.error("Something went wrong")
       setTimeout(() => setStatus("idle"), 4000);
     }
   };
